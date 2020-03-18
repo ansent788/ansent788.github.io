@@ -199,6 +199,518 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
+      <meta itemprop="name" content="Paul.X.D">
+      <meta itemprop="description" content="鼠标与键盘的故事的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠标与键盘的故事">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/8/" class="post-title-link" itemprop="url">了解 Xamarin.Forms 创建移动应用程序的基础知识 7 - Image</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-17 17:29:24" itemprop="dateCreated datePublished" datetime="2020-03-17T17:29:24+08:00">2020-03-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/8/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 7 - Image" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          简介
+演示如何显示图像。
+
+ 1. 在 XAML 中创建 Xamarin.Forms Image 。
+    
+    
+ 2. Image 基本属性。
+    
+    
+ 3. Image 图片引用。
+    
+    
+
+创建 Image
+ 1. 打开已有项目 AwesomeApp。
+    
+    
+ 2. 添加新项 ImagePage.xaml。
+    
+    
+ 3. 编辑 ImagePage.xaml：
+    
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
+      <meta itemprop="name" content="Paul.X.D">
+      <meta itemprop="description" content="鼠标与键盘的故事的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠标与键盘的故事">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/7/" class="post-title-link" itemprop="url">了解 Xamarin.Forms 创建移动应用程序的基础知识 6 - Editor</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-17 17:27:28" itemprop="dateCreated datePublished" datetime="2020-03-17T17:27:28+08:00">2020-03-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/7/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 6 - Editor" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          简介
+演示 Editor 属性。
+
+ 1. 在 XAML 中创建 Xamarin.Forms Editor 。
+    
+    
+ 2. 响应 Editor 的文本更改。
+    
+    
+ 3. Editor 属性简介。
+    
+    
+
+创建 Editor
+ 1. 打开已有项目 AwesomeApp。
+    
+    
+ 2. 添加新项 EditorPage.xaml。
+    
+    
+ 3. 编辑 EditorPage.xaml：
+    
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
+      <meta itemprop="name" content="Paul.X.D">
+      <meta itemprop="description" content="鼠标与键盘的故事的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠标与键盘的故事">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/6/" class="post-title-link" itemprop="url">了解 Xamarin.Forms 创建移动应用程序的基础知识 5 - Entry</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-17 17:24:36" itemprop="dateCreated datePublished" datetime="2020-03-17T17:24:36+08:00">2020-03-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/6/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 5 - Entry" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          简介
+演示 Entry 属性 。
+
+ 1. 在 XAML 中创建 Xamarin.Forms Entry 。
+    
+    
+ 2. 响应 Entry 的文本更改。
+    
+    
+ 3. Entry 属性简介。
+    
+    
+
+创建 Entry
+ 1. 打开已有项目 AwesomeApp。
+    
+    
+ 2. 添加新项 EntryPage.xaml。
+    
+    
+ 3. 编辑 EntryPage.xaml：
+    
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    1
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
+      <meta itemprop="name" content="Paul.X.D">
+      <meta itemprop="description" content="鼠标与键盘的故事的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠标与键盘的故事">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/" class="post-title-link" itemprop="url">了解 Xamarin.Forms 创建移动应用程序的基础知识 4 - Button</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-17 17:21:22" itemprop="dateCreated datePublished" datetime="2020-03-17T17:21:22+08:00">2020-03-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 4 - Button" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          简介
+演示如何自定义 Button。
+
+ 1. 在 XAML 中创建 Xamarin.Forms Button。
+    
+    
+ 2. Button 点击事件。
+    
+    
+ 3. 更改 Button 的样式。
+    
+    
+
+创建 Button
+ 1. 打开已有项目 AwesomeApp。
+    
+    
+ 2. 添加新项 ButtonPage.xaml。
+    
+    
+ 3. 编辑 ButtonPage.xaml：
+    
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -267,50 +779,47 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>演示如何在 Label 中显示文本。</p>
-<ol>
-<li><p>在 XAML 中创建 Xamarin.Forms Label。</p>
-</li>
-<li><p>更改 Label 的样式。</p>
-</li>
-<li><p>在一个 Label 中显示具有多种格式的文本。</p>
-</li>
-</ol>
-<h2 id="创建-Label"><a href="#创建-Label" class="headerlink" title="创建 Label"></a>创建 Label</h2><ol>
-<li><p>打开已有项目 AwesomeApp。</p>
-</li>
-<li><p>添加新项 LabelPage.xaml：<br><img src="https://img-blog.csdnimg.cn/20200305150539729.png" alt=""></p>
-</li>
-<li><p>编辑 LabelPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ContentPage</span> <span class="attr">xmlns</span>=<span class="string">"http://xamarin.com/schemas/2014/forms"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">"http://schemas.microsoft.com/winfx/2009/xaml"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:d</span>=<span class="string">"http://xamarin.com/schemas/2014/forms/design"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:mc</span>=<span class="string">"http://schemas.openxmlformats.org/markup-compatibility/2006"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">mc:Ignorable</span>=<span class="string">"d"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">x:Class</span>=<span class="string">"AwesomeApp.LabelPage"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ContentPage.Content</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">StackLayout</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"欢迎使用 Xamarin.Forms！"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">VerticalOptions</span>=<span class="string">"CenterAndExpand"</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">HorizontalOptions</span>=<span class="string">"CenterAndExpand"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">StackLayout</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ContentPage.Content</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ContentPage</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑 App.xaml.cs：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">App</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	InitializeComponent();</span><br><span class="line">	MainPage = <span class="keyword">new</span> LabelPage();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305150842798.png" alt=""></p>
-</li>
-</ol>
-<h2 id="配置-Label-样式"><a href="#配置-Label-样式" class="headerlink" title="配置 Label 样式"></a>配置 Label 样式</h2><ol>
-<li><p>编辑 LabelPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"欢迎使用 Xamarin.Forms！"</span></span></span><br><span class="line"><span class="tag">	   <span class="attr">VerticalOptions</span>=<span class="string">"CenterAndExpand"</span></span></span><br><span class="line"><span class="tag">	   <span class="attr">HorizontalOptions</span>=<span class="string">"CenterAndExpand"</span></span></span><br><span class="line"><span class="tag">	   <span class="attr">TextColor</span>=<span class="string">"Blue"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">FontAttributes</span>=<span class="string">"Italic"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">FontSize</span>=<span class="string">"22"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">TextDecorations</span>=<span class="string">"Underline"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>TextColor 设置文本的颜色，FontAttributes 设置字体为斜体，FontSize 设置字号，TextDecorations 应用下划线效果</p>
-</blockquote>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305151324276.png" alt=""></p>
-</li>
-</ol>
-<h2 id="自定义-Label-文本格式"><a href="#自定义-Label-文本格式" class="headerlink" title="自定义 Label 文本格式"></a>自定义 Label 文本格式</h2><ol>
-<li><p>编辑 LabelPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Label</span> <span class="attr">TextColor</span>=<span class="string">"Gray"</span></span></span><br><span class="line"><span class="tag">	   <span class="attr">FontSize</span>=<span class="string">"20"</span></span></span><br><span class="line"><span class="tag">	   <span class="attr">HorizontalOptions</span>=<span class="string">"Center"</span></span></span><br><span class="line"><span class="tag">	   <span class="attr">VerticalOptions</span>=<span class="string">"CenterAndExpand"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label.FormattedText</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">FormattedString</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Span</span> <span class="attr">Text</span>=<span class="string">"欢迎 "</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">TextColor</span>=<span class="string">"Blue"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Span</span> <span class="attr">Text</span>=<span class="string">"使用 "</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">TextColor</span>=<span class="string">"Red"</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">FontAttributes</span>=<span class="string">"Italic"</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Span</span> <span class="attr">Text</span>=<span class="string">"Xamarin.Form！"</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">TextColor</span>=<span class="string">"Green"</span></span></span><br><span class="line"><span class="tag">				  <span class="attr">TextDecorations</span>=<span class="string">"Underline"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">FormattedString</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">Label.FormattedText</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Label</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>FormattedText 属性是 FormattedString 类型，可以包含一个或多个 Span 实例</p>
-</blockquote>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305152247542.png" alt=""></p>
-</li>
-</ol>
+          简介
+演示如何在 Label 中显示文本。
 
+ 1. 在 XAML 中创建 Xamarin.Forms Label。
+    
+    
+ 2. 更改 Label 的样式。
+    
+    
+ 3. 在一个 Label 中显示具有多种格式的文本。
+    
+    
+
+创建 Label
+ 1. 打开已有项目 AwesomeApp。
+    
+    
+ 2. 添加新项 LabelPage.xaml：
+    
+    
+    
+ 3. 编辑 LabelPage.xaml：
+    
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -397,307 +906,47 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>演示如何在 Grid 中布局。</p>
-<ol>
-<li>在 XAML 中创建 Xamarin.Forms Grid。</li>
-<li>指定 Grid 的列和行。</li>
-<li>涉及 Grid 中多列或多行的内容。</li>
-</ol>
-<h2 id="创建-Grid"><a href="#创建-Grid" class="headerlink" title="创建 Grid"></a>创建 Grid</h2><ol>
-<li><p>打开已有项目 AwesomeApp。</p>
-</li>
-<li><p>添加新项 GridPage.xaml：<br><img src="https://img-blog.csdnimg.cn/20200305132648634.png" alt=""></p>
-</li>
-<li><p>编辑 GridPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ContentPage</span> <span class="attr">xmlns</span>=<span class="string">"http://xamarin.com/schemas/2014/forms"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">"http://schemas.microsoft.com/winfx/2009/xaml"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:d</span>=<span class="string">"http://xamarin.com/schemas/2014/forms/design"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:mc</span>=<span class="string">"http://schemas.openxmlformats.org/markup-compatibility/2006"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">mc:Ignorable</span>=<span class="string">"d"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">x:Class</span>=<span class="string">"AwesomeApp.GridPage"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ContentPage.Content</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Grid</span> <span class="attr">Margin</span>=<span class="string">"20,35"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"设置Grid.Margin，可控制Grid外边距。"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">Grid</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ContentPage.Content</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ContentPage</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><em>*除 Margin 属性外，还可在 Grid 上设置 Padding 属性。 Padding 指定 Grid 的内边距。</em></p>
-</blockquote>
-</li>
-<li><p>编辑 App.xaml.cs：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">App</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	InitializeComponent();</span><br><span class="line">	MainPage = <span class="keyword">new</span> GridPage();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305140418953.png" alt=""></p>
-</li>
-</ol>
-<h2 id="行列配置"><a href="#行列配置" class="headerlink" title="行列配置"></a>行列配置</h2><ol>
-<li><p>编辑 GridPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Grid</span> <span class="attr">Margin</span>=<span class="string">"20,35,20,20"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Grid.ColumnDefinitions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ColumnDefinition</span> <span class="attr">Width</span>=<span class="string">"0.5*"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ColumnDefinition</span> <span class="attr">Width</span>=<span class="string">"0.5*"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Grid.ColumnDefinitions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Grid.RowDefinitions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RowDefinition</span> <span class="attr">Height</span>=<span class="string">"50"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RowDefinition</span> <span class="attr">Height</span>=<span class="string">"50"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Grid.RowDefinitions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"Column 0, Row 0"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Label</span> <span class="attr">Grid.Column</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">Text</span>=<span class="string">"Column 1, Row 0"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Label</span> <span class="attr">Grid.Row</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">Text</span>=<span class="string">"Column 0, Row 1"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Label</span> <span class="attr">Grid.Column</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">Grid.Row</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">Text</span>=<span class="string">"Column 1, Row 1"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Grid</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305143245643.png" alt=""></p>
-<blockquote>
-<p>有效的宽度值和高度值为：</p>
-<ul>
-<li>Auto 对列或行进行大小调整以适应内容。</li>
-<li>比例值，将列和行的大小设置为剩余空间的比例。 以 * 结尾表示比例值。</li>
-<li>绝对值，使用特定的固定值调整列或行的大小。</li>
-</ul>
-<p><em>*可以使用 ColumnSpacing 和 RowSpacing 属性设置 Grid 中列和行之间的间距</em></p>
-</blockquote>
-</li>
-</ol>
-<h2 id="跨行跨列"><a href="#跨行跨列" class="headerlink" title="跨行跨列"></a>跨行跨列</h2><ol>
-<li><p>编辑 GridPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Grid</span> <span class="attr">Margin</span>=<span class="string">"20,35,20,20"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Grid.ColumnDefinitions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ColumnDefinition</span> <span class="attr">Width</span>=<span class="string">"0.5*"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ColumnDefinition</span> <span class="attr">Width</span>=<span class="string">"0.5*"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Grid.ColumnDefinitions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Grid.RowDefinitions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RowDefinition</span> <span class="attr">Height</span>=<span class="string">"50"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RowDefinition</span> <span class="attr">Height</span>=<span class="string">"30"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RowDefinition</span> <span class="attr">Height</span>=<span class="string">"30"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Grid.RowDefinitions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Label</span> <span class="attr">Grid.ColumnSpan</span>=<span class="string">"2"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">Text</span>=<span class="string">"This text uses the ColumnSpan property to span both columns."</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Label</span> <span class="attr">Grid.Row</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">Grid.RowSpan</span>=<span class="string">"2"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">Text</span>=<span class="string">"This text uses the RowSpan property to span two rows."</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Grid</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>ColumnSpan 跨越多列，RowSpan 跨越多行</p>
-</blockquote>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305145400950.png" alt=""></p>
-</li>
-</ol>
+          简介
+演示如何在 Grid 中布局。
 
-      
-    </div>
+ 1. 在 XAML 中创建 Xamarin.Forms Grid。
+ 2. 指定 Grid 的列和行。
+ 3. 涉及 Grid 中多列或多行的内容。
 
+创建 Grid
+ 1. 打开已有项目 AwesomeApp。
+    
+    
+ 2. 添加新项 GridPage.xaml：
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+ 3. 编辑 GridPage.xaml：
+    
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+    
+    
+    
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/3/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
-      <meta itemprop="name" content="Paul.X.D">
-      <meta itemprop="description" content="鼠标与键盘的故事的博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="鼠标与键盘的故事">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/2/" class="post-title-link" itemprop="url">了解 Xamarin.Forms 创建移动应用程序的基础知识 1 - StackLayout</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-16 16:32:27" itemprop="dateCreated datePublished" datetime="2020-03-16T16:32:27+08:00">2020-03-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/2/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 1 - StackLayout" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>演示如何在 StackLayout 中对齐控件。</p>
-<ol>
-<li>在 XAML 中创建 Xamarin.Forms StackLayout。</li>
-<li>指定 StackLayout 的方向。</li>
-<li>控制 StackLayout 内子视图的对齐和扩展。</li>
-</ol>
-<h2 id="创建-stacklayout"><a href="#创建-stacklayout" class="headerlink" title="创建 stacklayout"></a>创建 stacklayout</h2><ol>
-<li><p>打开已有项目 AwesomeApp。</p>
-</li>
-<li><p>添加新项 StackLayoutPage.xaml：</p>
-</li>
-</ol>
-<p><img src="https://img-blog.csdnimg.cn/20200305134444615.png" alt=""></p>
-<ol start="3">
-<li><p>编辑 StackLayoutPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">StackLayout</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"第一个Label。"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"第二个Label。"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"第三个Label。"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">StackLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>StackLayout 默认为垂直方向。 此外，Margin 属性表示 ContentPage 中 StackLayout 的外边距。<br><em>*除 Margin 外，StackLayout 还可设置 Padding 和 Spacing。 Padding 指定 StackLayout 的内边距，Spacing 指定 StackLayout 中每个子元素之间的间隔大小。</em></p>
-</blockquote>
-</li>
-<li><p>编辑 App.xaml.cs：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">App</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	InitializeComponent();</span><br><span class="line">	MainPage = <span class="keyword">new</span> StackLayoutPage();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305135303284.png" alt=""></p>
-</li>
-</ol>
-<h2 id="StackLayout-方向"><a href="#StackLayout-方向" class="headerlink" title="StackLayout 方向"></a>StackLayout 方向</h2><ol>
-<li><p>编辑 StackLayoutPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">StackLayout</span> <span class="attr">Margin</span>=<span class="string">"20,32"</span> <span class="attr">Orientation</span>=<span class="string">"Horizontal"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"第一个Label的显示内容。"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"第二个Label的显示内容。"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"第三个Label的显示内容。"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">StackLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Orientation属性：Horizontal 横向，Vertical 纵向</p>
-</blockquote>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305135351611.png" alt=""></p>
-</li>
-</ol>
-<h2 id="对齐方式和扩展选项"><a href="#对齐方式和扩展选项" class="headerlink" title="对齐方式和扩展选项"></a>对齐方式和扩展选项</h2><ol>
-<li><p>编辑 StackLayoutPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">StackLayout</span> <span class="attr">Margin</span>=<span class="string">"20,35"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"Start"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">HorizontalOptions</span>=<span class="string">"Start"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">BackgroundColor</span>=<span class="string">"LightGray"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"Center"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">HorizontalOptions</span>=<span class="string">"Center"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">BackgroundColor</span>=<span class="string">"LightGray"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"End"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">HorizontalOptions</span>=<span class="string">"End"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">BackgroundColor</span>=<span class="string">"LightGray"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"Fill"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">HorizontalOptions</span>=<span class="string">"Fill"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">BackgroundColor</span>=<span class="string">"LightGray"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"StartAndExpand"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">VerticalOptions</span>=<span class="string">"StartAndExpand"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">BackgroundColor</span>=<span class="string">"LightGray"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"CenterAndExpand"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">VerticalOptions</span>=<span class="string">"CenterAndExpand"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">BackgroundColor</span>=<span class="string">"LightGray"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"EndAndExpand"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">VerticalOptions</span>=<span class="string">"EndAndExpand"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">BackgroundColor</span>=<span class="string">"LightGray"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"FillAndExpand"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">VerticalOptions</span>=<span class="string">"FillAndExpand"</span></span></span><br><span class="line"><span class="tag">		   <span class="attr">BackgroundColor</span>=<span class="string">"LightGray"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">StackLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>前四个 Label 设置 HorizontalOptions 横向配置 Start、Center、End 和 Fill 各元素的显示位置，后四个 Label 设置 VerticalOptions 纵向配置 StartAndExpand、CenterAndExpand、EndAndExpand 和 FillAndExpand 在剩余空间中的位置。</p>
-</blockquote>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305135430671.png" alt=""></p>
-<blockquote>
-<ul>
-<li>StackLayout 仅遵循与 StackLayout 方向相反的子元素位置配置。 因此，Vertical 方向的 HorizontalOptions 属性设置时有效</li>
-<li>StackLayout 只能按照其方向扩展元素位置。 因此，Vertical 方向的 StackLayout 可以扩展 Label 子元素。 这意味着，对于 Vertical 对齐方式，每个 Label 在 StackLayout 内占据相同的空间量。 但是，只有最后一个 Label（可将 VerticalOptions 属性设置为 FillAndExpand）具有不同的大小</li>
-</ul>
-<p><em>*以上代码中 StackLayout.Orientation 默认为 Vertical，故前四个 Label 配置 HorizontalOptions 位置有效，后四个 Label 配置 VerticalOptions 为 Expand 有效</em><br><em>*使用 StackLayout 中的所有空间时，Expand 不起作用</em></p>
-</blockquote>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
-      <meta itemprop="name" content="Paul.X.D">
-      <meta itemprop="description" content="鼠标与键盘的故事的博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="鼠标与键盘的故事">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/" class="post-title-link" itemprop="url">了解 Xamarin.Forms 创建移动应用程序的基础知识 - 生成第一个Xamarin应用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-14 17:18:07" itemprop="dateCreated datePublished" datetime="2020-03-14T17:18:07+08:00">2020-03-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 - 生成第一个Xamarin应用" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>Visual Studio 2019</p>
-<h2 id="Windows-分步说明"><a href="#Windows-分步说明" class="headerlink" title="Windows 分步说明"></a>Windows 分步说明</h2><ol>
-<li>选择“文件”&gt;“新建”&gt;“项目…” ，或按“创建新项目…” 按钮：<br><img src="https://img-blog.csdnimg.cn/20200305094410752.png" alt=""></li>
-<li>搜索“Xamarin”或从“项目类型” 菜单中选择“移动” 。 选择“移动应用(Xamarin.Forms)” 项目类型：<br><img src="https://img-blog.csdnimg.cn/20200305094544257.png" alt=""></li>
-<li>选择项目名称 – 示例使用“AwesomeApp”：<br><img src="https://img-blog.csdnimg.cn/20200305094628686.png" alt=""></li>
-<li>单击“空白” 项目类型，确保选择了“Android” 和“iOS” ：<br><img src="https://img-blog.csdnimg.cn/20200305094734459.png" alt=""></li>
-<li>到 NuGet 包还原（状态栏中将出现“还原已完成”消息）。</li>
-<li>新 Visual Studio 2019 安装不会配置 Android 模拟器。 单击“调试” 按钮上的下拉箭头，然后选择“创建 Android Emulator” 以启动仿真器创建屏幕：<br><img src="https://img-blog.csdnimg.cn/20200305092243262.png" alt=""></li>
-<li>在仿真器创建屏幕中，使用默认设置并单击“创建” 按钮：<br><img src="https://img-blog.csdnimg.cn/20200305094857438.png" alt=""></li>
-<li>创建仿真器会使你返回“设备管理器”窗口。 单击“启动” 按钮以启动新仿真器：<br><img src="https://img-blog.csdnimg.cn/20200305094923593.png" alt=""></li>
-<li>Visual Studio 2019 现在应在“调试” 按钮上显示新仿真器的名称：<br><img src="https://img-blog.csdnimg.cn/20200305095008259.png" alt=""></li>
-<li>单击“调试” 按钮以生成应用程序并将其部署到 Android 仿真器：<br><img src="https://img-blog.csdnimg.cn/20200305095224286.png" alt=""> </li>
-</ol>
-<h2 id="自定义应用程序"><a href="#自定义应用程序" class="headerlink" title="自定义应用程序"></a>自定义应用程序</h2><ol>
-<li><p>编辑 MainPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"欢迎使用Xamarin！"</span> <span class="attr">HorizontalOptions</span>=<span class="string">"Center"</span> <span class="attr">VerticalOptions</span>=<span class="string">"CenterAndExpand"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">Text</span>=<span class="string">"点我"</span> <span class="attr">Clicked</span>=<span class="string">"Button_Clicked"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑 MainPage.xaml.cs：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Button_Clicked</span>(<span class="params"><span class="keyword">object</span> sender, System.EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    count++;</span><br><span class="line">    ((Button)sender).Text = <span class="string">$"你点击了 <span class="subst">&#123;count&#125;</span> 次。"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305095949266.png" alt=""></p>
-<h2 id="在-Visual-Studio-2019-中生成-iOS-应用"><a href="#在-Visual-Studio-2019-中生成-iOS-应用" class="headerlink" title="在 Visual Studio 2019 中生成 iOS 应用"></a>在 Visual Studio 2019 中生成 iOS 应用</h2><p><a href="https://sec.ch9.ms/ch9/093f/7c34917b-e6a0-41b5-8f49-4253b0b9093f/XamariniOS_high.mp4" target="_blank" rel="noopener">此视频引用于第9频道微软公开课</a></p>
-</li>
-</ol>
-
       
     </div>
 
@@ -716,7 +965,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
