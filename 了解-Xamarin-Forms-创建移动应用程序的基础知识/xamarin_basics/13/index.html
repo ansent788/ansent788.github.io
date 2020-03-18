@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ansent788.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"8CT8F0HFO9","apiKey":"6a02330219ac014d1509a6cbacbabdc7","indexName":"ansent788Blog","hits":{"per_page":10},"labels":{"input_placeholder":"搜索文档","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"${hits} 结果发现于 ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="简介演示如何访问并将使用网络数据。  添加 Newtonsoft.Json。  创建访问业务。  使用访问数据。   Newtonsoft.Json 类库引用 管理 NuGet 包。  搜索 Newtonsoft.Json。  安装推荐版本。   创建访问业务 添加 TianQiModel.cs 到 Models 文件夹。  编辑 TianQiModel.cs： 12345678910111213">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解 Xamarin.Forms 创建移动应用程序的基础知识 12 - 访问URL数据">
+<meta property="og:url" content="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/13/">
+<meta property="og:site_name" content="鼠标与键盘的故事">
+<meta property="og:description" content="简介演示如何访问并将使用网络数据。  添加 Newtonsoft.Json。  创建访问业务。  使用访问数据。   Newtonsoft.Json 类库引用 管理 NuGet 包。  搜索 Newtonsoft.Json。  安装推荐版本。   创建访问业务 添加 TianQiModel.cs 到 Models 文件夹。  编辑 TianQiModel.cs： 12345678910111213">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200312100609605.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200312100640511.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200312100701690.png">
+<meta property="article:published_time" content="2020-03-18T07:49:51.733Z">
+<meta property="article:modified_time" content="2020-03-18T07:49:51.733Z">
+<meta property="article:author" content="Paul.X.D">
+<meta property="article:tag" content="Xamarin">
+<meta property="article:tag" content="Xamarin.Forms">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200312100609605.png">
+
+<link rel="canonical" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/13/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>了解 Xamarin.Forms 创建移动应用程序的基础知识 12 - 访问URL数据 | 鼠标与键盘的故事</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">鼠标与键盘的故事</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">Paul.X.D</h1>
+      
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>文章<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="search-pop-overlay">
+  <div class="popup search-popup">
+      <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+    
+  </div>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/ansent788" class="github-corner" title="Paul.X.D&#96;s GitHub" aria-label="Paul.X.D&#96;s GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
+      <meta itemprop="name" content="Paul.X.D">
+      <meta itemprop="description" content="鼠标与键盘的故事的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠标与键盘的故事">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          了解 Xamarin.Forms 创建移动应用程序的基础知识 12 - 访问URL数据
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-18 15:49:51" itemprop="dateCreated datePublished" datetime="2020-03-18T15:49:51+08:00">2020-03-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/13/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 12 - 访问URL数据" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/13/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/13/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>演示如何访问并将使用网络数据。</p>
+<ol>
+<li><p>添加 Newtonsoft.Json。</p>
+</li>
+<li><p>创建访问业务。</p>
+</li>
+<li><p>使用访问数据。</p>
+</li>
+</ol>
+<h2 id="Newtonsoft-Json-类库引用"><a href="#Newtonsoft-Json-类库引用" class="headerlink" title="Newtonsoft.Json 类库引用"></a>Newtonsoft.Json 类库引用</h2><ol>
+<li><p>管理 NuGet 包。</p>
+</li>
+<li><p>搜索 Newtonsoft.Json。</p>
+</li>
+<li><p>安装推荐版本。</p>
+</li>
+</ol>
+<h2 id="创建访问业务"><a href="#创建访问业务" class="headerlink" title="创建访问业务"></a>创建访问业务</h2><ol>
+<li><p>添加 TianQiModel.cs 到 Models 文件夹。</p>
+</li>
+<li><p>编辑 TianQiModel.cs：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Newtonsoft.Json;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">AwesomeApp.Models</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">	<span class="comment"><span class="doctag">///</span> 天气数据模型</span></span><br><span class="line">	<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TianQiModel</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> 城市ID</span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">		[<span class="meta">JsonProperty(<span class="meta-string">"cityid"</span>)</span>]</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">string</span> CityID &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> 城市名称</span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">		[<span class="meta">JsonProperty(<span class="meta-string">"city"</span>)</span>]</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">string</span> City &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">		……</span><br><span class="line"></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> 警报</span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">		[<span class="meta">JsonProperty(<span class="meta-string">"alarm"</span>)</span>]</span><br><span class="line">		<span class="keyword">public</span> AlarmModel Alarm &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">	<span class="comment"><span class="doctag">///</span> 警报数据模型</span></span><br><span class="line">	<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AlarmModel</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> 类型</span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">		[<span class="meta">JsonProperty(<span class="meta-string">"alarm_type"</span>)</span>]</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">string</span> Type &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> 等级</span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">		[<span class="meta">JsonProperty(<span class="meta-string">"alarm_level"</span>)</span>]</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">string</span> Level &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> 内容</span></span><br><span class="line">		<span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">		[<span class="meta">JsonProperty(<span class="meta-string">"alarm_content"</span>)</span>]</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">string</span> Content &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>JsonProperty 属性标签表示JSON数据名称</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<ol start="3">
+<li><p>添加 TianQiAPI.cs 到 APIs文件夹。</p>
+</li>
+<li><p>编辑 TianQiAPI.cs：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> AwesomeApp.Models;</span><br><span class="line"><span class="keyword">using</span> Newtonsoft.Json;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Diagnostics;</span><br><span class="line"><span class="keyword">using</span> System.Net.Http;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">AwesomeApp.APIs</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TianQiAPI</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">const</span> <span class="keyword">string</span> _api_url = <span class="string">"https://www.tianqiapi.com/api"</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">const</span> <span class="keyword">string</span> _api_version = <span class="string">"v6"</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">const</span> <span class="keyword">string</span> _api_appid = <span class="string">"YOUR_APPID"</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">const</span> <span class="keyword">string</span> _api_appsecret = <span class="string">"YOUR_SECRET"</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="keyword">readonly</span> HttpClient _client;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">TianQiAPI</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			_client = <span class="keyword">new</span> HttpClient();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">async</span> Task&lt;TianQiModel&gt; <span class="title">GetWeatherDataAsync</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			TianQiModel tianQiData = <span class="literal">null</span>;</span><br><span class="line">			<span class="keyword">try</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">using</span> (HttpResponseMessage response = <span class="keyword">await</span> _client.GetAsync(<span class="keyword">string</span>.Format(</span><br><span class="line">					<span class="string">"&#123;0&#125;?version=&#123;1&#125;&amp;appid=&#123;2&#125;&amp;appsecret=&#123;3&#125;"</span>,</span><br><span class="line">					_api_url, _api_version, _api_appid, _api_appsecret)))</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span> (response.IsSuccessStatusCode)</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="keyword">string</span> content = <span class="keyword">await</span> response.Content.ReadAsStringAsync();</span><br><span class="line">						tianQiData = JsonConvert.DeserializeObject&lt;TianQiModel&gt;(content);</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span></span><br><span class="line">					&#123;</span><br><span class="line">						Debug.WriteLine(<span class="string">"\tERROR &#123;0&#125;"</span>, response.Content);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span> (Exception ex)</span><br><span class="line">			&#123;</span><br><span class="line">				Debug.WriteLine(<span class="string">"\tERROR &#123;0&#125;"</span>, ex.Message);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">return</span> tianQiData;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>APPID 与 SECRET 到 <a href="https://www.tianqiapi.com" target="_blank" rel="noopener">https://www.tianqiapi.com</a> 申请</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="使用访问数据"><a href="#使用访问数据" class="headerlink" title="使用访问数据"></a>使用访问数据</h2><ol>
+<li><p>添加 TitleAndTextCell.xaml 单元格控件到 Controls。</p>
+</li>
+<li><p>编辑 TitleAndTextCell.xaml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ViewCell</span> <span class="attr">xmlns</span>=<span class="string">"http://xamarin.com/schemas/2014/forms"</span> </span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">"http://schemas.microsoft.com/winfx/2009/xaml"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:d</span>=<span class="string">"http://xamarin.com/schemas/2014/forms/design"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:mc</span>=<span class="string">"http://schemas.openxmlformats.org/markup-compatibility/2006"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">mc:Ignorable</span>=<span class="string">"d"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">x:Class</span>=<span class="string">"AwesomeApp.Controls.TitleAndTextCell"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ViewCell.View</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Grid</span> <span class="attr">x:Name</span>=<span class="string">"grid"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Grid.ColumnDefinitions</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">ColumnDefinition</span> <span class="attr">Width</span>=<span class="string">"Auto"</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">ColumnDefinition</span> <span class="attr">Width</span>=<span class="string">"*"</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">Grid.ColumnDefinitions</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">Grid</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ViewCell.View</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ViewCell</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 TitleAndTextCell.xaml.cs：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> Xamarin.Forms;</span><br><span class="line"><span class="keyword">using</span> Xamarin.Forms.Xaml;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">AwesomeApp.Controls</span></span><br><span class="line">&#123;</span><br><span class="line">	[<span class="meta">XamlCompilation(XamlCompilationOptions.Compile)</span>]</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">TitleAndTextCell</span> : <span class="title">ViewCell</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">public</span> List&lt;<span class="keyword">string</span>&gt; TitleClass &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">string</span> TitleText &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> List&lt;<span class="keyword">string</span>&gt; TextClass &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">string</span> TextBindingPath &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">TitleAndTextCell</span>(<span class="params">List&lt;<span class="keyword">string</span>&gt; titleClass, <span class="keyword">string</span> titleText, List&lt;<span class="keyword">string</span>&gt; textClass, <span class="keyword">string</span> textBindingPath</span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			InitializeComponent();</span><br><span class="line"></span><br><span class="line">			TitleClass = titleClass;</span><br><span class="line">			TitleText = titleText;</span><br><span class="line">			TextClass = textClass;</span><br><span class="line">			TextBindingPath = textBindingPath;</span><br><span class="line"></span><br><span class="line">			InitGrid();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">InitGrid</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			grid.Children.Clear();</span><br><span class="line">			grid.Children.Add(<span class="keyword">new</span> Label &#123; StyleClass = TitleClass, Text = TitleText &#125;);</span><br><span class="line">			Label content = <span class="keyword">new</span> Label &#123; StyleClass = TextClass &#125;;</span><br><span class="line">			content.SetBinding(Label.TextProperty, TextBindingPath);</span><br><span class="line">			grid.Children.Add(content, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加 TianQiAPIPage.xaml。</p>
+</li>
+<li><p>编辑 TianQiAPIPage.xaml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ContentPage</span> <span class="attr">xmlns</span>=<span class="string">"http://xamarin.com/schemas/2014/forms"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">"http://schemas.microsoft.com/winfx/2009/xaml"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:d</span>=<span class="string">"http://xamarin.com/schemas/2014/forms/design"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:mc</span>=<span class="string">"http://schemas.openxmlformats.org/markup-compatibility/2006"</span></span></span><br><span class="line"><span class="tag">			 <span class="attr">xmlns:col</span>=<span class="string">"clr-namespace:AwesomeApp.Controls;assembly=AwesomeApp"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">mc:Ignorable</span>=<span class="string">"d"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">x:Class</span>=<span class="string">"AwesomeApp.TianQiAPIPage"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ContentPage.Resources</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ResourceDictionary</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Style</span> <span class="attr">TargetType</span>=<span class="string">"StackLayout"</span>&gt;</span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"Orientation"</span> <span class="attr">Value</span>=<span class="string">"Horizontal"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"Margin"</span> <span class="attr">Value</span>=<span class="string">"15,0"</span> /&gt;</span></span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">Style</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Style</span> <span class="attr">TargetType</span>=<span class="string">"Grid"</span>&gt;</span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"Margin"</span> <span class="attr">Value</span>=<span class="string">"15,0"</span> /&gt;</span></span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">Style</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Style</span> <span class="attr">TargetType</span>=<span class="string">"Label"</span> <span class="attr">Class</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"HeightRequest"</span> <span class="attr">Value</span>=<span class="string">"60"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"WidthRequest"</span> <span class="attr">Value</span>=<span class="string">"80"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"TextColor"</span> <span class="attr">Value</span>=<span class="string">"Black"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"VerticalTextAlignment"</span> <span class="attr">Value</span>=<span class="string">"Center"</span> /&gt;</span></span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">Style</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Style</span> <span class="attr">TargetType</span>=<span class="string">"Label"</span> <span class="attr">Class</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"TextColor"</span> <span class="attr">Value</span>=<span class="string">"DimGray"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"VerticalOptions"</span> <span class="attr">Value</span>=<span class="string">"CenterAndExpand"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"HorizontalOptions"</span> <span class="attr">Value</span>=<span class="string">"FillAndExpand"</span> /&gt;</span></span></span><br><span class="line"><span class="xml">				<span class="tag">&lt;<span class="name">Setter</span> <span class="attr">Property</span>=<span class="string">"LineBreakMode"</span> <span class="attr">Value</span>=<span class="string">"WordWrap"</span> /&gt;</span></span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">Style</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">ResourceDictionary</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ContentPage.Resources</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ContentPage.Content</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">TableView</span> <span class="attr">x:Name</span>=<span class="string">"tableView"</span> <span class="attr">Intent</span>=<span class="string">"Settings"</span> <span class="attr">HasUnevenRows</span>=<span class="string">"True"</span>&gt;</span><span class="tag">&lt;/<span class="name">TableView</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ContentPage.Content</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ContentPage</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 TianQiAPIPage.xaml.cs：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> AwesomeApp.APIs;</span><br><span class="line"><span class="keyword">using</span> AwesomeApp.Controls;</span><br><span class="line"><span class="keyword">using</span> AwesomeApp.Models;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> Xamarin.Forms;</span><br><span class="line"><span class="keyword">using</span> Xamarin.Forms.Xaml;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">AwesomeApp</span></span><br><span class="line">&#123;</span><br><span class="line">	[<span class="meta">XamlCompilation(XamlCompilationOptions.Compile)</span>]</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">TianQiAPIPage</span> : <span class="title">ContentPage</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="title">TianQiAPIPage</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			InitializeComponent();</span><br><span class="line"></span><br><span class="line">			Init();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			tableView.Root = <span class="keyword">new</span> TableRoot</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">new</span> TableSection(<span class="string">"实时天气预报"</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"城市ID"</span>, <span class="string">"CityID"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"城市"</span>, <span class="string">"City"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"城市英文"</span>, <span class="string">"CityEn"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"国家"</span>, <span class="string">"Country"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"国家英文"</span>, <span class="string">"CountryEn"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"日期"</span>, <span class="string">"Date"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"星期"</span>, <span class="string">"Week"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"更新时间"</span>, <span class="string">"UpdateTime"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"天气"</span>, <span class="string">"Weather"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"天气图标"</span>, <span class="string">"WeatherImage"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"温度"</span>, <span class="string">"Temperature"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"高温"</span>, <span class="string">"TemperatureHigh"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"低温"</span>, <span class="string">"TemperatureLow"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"风向"</span>, <span class="string">"Wind"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"风力"</span>, <span class="string">"WindSpeed"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"风速"</span>, <span class="string">"WindMeter"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"湿度"</span>, <span class="string">"Humidity"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"能见度"</span>, <span class="string">"Visibility"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"气压hPa"</span>, <span class="string">"Pressure"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"空气质量"</span>, <span class="string">"Air"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"PM2.5"</span>, <span class="string">"AirPM25"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"空气等级"</span>, <span class="string">"AirLevel"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"空气质量"</span>, <span class="string">"AirTips"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"警报类型"</span>, <span class="string">"Alarm.Type"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"警报等级"</span>, <span class="string">"Alarm.Level"</span>),</span><br><span class="line">					CreateTableViewViewCell(<span class="string">"警报内容"</span>, <span class="string">"Alarm.Content"</span>),</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">private</span> TitleAndTextCell <span class="title">CreateTableViewViewCell</span>(<span class="params"><span class="keyword">string</span> text, <span class="keyword">string</span> bindingPath</span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> TitleAndTextCell(<span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt; &#123; <span class="string">"title"</span> &#125;, text, <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt; &#123; <span class="string">"text"</span> &#125;, bindingPath);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">async</span> <span class="keyword">void</span> <span class="title">OnAppearing</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>		&#123;</span><br><span class="line">			<span class="keyword">base</span>.OnAppearing();</span><br><span class="line"></span><br><span class="line">			TianQiModel tianQi = <span class="keyword">await</span> TianQiAPI.GetWeatherDataAsync(<span class="keyword">string</span>.Empty);</span><br><span class="line">			BindingContext = tianQi;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>编辑 App.xaml.cs：<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">App</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	InitializeComponent();</span><br><span class="line">	MainPage = <span class="keyword">new</span> TianQiAPIPage();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>调试界面：<br><img src="https://img-blog.csdnimg.cn/20200312100609605.png" alt=""><br><img src="https://img-blog.csdnimg.cn/20200312100640511.png" alt=""><br><img src="https://img-blog.csdnimg.cn/20200312100701690.png" alt=""></p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Xamarin/" rel="tag"># Xamarin</a>
+              <a href="/tags/Xamarin-Forms/" rel="tag"># Xamarin.Forms</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/12/" rel="prev" title="了解 Xamarin.Forms 创建移动应用程序的基础知识 11 - SQLite数据库">
+      <i class="fa fa-chevron-left"></i> 了解 Xamarin.Forms 创建移动应用程序的基础知识 11 - SQLite数据库
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/14/" rel="next" title="了解 Xamarin.Forms 创建移动应用程序的基础知识 - 总结">
+      了解 Xamarin.Forms 创建移动应用程序的基础知识 - 总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newtonsoft-Json-类库引用"><span class="nav-number">2.</span> <span class="nav-text">Newtonsoft.Json 类库引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建访问业务"><span class="nav-number">3.</span> <span class="nav-text">创建访问业务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用访问数据"><span class="nav-number">4.</span> <span class="nav-text">使用访问数据</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Paul.X.D"
+      src="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
+  <p class="site-author-name" itemprop="name">Paul.X.D</p>
+  <div class="site-description" itemprop="description">鼠标与键盘的故事的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ansent788" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ansent788" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ansent788@163.com" title="E-Mail → mailto:ansent788@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Paul.X.D</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'tCpO6T9GHPSyr9m8kbq9sBEd-MdYXbMMI',
+      appKey     : 'W2dBJdXMTPrFD7P3s711Uuh2',
+      placeholder: "评价内容",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

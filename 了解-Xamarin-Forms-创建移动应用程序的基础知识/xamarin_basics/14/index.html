@@ -20,22 +20,21 @@
     var CONFIG = {"hostname":"ansent788.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"8CT8F0HFO9","apiKey":"6a02330219ac014d1509a6cbacbabdc7","indexName":"ansent788Blog","hits":{"per_page":10},"labels":{"input_placeholder":"搜索文档","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"${hits} 结果发现于 ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="鼠标与键盘的故事的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="鼠标与键盘的故事">
-<meta property="og:url" content="https://ansent788.github.io/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+  <meta name="description" content="简介通过对 “了解使用 Xamarin.Forms 创建移动应用程序的基础知识” 这个专题的编写，已经学习的内容如下： 基本控件的使用  元素基本样式的调整  应用程序的基础生命周期  本地数据库 SQLite 的使用  远程 URL 数据的访问  自定义控件的初步介绍   了解了这些内容已经可以实现简单功能的 APP 编写，处理日常事务的简单工作。接下来，会针对 Xamarin.Forms 的进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解 Xamarin.Forms 创建移动应用程序的基础知识 - 总结">
+<meta property="og:url" content="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/14/">
 <meta property="og:site_name" content="鼠标与键盘的故事">
-<meta property="og:description" content="鼠标与键盘的故事的博客">
+<meta property="og:description" content="简介通过对 “了解使用 Xamarin.Forms 创建移动应用程序的基础知识” 这个专题的编写，已经学习的内容如下： 基本控件的使用  元素基本样式的调整  应用程序的基础生命周期  本地数据库 SQLite 的使用  远程 URL 数据的访问  自定义控件的初步介绍   了解了这些内容已经可以实现简单功能的 APP 编写，处理日常事务的简单工作。接下来，会针对 Xamarin.Forms 的进">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-18T07:57:04.073Z">
+<meta property="article:modified_time" content="2020-03-18T07:57:04.073Z">
 <meta property="article:author" content="Paul.X.D">
-<meta property="article:tag" content="鼠标与键盘的故事">
-<meta property="article:tag" content="博客">
 <meta property="article:tag" content="Xamarin">
-<meta property="article:tag" content="C#">
-<meta property="article:tag" content=".NET">
+<meta property="article:tag" content="Xamarin.Forms">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ansent788.github.io/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+<link rel="canonical" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/14/">
 
 
 <script id="page-configurations">
@@ -43,11 +42,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false
+    isPost : true
   };
 </script>
 
-  <title>分类: 了解 Xamarin.Forms 创建移动应用程序的基础知识 | 鼠标与键盘的故事</title>
+  <title>了解 Xamarin.Forms 创建移动应用程序的基础知识 - 总结 | 鼠标与键盘的故事</title>
   
 
 
@@ -194,237 +193,158 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">了解 Xamarin.Forms 创建移动应用程序的基础知识
-          <small>分类</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
+      <meta itemprop="name" content="Paul.X.D">
+      <meta itemprop="description" content="鼠标与键盘的故事的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠标与键盘的故事">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          了解 Xamarin.Forms 创建移动应用程序的基础知识 - 总结
         </h2>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-18 15:57:04" itemprop="dateCreated datePublished" datetime="2020-03-18T15:57:04+08:00">2020-03-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/14/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 - 总结" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/14/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/14/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h2 class="collection-header">2020</h2>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-18T15:57:04+08:00"
-              content="2020-03-18">
-          03-18
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/14/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 - 总结</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-18T15:49:51+08:00"
-              content="2020-03-18">
-          03-18
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/13/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 12 - 访问URL数据</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-18T15:47:19+08:00"
-              content="2020-03-18">
-          03-18
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/12/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 11 - SQLite数据库</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-18T15:42:56+08:00"
-              content="2020-03-18">
-          03-18
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/11/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 10 - 应用程序的生命周期</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-18T15:40:42+08:00"
-              content="2020-03-18">
-          03-18
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/10/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 9 - 弹出窗口</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-18T15:32:24+08:00"
-              content="2020-03-18">
-          03-18
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/9/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 8 - ListView</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T17:29:24+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/8/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 7 - Image</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T17:27:28+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/7/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 6 - Editor</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T17:24:36+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/6/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 5 - Entry</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-17T17:21:22+08:00"
-              content="2020-03-17">
-          03-17
-        </time>
-      </div>
-
-      <h3 class="post-title">
-          <a class="post-title-link" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/" itemprop="url">
-            <span itemprop="name">了解 Xamarin.Forms 创建移动应用程序的基础知识 4 - Button</span>
-          </a>
-      </h3>
-
-    </header>
-  </article>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><pre><code>通过对 “了解使用 Xamarin.Forms 创建移动应用程序的基础知识” 这个专题的编写，已经学习的内容如下：</code></pre><ol>
+<li><p>基本控件的使用</p>
+</li>
+<li><p>元素基本样式的调整</p>
+</li>
+<li><p>应用程序的基础生命周期</p>
+</li>
+<li><p>本地数据库 SQLite 的使用</p>
+</li>
+<li><p>远程 URL 数据的访问</p>
+</li>
+<li><p>自定义控件的初步介绍</p>
+</li>
+</ol>
+<p>了解了这些内容已经可以实现简单功能的 APP 编写，处理日常事务的简单工作。接下来，会针对 Xamarin.Forms 的进阶内容与大家一同学习。</p>
+<h2 id="专题内容"><a href="#专题内容" class="headerlink" title="专题内容"></a>专题内容</h2><ol>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104667928" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 - 生成第一个Xamarin应用</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104667745" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 1 - StackLayout</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104672955" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 2 - Grid</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104675294" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 3 - Label</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104675989" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 4 - Button</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104676540" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 5 - Entry</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104692489" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 6 - Editor</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104695770" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 7 - Image</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104698433" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 8 - ListView</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104711938" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 9 - 弹出窗口</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104745499" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 10 - 应用程序的生命周期</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104752249" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 11 - SQLite数据库</a></p>
+</li>
+<li><p><a href="https://editor.csdn.net/md/?articleId=104769246" target="_blank" rel="noopener">了解 Xamarin.Forms 创建移动应用程序的基础知识 12 - 访问URL数据</a></p>
+</li>
+</ol>
 
     </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Xamarin/" rel="tag"># Xamarin</a>
+              <a href="/tags/Xamarin-Forms/" rel="tag"># Xamarin.Forms</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/13/" rel="prev" title="了解 Xamarin.Forms 创建移动应用程序的基础知识 12 - 访问URL数据">
+      <i class="fa fa-chevron-left"></i> 了解 Xamarin.Forms 创建移动应用程序的基础知识 12 - 访问URL数据
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/page/2/">2</a><a class="extend next" rel="next" href="/categories/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -471,6 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#专题内容"><span class="nav-number">2.</span> <span class="nav-text">专题内容</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -20,32 +20,25 @@
     var CONFIG = {"hostname":"ansent788.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"appID":"8CT8F0HFO9","apiKey":"6a02330219ac014d1509a6cbacbabdc7","indexName":"ansent788Blog","hits":{"per_page":10},"labels":{"input_placeholder":"搜索文档","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"${hits} 结果发现于 ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="开发环境Visual Studio 2019 Windows 分步说明 选择“文件”&gt;“新建”&gt;“项目…” ，或按“创建新项目…” 按钮： 搜索“Xamarin”或从“项目类型” 菜单中选择“移动” 。 选择“移动应用(Xamarin.Forms)” 项目类型： 选择项目名称 – 示例使用“AwesomeApp”： 单击“空白” 项目类型，确保选择了“Android” 和“iOS” ：">
+  <meta name="description" content="简介演示如何自定义 Button。  在 XAML 中创建 Xamarin.Forms Button。  Button 点击事件。  更改 Button 的样式。   创建 Button 打开已有项目 AwesomeApp。  添加新项 ButtonPage.xaml。  编辑 ButtonPage.xaml： 123456789101112131415&lt;?xml version&#x3D;&quot;1.0&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="了解 Xamarin.Forms 创建移动应用程序的基础知识 - 生成第一个Xamarin应用">
-<meta property="og:url" content="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/">
+<meta property="og:title" content="了解 Xamarin.Forms 创建移动应用程序的基础知识 4 - Button">
+<meta property="og:url" content="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/">
 <meta property="og:site_name" content="鼠标与键盘的故事">
-<meta property="og:description" content="开发环境Visual Studio 2019 Windows 分步说明 选择“文件”&gt;“新建”&gt;“项目…” ，或按“创建新项目…” 按钮： 搜索“Xamarin”或从“项目类型” 菜单中选择“移动” 。 选择“移动应用(Xamarin.Forms)” 项目类型： 选择项目名称 – 示例使用“AwesomeApp”： 单击“空白” 项目类型，确保选择了“Android” 和“iOS” ：">
+<meta property="og:description" content="简介演示如何自定义 Button。  在 XAML 中创建 Xamarin.Forms Button。  Button 点击事件。  更改 Button 的样式。   创建 Button 打开已有项目 AwesomeApp。  添加新项 ButtonPage.xaml。  编辑 ButtonPage.xaml： 123456789101112131415&lt;?xml version&#x3D;&quot;1.0&quot;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305094410752.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305094544257.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305094628686.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305094734459.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305092243262.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305094857438.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305094923593.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305095008259.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305095224286.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305095949266.png">
-<meta property="article:published_time" content="2020-03-14T09:18:07.000Z">
-<meta property="article:modified_time" content="2020-03-14T09:18:07.000Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020030515320694.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305153708933.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200305154412650.png">
+<meta property="article:published_time" content="2020-03-17T09:21:22.162Z">
+<meta property="article:modified_time" content="2020-03-17T09:21:22.162Z">
 <meta property="article:author" content="Paul.X.D">
 <meta property="article:tag" content="Xamarin">
 <meta property="article:tag" content="Xamarin.Forms">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200305094410752.png">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2020030515320694.png">
 
-<link rel="canonical" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/">
+<link rel="canonical" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/">
 
 
 <script id="page-configurations">
@@ -57,7 +50,7 @@
   };
 </script>
 
-  <title>了解 Xamarin.Forms 创建移动应用程序的基础知识 - 生成第一个Xamarin应用 | 鼠标与键盘的故事</title>
+  <title>了解 Xamarin.Forms 创建移动应用程序的基础知识 4 - Button | 鼠标与键盘的故事</title>
   
 
 
@@ -209,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.github.io/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://portrait.gitee.com/uploads/avatars/user/667/2001376_ansent788_1583989491.png">
@@ -222,7 +215,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          了解 Xamarin.Forms 创建移动应用程序的基础知识 - 生成第一个Xamarin应用
+          了解 Xamarin.Forms 创建移动应用程序的基础知识 4 - Button
         </h2>
 
         <div class="post-meta">
@@ -232,7 +225,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-14 17:18:07" itemprop="dateCreated datePublished" datetime="2020-03-14T17:18:07+08:00">2020-03-14</time>
+              <time title="创建时间：2020-03-17 17:21:22" itemprop="dateCreated datePublished" datetime="2020-03-17T17:21:22+08:00">2020-03-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,7 +238,7 @@
             </span>
 
           
-            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 - 生成第一个Xamarin应用" title="阅读次数">
+            <span id="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/" class="post-meta-item leancloud_visitors" data-flag-title="了解 Xamarin.Forms 创建移动应用程序的基础知识 4 - Button" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -260,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/1/" itemprop="commentCount"></span>
+    <a title="valine" href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/5/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -276,28 +269,50 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>Visual Studio 2019</p>
-<h2 id="Windows-分步说明"><a href="#Windows-分步说明" class="headerlink" title="Windows 分步说明"></a>Windows 分步说明</h2><ol>
-<li>选择“文件”&gt;“新建”&gt;“项目…” ，或按“创建新项目…” 按钮：<br><img src="https://img-blog.csdnimg.cn/20200305094410752.png" alt=""></li>
-<li>搜索“Xamarin”或从“项目类型” 菜单中选择“移动” 。 选择“移动应用(Xamarin.Forms)” 项目类型：<br><img src="https://img-blog.csdnimg.cn/20200305094544257.png" alt=""></li>
-<li>选择项目名称 – 示例使用“AwesomeApp”：<br><img src="https://img-blog.csdnimg.cn/20200305094628686.png" alt=""></li>
-<li>单击“空白” 项目类型，确保选择了“Android” 和“iOS” ：<br><img src="https://img-blog.csdnimg.cn/20200305094734459.png" alt=""></li>
-<li>到 NuGet 包还原（状态栏中将出现“还原已完成”消息）。</li>
-<li>新 Visual Studio 2019 安装不会配置 Android 模拟器。 单击“调试” 按钮上的下拉箭头，然后选择“创建 Android Emulator” 以启动仿真器创建屏幕：<br><img src="https://img-blog.csdnimg.cn/20200305092243262.png" alt=""></li>
-<li>在仿真器创建屏幕中，使用默认设置并单击“创建” 按钮：<br><img src="https://img-blog.csdnimg.cn/20200305094857438.png" alt=""></li>
-<li>创建仿真器会使你返回“设备管理器”窗口。 单击“启动” 按钮以启动新仿真器：<br><img src="https://img-blog.csdnimg.cn/20200305094923593.png" alt=""></li>
-<li>Visual Studio 2019 现在应在“调试” 按钮上显示新仿真器的名称：<br><img src="https://img-blog.csdnimg.cn/20200305095008259.png" alt=""></li>
-<li>单击“调试” 按钮以生成应用程序并将其部署到 Android 仿真器：<br><img src="https://img-blog.csdnimg.cn/20200305095224286.png" alt=""> </li>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>演示如何自定义 Button。</p>
+<ol>
+<li><p>在 XAML 中创建 Xamarin.Forms Button。</p>
+</li>
+<li><p>Button 点击事件。</p>
+</li>
+<li><p>更改 Button 的样式。</p>
+</li>
 </ol>
-<h2 id="自定义应用程序"><a href="#自定义应用程序" class="headerlink" title="自定义应用程序"></a>自定义应用程序</h2><ol>
-<li><p>编辑 MainPage.xaml：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Label</span> <span class="attr">Text</span>=<span class="string">"欢迎使用Xamarin！"</span> <span class="attr">HorizontalOptions</span>=<span class="string">"Center"</span> <span class="attr">VerticalOptions</span>=<span class="string">"CenterAndExpand"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">Text</span>=<span class="string">"点我"</span> <span class="attr">Clicked</span>=<span class="string">"Button_Clicked"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="创建-Button"><a href="#创建-Button" class="headerlink" title="创建 Button"></a>创建 Button</h2><ol>
+<li><p>打开已有项目 AwesomeApp。</p>
 </li>
-<li><p>编辑 MainPage.xaml.cs：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Button_Clicked</span>(<span class="params"><span class="keyword">object</span> sender, System.EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    count++;</span><br><span class="line">    ((Button)sender).Text = <span class="string">$"你点击了 <span class="subst">&#123;count&#125;</span> 次。"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>添加新项 ButtonPage.xaml。</p>
 </li>
-<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305095949266.png" alt=""></p>
-<h2 id="在-Visual-Studio-2019-中生成-iOS-应用"><a href="#在-Visual-Studio-2019-中生成-iOS-应用" class="headerlink" title="在 Visual Studio 2019 中生成 iOS 应用"></a>在 Visual Studio 2019 中生成 iOS 应用</h2><p><a href="https://sec.ch9.ms/ch9/093f/7c34917b-e6a0-41b5-8f49-4253b0b9093f/XamariniOS_high.mp4" target="_blank" rel="noopener">此视频引用于第9频道微软公开课</a></p>
+<li><p>编辑 ButtonPage.xaml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ContentPage</span> <span class="attr">xmlns</span>=<span class="string">"http://xamarin.com/schemas/2014/forms"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">"http://schemas.microsoft.com/winfx/2009/xaml"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:d</span>=<span class="string">"http://xamarin.com/schemas/2014/forms/design"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:mc</span>=<span class="string">"http://schemas.openxmlformats.org/markup-compatibility/2006"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">mc:Ignorable</span>=<span class="string">"d"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">x:Class</span>=<span class="string">"AwesomeApp.ButtonPage"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ContentPage.Content</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">StackLayout</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">Button</span> <span class="attr">Text</span>=<span class="string">"欢迎使用 Xamarin.Forms！"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">VerticalOptions</span>=<span class="string">"CenterAndExpand"</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">HorizontalOptions</span>=<span class="string">"CenterAndExpand"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">StackLayout</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ContentPage.Content</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ContentPage</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 App.xaml.cs：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">App</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	InitializeComponent();</span><br><span class="line">	MainPage = <span class="keyword">new</span> ButtonPage();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/2020030515320694.png" alt=""></p>
+</li>
+</ol>
+<h2 id="Button-点击事件"><a href="#Button-点击事件" class="headerlink" title="Button 点击事件"></a>Button 点击事件</h2><ol>
+<li><p>编辑 ButtonPage.xaml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">Text</span>=<span class="string">"欢迎使用 Xamarin.Forms！"</span></span></span><br><span class="line"><span class="tag">		<span class="attr">x:Name</span>=<span class="string">"btnWel"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">VerticalOptions</span>=<span class="string">"CenterAndExpand"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">HorizontalOptions</span>=<span class="string">"CenterAndExpand"</span></span></span><br><span class="line"><span class="tag">		<span class="attr">Clicked</span>=<span class="string">"OnButtonClicked"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>除了 Clicked 事件，Button 还定义了 Pressed 和 Released 事件</p>
+</blockquote>
+</li>
+<li><p>编辑 ButtonPage.xaml.cs：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnButtonClicked</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	btnWel.Text = <span class="string">"你点击了我一下！"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305153708933.png" alt=""></p>
+</li>
+</ol>
+<h2 id="更改-Button-的样式"><a href="#更改-Button-的样式" class="headerlink" title="更改 Button 的样式"></a>更改 Button 的样式</h2><ol>
+<li><p>编辑 ButtonPage.xaml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">Text</span>=<span class="string">"欢迎使用 Xamarin.Forms！"</span></span></span><br><span class="line"><span class="tag">		<span class="attr">x:Name</span>=<span class="string">"btnWel"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">VerticalOptions</span>=<span class="string">"CenterAndExpand"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">HorizontalOptions</span>=<span class="string">"Center"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">TextColor</span>=<span class="string">"Black"</span></span></span><br><span class="line"><span class="tag">		<span class="attr">FontSize</span>=<span class="string">"20"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">BackgroundColor</span>=<span class="string">"LightGray"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">BorderColor</span>=<span class="string">"Gray"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">BorderWidth</span>=<span class="string">"5"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">CornerRadius</span>=<span class="string">"5"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">WidthRequest</span>=<span class="string">"240"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">HeightRequest</span>=<span class="string">"120"</span></span></span><br><span class="line"><span class="tag">		<span class="attr">Clicked</span>=<span class="string">"OnButtonClicked"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>BorderColor 设置边框颜色，BorderWidth 设置边框宽度，CornerRadius 设置圆角大小，WidthRequest 和 HeightRequest 设置 Button 大小</p>
+</blockquote>
+</li>
+<li><p>调试 Android 上的应用：<br><img src="https://img-blog.csdnimg.cn/20200305154412650.png" alt=""></p>
 </li>
 </ol>
 
@@ -318,10 +333,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/2/" rel="next" title="了解 Xamarin.Forms 创建移动应用程序的基础知识 1 - StackLayout">
-      了解 Xamarin.Forms 创建移动应用程序的基础知识 1 - StackLayout <i class="fa fa-chevron-right"></i>
+    <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/4/" rel="prev" title="了解 Xamarin.Forms 创建移动应用程序的基础知识 3 - Label">
+      <i class="fa fa-chevron-left"></i> 了解 Xamarin.Forms 创建移动应用程序的基础知识 3 - Label
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E4%BA%86%E8%A7%A3-Xamarin-Forms-%E5%88%9B%E5%BB%BA%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/xamarin_basics/6/" rel="next" title="了解 Xamarin.Forms 创建移动应用程序的基础知识 5 - Entry">
+      了解 Xamarin.Forms 创建移动应用程序的基础知识 5 - Entry <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -383,7 +401,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境"><span class="nav-number">1.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-分步说明"><span class="nav-number">2.</span> <span class="nav-text">Windows 分步说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义应用程序"><span class="nav-number">3.</span> <span class="nav-text">自定义应用程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Visual-Studio-2019-中生成-iOS-应用"><span class="nav-number">4.</span> <span class="nav-text">在 Visual Studio 2019 中生成 iOS 应用</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-Button"><span class="nav-number">2.</span> <span class="nav-text">创建 Button</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Button-点击事件"><span class="nav-number">3.</span> <span class="nav-text">Button 点击事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改-Button-的样式"><span class="nav-number">4.</span> <span class="nav-text">更改 Button 的样式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
