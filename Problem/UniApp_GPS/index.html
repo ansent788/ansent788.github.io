@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <meta name="baidu-site-verification" content="code-jzYjZNIgkV">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ansent788.gitee.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#007acc","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动">
+<meta property="og:url" content="https://ansent788.gitee.io/Problem/UniApp_GPS/index.html">
+<meta property="og:site_name" content="鼠标与键盘的故事">
+<meta property="og:description" content="uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-25T06:33:16.000Z">
+<meta property="article:modified_time" content="2022-06-20T01:28:47.554Z">
+<meta property="article:author" content="Paul.DX">
+<meta property="article:tag" content="UniApp">
+<meta property="article:tag" content="GPS">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ansent788.gitee.io/Problem/UniApp_GPS/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ansent788.gitee.io/Problem/UniApp_GPS/","path":"Problem/UniApp_GPS/","title":"uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动 | 鼠标与键盘的故事</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">鼠标与键盘的故事</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Paul.DX</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#uniapp-%E5%88%A4%E6%96%AD-IOS-%E5%92%8C-Android-%E7%9A%84-GPS-%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AF%E5%B9%B6%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Native-js-%E5%8E%9F%E7%94%9F-API"><span class="nav-number">1.1.</span> <span class="nav-text">Native.js 原生 API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#permission-%E6%A8%A1%E5%9D%97"><span class="nav-number">1.2.</span> <span class="nav-text">permission 模块</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Paul.DX"
+      src="/images/custom-logo.png">
+  <p class="site-author-name" itemprop="name">Paul.DX</p>
+  <div class="site-description" itemprop="description">鼠标与键盘的故事(Paul.DX)，记录：C#、.Net、.NetCore、.AspNetCore、Xamarin、AI、OpenCV，等学习笔记</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <button><i class="fa fa-comment"></i>
+      Chat
+    </button>
+  </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vYW5zZW50Nzg4L2Fuc2VudDc4OA==" title="GitHub → https:&#x2F;&#x2F;gitee.com&#x2F;ansent788&#x2F;ansent788"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmFuc2VudDc4OEAxNjMuY29t" title="E-Mail → mailto:ansent788@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.gitee.io/Problem/UniApp_GPS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.png">
+      <meta itemprop="name" content="Paul.DX">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠标与键盘的故事">
+      <meta itemprop="description" content="鼠标与键盘的故事(Paul.DX)，记录：C#、.Net、.NetCore、.AspNetCore、Xamarin、AI、OpenCV，等学习笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动 | 鼠标与键盘的故事">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-25 14:33:16" itemprop="dateCreated datePublished" datetime="2021-08-25T14:33:16+08:00">2021-08-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-06-20 09:28:47" itemprop="dateModified" datetime="2022-06-20T09:28:47+08:00">2022-06-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">问题记录</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="uniapp-判断-IOS-和-Android-的-GPS-是否开启并设置启动"><a href="#uniapp-判断-IOS-和-Android-的-GPS-是否开启并设置启动" class="headerlink" title="uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动"></a>uniapp 判断 IOS 和 Android 的 GPS 是否开启并设置启动</h3><span id="more"></span>
+
+<h4 id="Native-js-原生-API"><a href="#Native-js-原生-API" class="headerlink" title="Native.js 原生 API"></a>Native.js 原生 API</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> system <span class="token operator">=</span> uni<span class="token punctuation">.</span><span class="token function">getSystemInfoSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 获取系统信息</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>system<span class="token punctuation">.</span>platform <span class="token operator">===</span> <span class="token string">"android"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 判断平台</span>
+  <span class="token keyword">var</span> context <span class="token operator">=</span> plus<span class="token punctuation">.</span>android<span class="token punctuation">.</span><span class="token function">importClass</span><span class="token punctuation">(</span><span class="token string">"android.content.Context"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> locationManager <span class="token operator">=</span> plus<span class="token punctuation">.</span>android<span class="token punctuation">.</span><span class="token function">importClass</span><span class="token punctuation">(</span>
+    <span class="token string">"android.location.LocationManager"</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> main <span class="token operator">=</span> plus<span class="token punctuation">.</span>android<span class="token punctuation">.</span><span class="token function">runtimeMainActivity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> mainSvr <span class="token operator">=</span> main<span class="token punctuation">.</span><span class="token function">getSystemService</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token constant">LOCATION_SERVICE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>mainSvr<span class="token punctuation">.</span><span class="token function">isProviderEnabled</span><span class="token punctuation">(</span>locationManager<span class="token punctuation">.</span><span class="token constant">GPS_PROVIDER</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    uni<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"提示"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">"请打开定位服务功能"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">showCancel</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 不显示取消按钮</span>
+      <span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>mainSvr<span class="token punctuation">.</span><span class="token function">isProviderEnabled</span><span class="token punctuation">(</span>locationManager<span class="token punctuation">.</span><span class="token constant">GPS_PROVIDER</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">var</span> Intent <span class="token operator">=</span> plus<span class="token punctuation">.</span>android<span class="token punctuation">.</span><span class="token function">importClass</span><span class="token punctuation">(</span><span class="token string">"android.content.Intent"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">var</span> Settings <span class="token operator">=</span> plus<span class="token punctuation">.</span>android<span class="token punctuation">.</span><span class="token function">importClass</span><span class="token punctuation">(</span><span class="token string">"android.provider.Settings"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">var</span> intent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Intent</span><span class="token punctuation">(</span>Settings<span class="token punctuation">.</span><span class="token constant">ACTION_LOCATION_SOURCE_SETTINGS</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          main<span class="token punctuation">.</span><span class="token function">startActivity</span><span class="token punctuation">(</span>intent<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 打开系统设置GPS服务页面</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"GPS功能已开启"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>system<span class="token punctuation">.</span>platform <span class="token operator">===</span> <span class="token string">"ios"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> cllocationManger <span class="token operator">=</span> plus<span class="token punctuation">.</span>ios<span class="token punctuation">.</span><span class="token function">import</span><span class="token punctuation">(</span><span class="token string">"CLLocationManager"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> enable <span class="token operator">=</span> cllocationManger<span class="token punctuation">.</span><span class="token function">locationServicesEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> status <span class="token operator">=</span> cllocationManger<span class="token punctuation">.</span><span class="token function">authorizationStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  plus<span class="token punctuation">.</span>ios<span class="token punctuation">.</span><span class="token function">deleteObject</span><span class="token punctuation">(</span>cllocationManger<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>enable <span class="token operator">&amp;&amp;</span> status <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"手机系统的定位已经打开"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"手机系统的定位没有打开"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    uni<span class="token punctuation">.</span><span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"提示"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">"请打开定位服务功能"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">showCancel</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 不显示取消按钮</span>
+      <span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">var</span> UIApplication <span class="token operator">=</span> plus<span class="token punctuation">.</span>ios<span class="token punctuation">.</span><span class="token function">import</span><span class="token punctuation">(</span><span class="token string">"UIApplication"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> application2 <span class="token operator">=</span> UIApplication<span class="token punctuation">.</span><span class="token function">sharedApplication</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> <span class="token constant">NSURL2</span> <span class="token operator">=</span> plus<span class="token punctuation">.</span>ios<span class="token punctuation">.</span><span class="token function">import</span><span class="token punctuation">(</span><span class="token string">"NSURL"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// var setting2 = NSURL2.URLWithString("prefs:root=LOCATION_SERVICES");</span>
+        <span class="token comment">// var setting2 = NSURL2.URLWithString("App-Prefs:root=LOCATION_SERVICES");</span>
+        <span class="token comment">// var setting2 = NSURL2.URLWithString("app-settings");</span>
+        <span class="token keyword">var</span> setting2 <span class="token operator">=</span> <span class="token constant">NSURL2</span><span class="token punctuation">.</span><span class="token function">URLWithString</span><span class="token punctuation">(</span>
+          <span class="token string">"App-Prefs:root=Privacy&amp;path=LOCATION"</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// var setting2 = NSURL2.URLWithString("App-Prefs:root=Privacy&amp;path=LOCATION_SERVICES");</span>
+        application2<span class="token punctuation">.</span><span class="token function">openURL</span><span class="token punctuation">(</span>setting2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        plus<span class="token punctuation">.</span>ios<span class="token punctuation">.</span><span class="token function">deleteObject</span><span class="token punctuation">(</span>setting2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        plus<span class="token punctuation">.</span>ios<span class="token punctuation">.</span><span class="token function">deleteObject</span><span class="token punctuation">(</span><span class="token constant">NSURL2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        plus<span class="token punctuation">.</span>ios<span class="token punctuation">.</span><span class="token function">deleteObject</span><span class="token punctuation">(</span>application2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="permission-模块"><a href="#permission-模块" class="headerlink" title="permission 模块"></a>permission 模块</h4><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9leHQuZGNsb3VkLm5ldC5jbi9wbHVnaW4/aWQ9NTk0">https://ext.dcloud.net.cn/plugin?id=594<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Paul.DX 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="Paul.DX 支付宝">
+        <span>支付宝</span>
+      </div>
+      <div>
+        <img src="/images/paypal.png" alt="Paul.DX PayPal">
+        <span>PayPal</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/UniApp/" rel="tag"><i class="fa fa-tag"></i> UniApp</a>
+              <a href="/tags/GPS/" rel="tag"><i class="fa fa-tag"></i> GPS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/H5/PlusAPI/Geolocation/" rel="prev" title="H5PlusAPI 学习内容整理 - Geolocation">
+                  <i class="fa fa-chevron-left"></i> H5PlusAPI 学习内容整理 - Geolocation
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Problem/MacApiError/" rel="next" title="MacApiError 数据处理中流不可异步写入">
+                  MacApiError 数据处理中流不可异步写入 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-brain"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Paul.DX</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"imT8iiXTN4ucSguh6"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-mml-chtml.js","integrity":"sha256-hlC2uSQYTmPsrzGZTEQEg9PZ1a/+SV6VBCTclohf2og="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
