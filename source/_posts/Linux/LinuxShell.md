@@ -28,7 +28,7 @@ Linux 常用命令
   `cat /proc/mounts`
 - PCI 设备
   `ls pci -tv`
-- SB 设备
+- USB 设备
   `ls usb -tv`
 
 ### 结束进程命令
