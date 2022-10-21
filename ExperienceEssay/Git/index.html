@@ -12,21 +12,21 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ansent788.gitee.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#007acc","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ansent788.gitee.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#007acc","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简介Git 命令行总结">
+    <meta name="description" content="1. 简介Git 命令行总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 命令行使用">
 <meta property="og:url" content="https://ansent788.gitee.io/ExperienceEssay/Git/index.html">
 <meta property="og:site_name" content="鼠标与键盘的故事">
-<meta property="og:description" content="简介Git 命令行总结">
+<meta property="og:description" content="1. 简介Git 命令行总结">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-14T08:55:21.000Z">
-<meta property="article:modified_time" content="2022-06-20T01:28:47.546Z">
+<meta property="article:modified_time" content="2022-10-21T08:01:18.665Z">
 <meta property="article:author" content="Paul.DX">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -41,6 +41,7 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Git 命令行使用 | 鼠标与键盘的故事</title>
   
+
 
 
 
@@ -142,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">init 初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config-%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">config 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-%E6%B7%BB%E5%8A%A0"><span class="nav-number">4.</span> <span class="nav-text">add 添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#commit-%E6%8F%90%E4%BA%A4"><span class="nav-number">5.</span> <span class="nav-text">commit 提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remote-%E8%B7%9F%E8%B8%AA"><span class="nav-number">6.</span> <span class="nav-text">remote 跟踪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pull-%E6%8B%89%E5%8F%96"><span class="nav-number">7.</span> <span class="nav-text">pull 拉取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push-%E6%8E%A8%E9%80%81"><span class="nav-number">8.</span> <span class="nav-text">push 推送</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reset-%E9%87%8D%E7%BD%AE"><span class="nav-number">9.</span> <span class="nav-text">reset 重置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cherry-pick-%E5%BA%94%E7%94%A8%E6%8F%90%E4%BA%A4"><span class="nav-number">10.</span> <span class="nav-text">cherry-pick 应用提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stash-%E5%82%A8%E8%97%8F"><span class="nav-number">11.</span> <span class="nav-text">stash 储藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#branch-%E5%88%86%E6%94%AF"><span class="nav-number">12.</span> <span class="nav-text">branch 分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#checkout-%E6%A3%80%E5%87%BA"><span class="nav-number">13.</span> <span class="nav-text">checkout 检出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rebase-%E5%8F%98%E5%9F%BA"><span class="nav-number">14.</span> <span class="nav-text">rebase 变基</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-init-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">2. init 初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-config-%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">3. config 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-add-%E6%B7%BB%E5%8A%A0"><span class="nav-number">4.</span> <span class="nav-text">4. add 添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-commit-%E6%8F%90%E4%BA%A4"><span class="nav-number">5.</span> <span class="nav-text">5. commit 提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-remote-%E8%B7%9F%E8%B8%AA"><span class="nav-number">6.</span> <span class="nav-text">6. remote 跟踪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-pull-%E6%8B%89%E5%8F%96"><span class="nav-number">7.</span> <span class="nav-text">7. pull 拉取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-push-%E6%8E%A8%E9%80%81"><span class="nav-number">8.</span> <span class="nav-text">8. push 推送</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-reset-%E9%87%8D%E7%BD%AE"><span class="nav-number">9.</span> <span class="nav-text">9. reset 重置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-cherry-pick-%E5%BA%94%E7%94%A8%E6%8F%90%E4%BA%A4"><span class="nav-number">10.</span> <span class="nav-text">10. cherry-pick 应用提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-stash-%E5%82%A8%E8%97%8F"><span class="nav-number">11.</span> <span class="nav-text">11. stash 储藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-branch-%E5%88%86%E6%94%AF"><span class="nav-number">12.</span> <span class="nav-text">12. branch 分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-checkout-%E6%A3%80%E5%87%BA"><span class="nav-number">13.</span> <span class="nav-text">13. checkout 检出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-rebase-%E5%8F%98%E5%9F%BA"><span class="nav-number">14.</span> <span class="nav-text">14. rebase 变基</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -258,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-20 09:28:47" itemprop="dateModified" datetime="2022-06-20T09:28:47+08:00">2022-06-20</time>
+      <time title="修改时间：2022-10-21 16:01:18" itemprop="dateModified" datetime="2022-10-21T16:01:18+08:00">2022-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -280,131 +281,137 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Git 命令行总结</p>
+        <h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>Git 命令行总结</p>
 <span id="more"></span>
 
-<h3 id="init-初始化"><a href="#init-初始化" class="headerlink" title="init 初始化"></a>init 初始化</h3><ul>
+<h3 id="2-init-初始化"><a href="#2-init-初始化" class="headerlink" title="2. init 初始化"></a>2. init 初始化</h3><ul>
 <li><p>初始化Git代码仓库</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="config-配置"><a href="#config-配置" class="headerlink" title="config 配置"></a>config 配置</h3><ul>
+<h3 id="3-config-配置"><a href="#3-config-配置" class="headerlink" title="3. config 配置"></a>3. config 配置</h3><ul>
 <li><p>查看配置</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git config --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>查看系统配置</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git config --system --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--system</span> --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>查看用户（global）配置</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git config --global --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>查看仓库配置</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git config --local --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--local</span> --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="add-添加"><a href="#add-添加" class="headerlink" title="add 添加"></a>add 添加</h3><ul>
+<h3 id="4-add-添加"><a href="#4-add-添加" class="headerlink" title="4. add 添加"></a>4. add 添加</h3><ul>
 <li><p>添加所有新文件</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git add .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="commit-提交"><a href="#commit-提交" class="headerlink" title="commit 提交"></a>commit 提交</h3><ul>
+<h3 id="5-commit-提交"><a href="#5-commit-提交" class="headerlink" title="5. commit 提交"></a>5. commit 提交</h3><ul>
 <li><p>提交并添加更改</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git commit -am &#39;message&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit <span class="token parameter variable">-am</span> <span class="token string">'message'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>修改提交注释</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git commit --amend<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit <span class="token parameter variable">--amend</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="remote-跟踪"><a href="#remote-跟踪" class="headerlink" title="remote 跟踪"></a>remote 跟踪</h3><ul>
+<h3 id="6-remote-跟踪"><a href="#6-remote-跟踪" class="headerlink" title="6. remote 跟踪"></a>6. remote 跟踪</h3><ul>
 <li><p>跟踪远程分支到指定分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git remote add origin&#x2F;[branchName] [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> origin/<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>修改远程仓库地址</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git remote set-url origin [newUrl]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin <span class="token punctuation">[</span>newUrl<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>查看远程仓库地址</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git remote -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="pull-拉取"><a href="#pull-拉取" class="headerlink" title="pull 拉取"></a>pull 拉取</h3><ul>
-<li><p>远程分支拉取</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git pull origin [branchName]:[branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="7-pull-拉取"><a href="#7-pull-拉取" class="headerlink" title="7. pull 拉取"></a>7. pull 拉取</h3><ul>
+<li><p>远程分支拉取 - 不变基</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull origin <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span>:<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> --no-rebase<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>远程分支拉取 - 变基</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull origin <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span>:<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token parameter variable">--rebase</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>允许不相关历史强制合并</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git pull origin master --allow-unrelated-histories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull origin master --allow-unrelated-histories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="push-推送"><a href="#push-推送" class="headerlink" title="push 推送"></a>push 推送</h3><ul>
+<h3 id="8-push-推送"><a href="#8-push-推送" class="headerlink" title="8. push 推送"></a>8. push 推送</h3><ul>
 <li><p>推送到指定的远程分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git push origin [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push origin <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>推送到指定的远程分支 - 强制</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push origin <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token parameter variable">--force</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>新建并推送到远程分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git push --set-upstream origin [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push --set-upstream origin <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="reset-重置"><a href="#reset-重置" class="headerlink" title="reset 重置"></a>reset 重置</h3><ul>
+<h3 id="9-reset-重置"><a href="#9-reset-重置" class="headerlink" title="9. reset 重置"></a>9. reset 重置</h3><ul>
 <li><p>重置当前最后一次提交</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git reset --soft HEAD^<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token parameter variable">--soft</span> HEAD^<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="cherry-pick-应用提交"><a href="#cherry-pick-应用提交" class="headerlink" title="cherry-pick 应用提交"></a>cherry-pick 应用提交</h3><ul>
+<h3 id="10-cherry-pick-应用提交"><a href="#10-cherry-pick-应用提交" class="headerlink" title="10. cherry-pick 应用提交"></a>10. cherry-pick 应用提交</h3><ul>
 <li><p>应用指定提交到当前分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git cherry-pick [commitHash]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>最近一次提交</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git cherry-pick [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>多个提交</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git cherry-pick [commitHash] [commitHash] ...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span> <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span> <span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>一段提交不包含开头</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git cherry-pick [commitHash]..[commitHash]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span><span class="token punctuation">..</span><span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>一段提交包含开头</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git cherry-pick [commitHash]^..[commitHash]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span>^<span class="token punctuation">..</span><span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li></li>
 </ul>
-<h3 id="stash-储藏"><a href="#stash-储藏" class="headerlink" title="stash 储藏"></a>stash 储藏</h3><ul>
+<h3 id="11-stash-储藏"><a href="#11-stash-储藏" class="headerlink" title="11. stash 储藏"></a>11. stash 储藏</h3><ul>
 <li><p>储藏当前更改</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git stash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>读取储藏更改</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git stash pop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash pop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="branch-分支"><a href="#branch-分支" class="headerlink" title="branch 分支"></a>branch 分支</h3><ul>
+<h3 id="12-branch-分支"><a href="#12-branch-分支" class="headerlink" title="12. branch 分支"></a>12. branch 分支</h3><ul>
 <li><p>查看分支</p>
-<pre class="line-numbers language-console" data-language="console"><div class="caption"><span>list</span></div><code class="language-console">git branch -l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><div class="caption"><span>list</span></div><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-l</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>查看分支详情</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git branch -vv<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-vv</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>创建分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git branch [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>创建分支并指定跟踪分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git branch [branchName] -t origin&#x2F;[branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token parameter variable">-t</span> origin/<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>删除本地分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git branch -d|-D [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch -d<span class="token operator">|</span>-D <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>按指定提交创建分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git branch [branch] [start point]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token punctuation">[</span>branch<span class="token punctuation">]</span> <span class="token punctuation">[</span>start point<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>设置跟踪的远程分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git branch --set-upstream-to origin&#x2F;[branchName] [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch --set-upstream-to origin/<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>修改跟踪的远程分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git branch -u origin&#x2F;[branchName] [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-u</span> origin/<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="checkout-检出"><a href="#checkout-检出" class="headerlink" title="checkout 检出"></a>checkout 检出</h3><ul>
+<h3 id="13-checkout-检出"><a href="#13-checkout-检出" class="headerlink" title="13. checkout 检出"></a>13. checkout 检出</h3><ul>
 <li><p>撤消当前分支所有修改</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git checkout .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>切换分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git checkout [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>创建并切换</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git checkout -b [branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>创建并切换、设置跟踪的远程分支</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git checkout -b [branchName] -t origin&#x2F;[branchName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token parameter variable">-t</span> origin/<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="rebase-变基"><a href="#rebase-变基" class="headerlink" title="rebase 变基"></a>rebase 变基</h3><ul>
+<h3 id="14-rebase-变基"><a href="#14-rebase-变基" class="headerlink" title="14. rebase 变基"></a>14. rebase 变基</h3><ul>
 <li><p>no branch, rebasing master （当前无分支，可变基到master分支）</p>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">git rebase --continue<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> rebase <span class="token parameter variable">--continue</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 
     </div>
@@ -485,7 +492,7 @@
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
@@ -510,7 +517,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-mml-chtml.js","integrity":"sha256-hlC2uSQYTmPsrzGZTEQEg9PZ1a/+SV6VBCTclohf2og="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
