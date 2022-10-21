@@ -16,11 +16,11 @@ tags:
 
 ## 注册账号
 
-https://uums.tianditu.gov.cn/register
+<https://uums.tianditu.gov.cn/register>
 
 ## 打开控制台
 
-https://console.tianditu.gov.cn/api/key
+<https://console.tianditu.gov.cn/api/key>
 
 1. 创建新应用（浏览器端）
 2. 复制 Key 备用

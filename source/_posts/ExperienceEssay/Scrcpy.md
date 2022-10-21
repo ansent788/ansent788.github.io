@@ -42,7 +42,7 @@ tags:
    `adb tcpip [port]`
 3. 查看手机 IP
    `adb shell ip route | awk '{print $9}'`
-4. ‎ 拔下设备插头 ‎
+4. 拔下设备插头
 5. 打开 adb 调试链接
    `adb connect [ip]:[port]`
 6. 运行 scrcpy

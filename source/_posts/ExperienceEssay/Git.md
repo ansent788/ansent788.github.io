@@ -7,252 +7,264 @@ tags:
   - Git
 ---
 
-### 简介
+### 1. 简介
 
 Git 命令行总结
 
 <!-- more -->
 
-### init 初始化
+### 2. init 初始化
 
 - 初始化Git代码仓库
 
-  ```console
+  ```bash
   git init
   ```
 
-### config 配置
+### 3. config 配置
 
 - 查看配置
 
-  ```console
+  ```bash
   git config --list｜-l
   ```
 
 - 查看系统配置
 
-  ```console
+  ```bash
   git config --system --list｜-l
   ```
 
 - 查看用户（global）配置
 
-  ```console
+  ```bash
   git config --global --list｜-l
   ```
 
 - 查看仓库配置
 
-  ```console
+  ```bash
   git config --local --list｜-l
   ```
 
-### add 添加
+### 4. add 添加
 
 - 添加所有新文件
 
-  ```console
+  ```bash
   git add .
   ```
 
-### commit 提交
+### 5. commit 提交
 
 - 提交并添加更改
 
-  ```console
+  ```bash
   git commit -am 'message'
   ```
 
 - 修改提交注释
 
-  ```console
+  ```bash
   git commit --amend
   ```
 
-### remote 跟踪
+### 6. remote 跟踪
 
 - 跟踪远程分支到指定分支
 
-  ```console
+  ```bash
   git remote add origin/[branchName] [branchName]
   ```
 
 - 修改远程仓库地址
 
-  ```console
+  ```bash
   git remote set-url origin [newUrl]
   ```
 
 - 查看远程仓库地址
 
-  ```console
+  ```bash
   git remote -v
   ```
 
-### pull 拉取
+### 7. pull 拉取
 
-- 远程分支拉取
+- 远程分支拉取 - 不变基
 
-  ```console
-  git pull origin [branchName]:[branchName]
+  ```bash
+  git pull origin [branchName]:[branchName] --no-rebase
+  ```
+
+- 远程分支拉取 - 变基
+
+  ```bash
+  git pull origin [branchName]:[branchName] --rebase
   ```
 
 - 允许不相关历史强制合并
 
-  ```console
+  ```bash
   git pull origin master --allow-unrelated-histories
   ```
 
-### push 推送
+### 8. push 推送
 
 - 推送到指定的远程分支
 
-  ```console
+  ```bash
   git push origin [branchName]
+  ```
+
+- 推送到指定的远程分支 - 强制
+
+  ```bash
+  git push origin [branchName] --force
   ```
 
 - 新建并推送到远程分支
 
-  ```console
+  ```bash
   git push --set-upstream origin [branchName]
   ```
 
-### reset 重置
+### 9. reset 重置
 
 - 重置当前最后一次提交
 
-  ```console
+  ```bash
   git reset --soft HEAD^
   ```
 
-### cherry-pick 应用提交
+### 10. cherry-pick 应用提交
 
 - 应用指定提交到当前分支
 
-  ```console
+  ```bash
   git cherry-pick [commitHash]
   ```
 
 - 最近一次提交
 
-  ```console
+  ```bash
   git cherry-pick [branchName]
   ```
 
 - 多个提交
 
-  ```console
+  ```bash
   git cherry-pick [commitHash] [commitHash] ...
   ```
 
 - 一段提交不包含开头
 
-  ```console
+  ```bash
   git cherry-pick [commitHash]..[commitHash]
   ```
 
 - 一段提交包含开头
 
-  ```console
+  ```bash
   git cherry-pick [commitHash]^..[commitHash]
   ```
 
 -
 
-### stash 储藏
+### 11. stash 储藏
 
 - 储藏当前更改
 
-  ```console
+  ```bash
   git stash
   ```
 
 - 读取储藏更改
 
-  ```console
+  ```bash
   git stash pop
   ```
 
-### branch 分支
+### 12. branch 分支
 
 - 查看分支
 
-  ```console list
+  ```bash list
   git branch -l
   ```
 
 - 查看分支详情
 
-  ```console
+  ```bash
   git branch -vv
   ```
 
 - 创建分支
 
-  ```console
+  ```bash
   git branch [branchName]
   ```
 
 - 创建分支并指定跟踪分支
 
-  ```console
+  ```bash
   git branch [branchName] -t origin/[branchName]
   ```
 
 - 删除本地分支
 
-  ```console
+  ```bash
   git branch -d|-D [branchName]
   ```
 
 - 按指定提交创建分支
 
-  ```console
+  ```bash
   git branch [branch] [start point]
   ```
 
 - 设置跟踪的远程分支
 
-  ```console
+  ```bash
   git branch --set-upstream-to origin/[branchName] [branchName]
   ```
 
 - 修改跟踪的远程分支
 
-  ```console
+  ```bash
   git branch -u origin/[branchName] [branchName]
   ```
 
-### checkout 检出
+### 13. checkout 检出
 
 - 撤消当前分支所有修改
 
-  ```console
+  ```bash
   git checkout .
   ```
 
 - 切换分支
 
-  ```console
+  ```bash
   git checkout [branchName]
   ```
 
 - 创建并切换
 
-  ```console
+  ```bash
   git checkout -b [branchName]
   ```
 
 - 创建并切换、设置跟踪的远程分支
 
-  ```console
+  ```bash
   git checkout -b [branchName] -t origin/[branchName]
   ```
 
-### rebase 变基
+### 14. rebase 变基
 
 - no branch, rebasing master （当前无分支，可变基到master分支）
 
-  ```console
+  ```bash
   git rebase --continue
   ```
