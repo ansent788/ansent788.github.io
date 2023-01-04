@@ -169,15 +169,14 @@
 <span class="token function">git</span> revert commit_id  // 还原到这次更改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p>merge 节点的话，则需要加上 -m 指令</p>
-</li>
-</ul>
-  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> revert commit_id <span class="token parameter variable">-m</span> <span class="token number">1</span> // 第一个更改点
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> revert commit_id <span class="token parameter variable">-m</span> <span class="token number">1</span> // 第一个更改点
 // 手动解决冲突
 <span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>
 <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">""</span>
 <span class="token function">git</span> revert commit_id <span class="token parameter variable">-m</span> <span class="token number">2</span> // 第二个更改点
 // 重复 <span class="token number">2</span>，3，4
-<span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 ]]></content>
       <categories>
         <category>经验随笔</category>
