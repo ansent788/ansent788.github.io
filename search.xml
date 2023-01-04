@@ -27,11 +27,11 @@
 <li><p>添加所有新文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="5-commit-提交"><a href="#5-commit-提交" class="headerlink" title="5. commit 提交"></a>5. commit 提交</h3><ul>
-<li><p>提交并添加更改</p>
+<h3 id="5-commit-更改"><a href="#5-commit-更改" class="headerlink" title="5. commit 更改"></a>5. commit 更改</h3><ul>
+<li><p>带注释添加更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit <span class="token parameter variable">-am</span> <span class="token string">'message'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
-<li><p>修改提交注释</p>
+<li><p>修改更改注释</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit <span class="token parameter variable">--amend</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <h3 id="6-remote-跟踪"><a href="#6-remote-跟踪" class="headerlink" title="6. remote 跟踪"></a>6. remote 跟踪</h3><ul>
@@ -65,23 +65,23 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push --set-upstream origin <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <h3 id="9-reset-重置"><a href="#9-reset-重置" class="headerlink" title="9. reset 重置"></a>9. reset 重置</h3><ul>
-<li><p>重置当前最后一次提交</p>
+<li><p>重置当前最后一次更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token parameter variable">--soft</span> HEAD^<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="10-cherry-pick-应用提交"><a href="#10-cherry-pick-应用提交" class="headerlink" title="10. cherry-pick 应用提交"></a>10. cherry-pick 应用提交</h3><ul>
-<li><p>应用指定提交到当前分支</p>
+<h3 id="10-cherry-pick-应用更改"><a href="#10-cherry-pick-应用更改" class="headerlink" title="10. cherry-pick 应用更改"></a>10. cherry-pick 应用更改</h3><ul>
+<li><p>应用指定更改到当前分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
-<li><p>最近一次提交</p>
+<li><p>最近一次更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
-<li><p>多个提交</p>
+<li><p>多个更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span> <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span> <span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
-<li><p>一段提交不包含开头</p>
+<li><p>一段更改不包含开头</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span><span class="token punctuation">..</span><span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
-<li><p>一段提交包含开头</p>
+<li><p>一段更改包含开头</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span>^<span class="token punctuation">..</span><span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li></li>
@@ -109,7 +109,7 @@
 <li><p>删除本地分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch -d<span class="token operator">|</span>-D <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
-<li><p>按指定提交创建分支</p>
+<li><p>按指定更改创建分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token punctuation">[</span>branch<span class="token punctuation">]</span> <span class="token punctuation">[</span>start point<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>设置跟踪的远程分支</p>
@@ -135,6 +135,49 @@
 <li><p>no branch, rebasing master （当前无分支，可变基到master分支）</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> rebase <span class="token parameter variable">--continue</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
+<h3 id="15-reset-重置某次更改"><a href="#15-reset-重置某次更改" class="headerlink" title="15. reset 重置某次更改"></a>15. reset 重置某次更改</h3><ul>
+<li><p>回滚到某次更改</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset commit_id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>此次更改之后的修改会被退回到暂存区</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token parameter variable">--soft</span> commit_id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>此次更改之后的修改不做任何保留</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token parameter variable">--hard</span> commit_id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h3 id="16-rebase-重新设置基准"><a href="#16-rebase-重新设置基准" class="headerlink" title="16. rebase 重新设置基准"></a>16. rebase 重新设置基准</h3><blockquote>
+<p>当两个分支不在一条线上，需要执行 merge 操作时使用该命令</p>
+</blockquote>
+<ul>
+<li><p>撤销更改</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log // 查找要删除的前一次更改的 commit_id
+<span class="token function">git</span> rebase <span class="token parameter variable">-i</span> commit_id // 将 commit_id 替换成复制的值
+进入 Vim 编辑模式，将要删除的 commit 前面的 <span class="token variable"><span class="token variable">`</span>pick<span class="token variable">`</span></span> 改成 <span class="token variable"><span class="token variable">`</span>drop<span class="token variable">`</span></span>
+保存并退出 Vim<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>解决冲突</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">diff</span> // 查看冲突内容
+// 手动解决冲突（冲突位置已在文件中标明）
+<span class="token function">git</span> <span class="token function">add</span> <span class="token operator">&lt;</span>file<span class="token operator">></span> 或 <span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span> // 添加
+<span class="token function">git</span> rebase <span class="token parameter variable">--continue</span> // 继续 rebase
+// 若还在 rebase 状态，则重复 <span class="token number">2</span>、3、4，直至 rebase 完成出现 applying 字样
+<span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="17-revert-还原到更改"><a href="#17-revert-还原到更改" class="headerlink" title="17. revert 还原到更改"></a>17. revert 还原到更改</h3><ul>
+<li><p>之前的更改仍会保留在 git log 中，而此次还原会做为一次新的更改</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log // 查找需要还原的 commit_id
+<span class="token function">git</span> revert commit_id  // 还原到这次更改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>merge 节点的话，则需要加上 -m 指令</p>
+</li>
+</ul>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> revert commit_id <span class="token parameter variable">-m</span> <span class="token number">1</span> // 第一个更改点
+// 手动解决冲突
+<span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">""</span>
+<span class="token function">git</span> revert commit_id <span class="token parameter variable">-m</span> <span class="token number">2</span> // 第二个更改点
+// 重复 <span class="token number">2</span>，3，4
+<span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>经验随笔</category>
