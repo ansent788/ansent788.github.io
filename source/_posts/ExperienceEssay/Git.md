@@ -55,15 +55,15 @@ Git 命令行总结
   git add .
   ```
 
-### 5. commit 提交
+### 5. commit 更改
 
-- 提交并添加更改
+- 带注释添加更改
 
   ```bash
   git commit -am 'message'
   ```
 
-- 修改提交注释
+- 修改更改注释
 
   ```bash
   git commit --amend
@@ -131,39 +131,39 @@ Git 命令行总结
 
 ### 9. reset 重置
 
-- 重置当前最后一次提交
+- 重置当前最后一次更改
 
   ```bash
   git reset --soft HEAD^
   ```
 
-### 10. cherry-pick 应用提交
+### 10. cherry-pick 应用更改
 
-- 应用指定提交到当前分支
+- 应用指定更改到当前分支
 
   ```bash
   git cherry-pick [commitHash]
   ```
 
-- 最近一次提交
+- 最近一次更改
 
   ```bash
   git cherry-pick [branchName]
   ```
 
-- 多个提交
+- 多个更改
 
   ```bash
   git cherry-pick [commitHash] [commitHash] ...
   ```
 
-- 一段提交不包含开头
+- 一段更改不包含开头
 
   ```bash
   git cherry-pick [commitHash]..[commitHash]
   ```
 
-- 一段提交包含开头
+- 一段更改包含开头
 
   ```bash
   git cherry-pick [commitHash]^..[commitHash]
@@ -217,7 +217,7 @@ Git 命令行总结
   git branch -d|-D [branchName]
   ```
 
-- 按指定提交创建分支
+- 按指定更改创建分支
 
   ```bash
   git branch [branch] [start point]
@@ -267,4 +267,69 @@ Git 命令行总结
 
   ```bash
   git rebase --continue
+  ```
+
+### 15. reset 重置某次更改
+
+- 回滚到某次更改
+
+  ```bash
+  git reset commit_id
+  ```
+
+- 此次更改之后的修改会被退回到暂存区
+
+  ```bash
+  git reset --soft commit_id
+  ```
+
+- 此次更改之后的修改不做任何保留
+
+  ```bash
+  git reset --hard commit_id
+  ```
+
+### 16. rebase 重新设置基准
+
+> 当两个分支不在一条线上，需要执行 merge 操作时使用该命令
+
+- 撤销更改
+
+  ```bash
+  git log // 查找要删除的前一次更改的 commit_id
+  git rebase -i commit_id // 将 commit_id 替换成复制的值
+  进入 Vim 编辑模式，将要删除的 commit 前面的 `pick` 改成 `drop`
+  保存并退出 Vim
+  ```
+
+- 解决冲突
+
+  ```bash
+  git diff // 查看冲突内容
+  // 手动解决冲突（冲突位置已在文件中标明）
+  git add <file> 或 git add -A // 添加
+  git rebase --continue // 继续 rebase
+  // 若还在 rebase 状态，则重复 2、3、4，直至 rebase 完成出现 applying 字样
+  git push
+  ```
+
+### 17. revert 还原到更改
+
+- 之前的更改仍会保留在 git log 中，而此次还原会做为一次新的更改
+
+  ```bash
+  git log // 查找需要还原的 commit_id
+  git revert commit_id  // 还原到这次更改
+  ```
+
+-  merge 节点的话，则需要加上 -m 指令
+
+  ```bash
+  git revert commit_id -m 1 // 第一个更改点
+  // 手动解决冲突
+  git add -A
+  git commit -m ""
+  git revert commit_id -m 2 // 第二个更改点
+  // 重复 2，3，4
+  git push
   ```
