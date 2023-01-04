@@ -322,7 +322,7 @@ Git 命令行总结
   git revert commit_id  // 还原到这次更改
   ```
 
--  merge 节点的话，则需要加上 -m 指令
+- merge 节点的话，则需要加上 -m 指令
 
   ```bash
   git revert commit_id -m 1 // 第一个更改点
