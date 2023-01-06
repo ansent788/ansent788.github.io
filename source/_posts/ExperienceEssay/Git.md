@@ -333,3 +333,13 @@ Git 命令行总结
   // 重复 2，3，4
   git push
   ```
+
+### 18. merge 合并分支
+
+- 合并分支到当前分支
+
+  ```bash
+  git branch -a -vv // 查看所有分支是否为最新更改
+  // 拉取最新更改
+  git merge [branchName] // 合并为v祸从口出当前分支
+  ```
