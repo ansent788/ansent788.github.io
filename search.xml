@@ -177,6 +177,12 @@
 // 重复 <span class="token number">2</span>，3，4
 <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
+<h3 id="18-merge-合并分支"><a href="#18-merge-合并分支" class="headerlink" title="18. merge 合并分支"></a>18. merge 合并分支</h3><ul>
+<li><p>合并分支到当前分支</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-a</span> <span class="token parameter variable">-vv</span> // 查看所有分支是否为最新更改
+// 拉取最新更改
+<span class="token function">git</span> merge <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> // 合并为v祸从口出当前分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 ]]></content>
       <categories>
         <category>经验随笔</category>
