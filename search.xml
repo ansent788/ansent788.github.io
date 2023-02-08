@@ -20,6 +20,12 @@
 <li><p>查看用户（global）配置</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
+<li><p>配置用户（global）用户</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token punctuation">[</span>your name<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>配置用户（global）邮箱</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token punctuation">[</span>your email<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>查看仓库配置</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--local</span> --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
