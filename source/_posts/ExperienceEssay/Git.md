@@ -41,6 +41,18 @@ Git 命令行总结
   git config --global --list｜-l
   ```
 
+- 配置用户（global）用户
+
+  ```bash
+  git config --global user.name [your name]
+  ```
+
+- 配置用户（global）邮箱
+
+  ```bash
+  git config --global user.email [your email]
+  ```
+
 - 查看仓库配置
 
   ```bash
