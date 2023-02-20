@@ -101,6 +101,12 @@ Git 命令行总结
   git remote -v
   ```
 
+- 删除本地存在远程不存在的分支
+
+  ```bash
+  git remote prune origin
+  ```
+
 ### 7. pull 拉取
 
 - 远程分支拉取 - 不变基
@@ -354,4 +360,12 @@ Git 命令行总结
   git branch -a -vv // 查看所有分支是否为最新更改
   // 拉取最新更改
   git merge [branchName] // 合并为v祸从口出当前分支
+  ```
+
+### 19. fetch 抓取
+
+- 清除无效分支
+
+  ```bash
+  git fetch -p // 删除本地存在，但远程不存在的分支
   ```
