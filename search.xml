@@ -48,7 +48,10 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin <span class="token punctuation">[</span>newUrl<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>查看远程仓库地址</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>删除本地存在远程不存在的分支</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote prune origin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <h3 id="7-pull-拉取"><a href="#7-pull-拉取" class="headerlink" title="7. pull 拉取"></a>7. pull 拉取</h3><ul>
 <li><p>远程分支拉取 - 不变基</p>
@@ -188,6 +191,10 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-a</span> <span class="token parameter variable">-vv</span> // 查看所有分支是否为最新更改
 // 拉取最新更改
 <span class="token function">git</span> merge <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> // 合并为v祸从口出当前分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="19-fetch-抓取"><a href="#19-fetch-抓取" class="headerlink" title="19. fetch 抓取"></a>19. fetch 抓取</h3><ul>
+<li><p>清除无效分支</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch <span class="token parameter variable">-p</span> // 删除本地存在，但远程不存在的分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 ]]></content>
       <categories>
