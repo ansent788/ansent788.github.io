@@ -31,6 +31,20 @@ Linux 常用命令
 - USB 设备
   `ls usb -tv`
 
+### 后台进程命令
+
+1. 运行后台进程
+  `sudo nohup [commandName] [> logFile] [2>&1] [&]`
+  > - commandName 命令名称
+  > - \> logFile 输出日志
+  > - 2>&1 错误日志重定向到输出日志
+  > - & 后台运行进程
+
+### 查看进程命令
+
+1. 根据名称查看
+  `sudo ps -fe | grep [commandName]`
+
 ### 结束进程命令
 
 1. 查看端口被哪个程序占用
