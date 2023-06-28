@@ -3977,4 +3977,47 @@ mp_holistic <span class="token operator">=</span> mp<span class="token punctuati
         <tag>Xamarin</tag>
       </tags>
   </entry>
+  <entry>
+    <title>常用数据库默认端口</title>
+    <url>/ExperienceEssay/DBPort/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>常用数据库默认端口</p>
+<span id="more"></span>
+
+<table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MySql</td>
+<td>3306</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>1521</td>
+</tr>
+<tr>
+<td>SqlServer</td>
+<td>1433</td>
+</tr>
+<tr>
+<td>DB2</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>5432</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>经验随笔</category>
+      </categories>
+      <tags>
+        <tag>DB</tag>
+        <tag>Port</tag>
+      </tags>
+  </entry>
 </search>
