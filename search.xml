@@ -4020,4 +4020,231 @@ mp_holistic <span class="token operator">=</span> mp<span class="token punctuati
         <tag>Port</tag>
       </tags>
   </entry>
+  <entry>
+    <title>串口学习笔记</title>
+    <url>/WinForm/SerialPort/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>串口学习笔记</p>
+<span id="more"></span>
+
+<h3 id="一、什么是串口"><a href="#一、什么是串口" class="headerlink" title="一、什么是串口"></a>一、什么是串口</h3><p>串口通信(Serial Communication)，是一种用于在计算机和外部设备之间传输数据的通信方式。它使用串行数据传输的方式，通过计算机的串口与外部设备进行数据交换。串口通信常用于连接各种设备，例如打印机、调制解调器、传感器等。它通过逐位传输数据，可以实现可靠的数据传输和通信。</p>
+<h3 id="二、常用的串口通信方式主要包括以下几种"><a href="#二、常用的串口通信方式主要包括以下几种" class="headerlink" title="二、常用的串口通信方式主要包括以下几种"></a>二、常用的串口通信方式主要包括以下几种</h3><ul>
+<li><p>RS-232：</p>
+<blockquote>
+<p>RS-232是一种常见的串口通信标准，用于在计算机和外部设备之间传输数据。它使用DB-9或DB-25连接器，支持较短距离的数据传输。</p>
+</blockquote>
+</li>
+<li><p>RS-485：</p>
+<blockquote>
+<p>RS-485是一种多点通信协议，可以实现多个设备之间的串口通信。它支持较长距离的数据传输，通常用于工业控制系统和远程监控等领域。</p>
+</blockquote>
+</li>
+<li><p>USB串口：</p>
+<blockquote>
+<p>USB串口是通过USB接口进行串口通信的方式。它广泛应用于各种外部设备，如打印机、调制解调器、数码相机等。</p>
+</blockquote>
+</li>
+<li><p>TTL串口：</p>
+<blockquote>
+<p>TTL串口是一种基于TTL电平的串口通信方式，常用于嵌入式系统和单片机开发中。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="三、串口怎样通信"><a href="#三、串口怎样通信" class="headerlink" title="三、串口怎样通信"></a>三、串口怎样通信</h3><p>串口通信的基本原理是通过发送和接收数据位来实现。下面是串口通信的基本步骤：</p>
+<ol>
+<li><p>确定串口参数：首先需要确定串口的参数，包括波特率（Baud Rate）、数据位（Data Bits）、停止位（Stop Bits）和校验位（Parity）等。这些参数需要在发送和接收端保持一致。</p>
+<blockquote>
+<p>以下是一些常见的串口参数定义方式：</p>
+<ul>
+<li>波特率（Baud Rate）：指的是每秒传输的比特数。常见的波特率有9600、115200等。发送和接收数据的设备必须使用相同 的波特率才能正常通信。</li>
+<li>数据位（Data Bits）：指的是每个数据字节中所使用的位数。常见的数据位有5、6、7、8位。</li>
+<li>停止位（Stop Bits）：指的是每个数据字节之后的停止位数。常见的停止位有1位和2位。</li>
+<li>校验位（Parity Bit）：用于数据传输的错误检测。常见的校验位有无校验位、奇校验位和偶校验位。</li>
+</ul>
+<p>串口参数的定义可以根据具体的应用需求进行配置，以确保设备之间的串口通信正常进行。</p>
+</blockquote>
+</li>
+<li><p>打开串口：在计算机或设备上，需要打开串口以进行通信。这可以通过编程语言或串口通信工具实现。</p>
+<p>在C#中，你可以使用 <code>System.IO.Ports</code> 命名空间提供的 <code>SerialPort</code> 类来打开和操作串口。下面是使用C#打开232和485串口的示例代码：</p>
+<ul>
+<li><p>打开232串口：</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>IO<span class="token punctuation">.</span>Ports</span><span class="token punctuation">;</span>
+<span class="token comment">// 创建SerialPort对象</span>
+<span class="token class-name">SerialPort</span> serialPort <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">SerialPort</span><span class="token punctuation">(</span><span class="token string">"COM1"</span><span class="token punctuation">,</span> <span class="token number">9600</span><span class="token punctuation">,</span> Parity<span class="token punctuation">.</span>None<span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> StopBits<span class="token punctuation">.</span>One<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 打开串口</span>
+serialPort<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 串口打开后，可以进行数据的读取和写入操作</span>
+<span class="token comment">// 关闭串口</span>
+serialPort<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>打开485串口：</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">using</span> <span class="token namespace">System<span class="token punctuation">.</span>IO<span class="token punctuation">.</span>Ports</span><span class="token punctuation">;</span>
+<span class="token comment">// 创建SerialPort对象</span>
+<span class="token class-name">SerialPort</span> serialPort <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">SerialPort</span><span class="token punctuation">(</span><span class="token string">"COM1"</span><span class="token punctuation">,</span> <span class="token number">9600</span><span class="token punctuation">,</span> Parity<span class="token punctuation">.</span>None<span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> StopBits<span class="token punctuation">.</span>One<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 设置485串口为半双工模式</span>
+serialPort<span class="token punctuation">.</span>RtsEnable <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+serialPort<span class="token punctuation">.</span>DtrEnable <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token comment">// 打开串口</span>
+serialPort<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 串口打开后，可以进行数据的读取和写入操作</span>
+<span class="token comment">// 关闭串口</span>
+serialPort<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<blockquote>
+<p>请注意，上述代码中的参数值可能需要根据你的具体需求进行调整。同时，确保在使用完串口后及时关闭串口以释放资源。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL3poLWNuL2RvdG5ldC9hcGkvc3lzdGVtLmlvLnBvcnRzLnNlcmlhbHBvcnQ/dmlldz1kb3RuZXQtcGxhdC1leHQtNy4w">点此查看SerialPort类说明:<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+</li>
+<li><p>发送数据：在发送端，将要发送的数据转化为二进制形式，并按照串口参数进行传输。通常是按照字节（8位）的形式发送数据。</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token comment">// 要发送的数据</span>
+<span class="token class-name"><span class="token keyword">string</span></span> data <span class="token operator">=</span> <span class="token string">"Hello, World!"</span><span class="token punctuation">;</span>
+<span class="token comment">// 将数据转换为ASCII码</span>
+<span class="token class-name"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> asciiBytes <span class="token operator">=</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">.</span>Encoding<span class="token punctuation">.</span>ASCII<span class="token punctuation">.</span><span class="token function">GetBytes</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 发送数据</span>
+serialPort<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>asciiBytes<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> asciiBytes<span class="token punctuation">.</span>Length<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>接收数据：在接收端，通过串口接收器接收数据，并将其转化为可读形式。接收端需要按照相同的串口参数配置进行接收。</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token comment">// 设置接收事件处理程序</span>
+serialPort<span class="token punctuation">.</span>DataReceived <span class="token operator">+=</span> SerialPort_DataReceived<span class="token punctuation">;</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SerialPort_DataReceived</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">SerialDataReceivedEventArgs</span> e<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token class-name">SerialPort</span> serialPort <span class="token operator">=</span> <span class="token punctuation">(</span>SerialPort<span class="token punctuation">)</span>sender<span class="token punctuation">;</span>
+    <span class="token comment">// 读取接收缓冲区中的所有可用字节</span>
+    <span class="token class-name"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name"><span class="token keyword">byte</span></span><span class="token punctuation">[</span>serialPort<span class="token punctuation">.</span>BytesToRead<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    serialPort<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> buffer<span class="token punctuation">.</span>Length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 将接收到的字节数组转换为字符串</span>
+    <span class="token class-name"><span class="token keyword">string</span></span> receivedData <span class="token operator">=</span> System<span class="token punctuation">.</span>Text<span class="token punctuation">.</span>Encoding<span class="token punctuation">.</span>ASCII<span class="token punctuation">.</span><span class="token function">GetString</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>数据校验：为了确保数据的完整性和准确性，可以使用校验位进行数据校验。常见的校验方式包括奇偶校验和循环冗余校验（CRC）等。</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SerialPort_DataReceived</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">SerialDataReceivedEventArgs</span> e<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token class-name">SerialPort</span> serialPort <span class="token operator">=</span> <span class="token punctuation">(</span>SerialPort<span class="token punctuation">)</span>sender<span class="token punctuation">;</span>
+
+    <span class="token comment">// 读取接收缓冲区中的所有可用字节</span>
+    <span class="token class-name"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name"><span class="token keyword">byte</span></span><span class="token punctuation">[</span>serialPort<span class="token punctuation">.</span>BytesToRead<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    serialPort<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> buffer<span class="token punctuation">.</span>Length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 按照串口参数规则与8位校验校验数据</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>buffer<span class="token punctuation">.</span>Length <span class="token operator">==</span> serialPort<span class="token punctuation">.</span>DataBits <span class="token operator">/</span> <span class="token number">8</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 校验停止位</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>serialPort<span class="token punctuation">.</span>StopBits <span class="token operator">==</span> StopBits<span class="token punctuation">.</span>One <span class="token operator">&amp;&amp;</span> buffer<span class="token punctuation">[</span>buffer<span class="token punctuation">.</span>Length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0x00</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"停止位校验失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>serialPort<span class="token punctuation">.</span>StopBits <span class="token operator">==</span> StopBits<span class="token punctuation">.</span>Two <span class="token operator">&amp;&amp;</span> buffer<span class="token punctuation">[</span>buffer<span class="token punctuation">.</span>Length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0xFF</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"停止位校验失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">// 校验奇偶校验位</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>serialPort<span class="token punctuation">.</span>Parity <span class="token operator">==</span> Parity<span class="token punctuation">.</span>None<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 无奇偶校验位，直接输出数据</span>
+            Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"数据校验通过："</span> <span class="token operator">+</span> BitConverter<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>serialPort<span class="token punctuation">.</span>Parity <span class="token operator">==</span> Parity<span class="token punctuation">.</span>Even<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 偶校验</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> parityBit <span class="token operator">=</span> buffer<span class="token punctuation">[</span>buffer<span class="token punctuation">.</span>Length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> dataBits <span class="token operator">=</span> serialPort<span class="token punctuation">.</span>DataBits<span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">bool</span></span> isEvenParity <span class="token operator">=</span> <span class="token function">IsEvenParity</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> dataBits<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>isEvenParity <span class="token operator">&amp;&amp;</span> parityBit <span class="token operator">==</span> <span class="token number">0x00</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#123;</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"数据校验通过："</span> <span class="token operator">+</span> BitConverter<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">&#123;</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"奇偶校验位校验失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>serialPort<span class="token punctuation">.</span>Parity <span class="token operator">==</span> Parity<span class="token punctuation">.</span>Odd<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 奇校验</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> parityBit <span class="token operator">=</span> buffer<span class="token punctuation">[</span>buffer<span class="token punctuation">.</span>Length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">int</span></span> dataBits <span class="token operator">=</span> serialPort<span class="token punctuation">.</span>DataBits<span class="token punctuation">;</span>
+            <span class="token class-name"><span class="token keyword">bool</span></span> isOddParity <span class="token operator">=</span> <span class="token function">IsOddParity</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> dataBits<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>isOddParity <span class="token operator">&amp;&amp;</span> parityBit <span class="token operator">==</span> <span class="token number">0x00</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#123;</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"数据校验通过："</span> <span class="token operator">+</span> BitConverter<span class="token punctuation">.</span><span class="token function">ToString</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">&#123;</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"奇偶校验位校验失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">&#123;</span>
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"数据长度校验失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> <span class="token function">IsEvenParity</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> data<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">int</span></span> dataBits<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token class-name"><span class="token keyword">int</span></span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> data<span class="token punctuation">.</span>Length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token class-name"><span class="token keyword">byte</span></span> b <span class="token operator">=</span> data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>b <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            count<span class="token operator">++</span><span class="token punctuation">;</span>
+            b <span class="token operator">&amp;=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token punctuation">(</span>b <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">return</span> count <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> <span class="token function">IsOddParity</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> data<span class="token punctuation">,</span> <span class="token class-name"><span class="token keyword">int</span></span> dataBits<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token operator">!</span><span class="token function">IsEvenParity</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> dataBits<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>数据处理：接收到数据后，可以根据需求进行相应的数据处理，如解析数据、执行相应的操作等。</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">com_DataReceived</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">SerialDataReceivedEventArgs</span> e<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token comment">// 使用二进制或字符串技术（但不能同时使用两者）</span>
+    <span class="token comment">// 缓冲和处理二进制数据</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>com<span class="token punctuation">.</span>BytesToRead <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+        bBuffer<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span>com<span class="token punctuation">.</span><span class="token function">ReadByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ProcessBuffer</span><span class="token punctuation">(</span>bBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 缓冲区字符串数据</span>
+    sBuffer <span class="token operator">+=</span> com<span class="token punctuation">.</span><span class="token function">ReadExisting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ProcessBuffer</span><span class="token punctuation">(</span>sBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">ProcessBuffer</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span></span> sBuffer<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token comment">// 在字符串中查找有用信息</span>
+    <span class="token comment">// 然后从缓冲区中删除有用的数据</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">ProcessBuffer</span><span class="token punctuation">(</span><span class="token class-name">List<span class="token punctuation">&lt;</span><span class="token keyword">byte</span><span class="token punctuation">></span></span> bBuffer<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token comment">// 在字节数组中查找有用的信息</span>
+    <span class="token comment">// 然后从缓冲区中删除有用的数据</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>关闭串口：通信完成后，需要关闭串口以释放资源。</p>
+</li>
+</ol>
+<blockquote>
+<p>需要注意的是，串口通信需要发送端和接收端的串口参数保持一致，否则数据可能无法正确传输。同时，串口通信的稳定性和可靠性较差，对于长距离通信或高速通信，可能需要使用更可靠的通信方式。</p>
+</blockquote>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzE2NjQzMjIzL2FydGljbGUvZGV0YWlscy8xMTgzNTc2NTA=">串口通信校验方式：奇偶校验、累加和校验<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thbHZpbl95X2xpdS9hcnRpY2xlL2RldGFpbHMvMTI2ODg1NTI4">C#实现串口通信解析<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTAxMjc2NS9hcnRpY2xlL2RldGFpbHMvMTI1MDI0MDQ4">C#实现串口通信的上位机开发<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>经验随笔</category>
+      </categories>
+      <tags>
+        <tag>Port</tag>
+        <tag>Serial</tag>
+      </tags>
+  </entry>
 </search>
