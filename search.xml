@@ -4236,7 +4236,7 @@ serialPort<span class="token punctuation">.</span>DataReceived <span class="toke
 <p>需要注意的是，串口通信需要发送端和接收端的串口参数保持一致，否则数据可能无法正确传输。同时，串口通信的稳定性和可靠性较差，对于长距离通信或高速通信，可能需要使用更可靠的通信方式。</p>
 </blockquote>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><blockquote>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzE2NjQzMjIzL2FydGljbGUvZGV0YWlscy8xMTgzNTc2NTA=">串口通信校验方式：奇偶校验、累加和校验<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thbHZpbl95X2xpdS9hcnRpY2xlL2RldGFpbHMvMTI2ODg1NTI4">C#实现串口通信解析<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTAxMjc2NS9hcnRpY2xlL2RldGFpbHMvMTI1MDI0MDQ4">C#实现串口通信的上位机开发<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDg0MTU2OS9hcnRpY2xlL2RldGFpbHMvMTI4MjcwOTQw">串口RS232和RS485<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzE2NjQzMjIzL2FydGljbGUvZGV0YWlscy8xMTgzNTc2NTA=">串口通信校验方式：奇偶校验、累加和校验<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thbHZpbl95X2xpdS9hcnRpY2xlL2RldGFpbHMvMTI2ODg1NTI4">C#实现串口通信解析<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTAxMjc2NS9hcnRpY2xlL2RldGFpbHMvMTI1MDI0MDQ4">C#实现串口通信的上位机开发<i class="fa fa-external-link-alt"></i></span></p>
 </blockquote>
 ]]></content>
       <categories>
