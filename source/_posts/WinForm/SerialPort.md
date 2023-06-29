@@ -237,6 +237,7 @@ tags:
 
 ### 参考资料
 
+> [串口RS232和RS485](https://blog.csdn.net/weixin_44841569/article/details/128270940)
 > [串口通信校验方式：奇偶校验、累加和校验](https://blog.csdn.net/sinat_16643223/article/details/118357650)
 > [C#实现串口通信解析](https://blog.csdn.net/kalvin_y_liu/article/details/126885528)
 > [C#实现串口通信的上位机开发](https://blog.csdn.net/weixin_41012765/article/details/125024048)
