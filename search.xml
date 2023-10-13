@@ -4247,4 +4247,68 @@ serialPort<span class="token punctuation">.</span>DataReceived <span class="toke
         <tag>Serial</tag>
       </tags>
   </entry>
+  <entry>
+    <title>常用数据库链接字符串</title>
+    <url>/ExperienceEssay/DBConn/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>常用数据库链接字符串</p>
+<span id="more"></span>
+
+<table>
+<thead>
+<tr>
+<th>数据库类型</th>
+<th>连接方式</th>
+<th>连接字符串</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Access</td>
+<td>ODBC</td>
+<td>“Driver&#x3D;{Microsoft Access Driver(*.mdb)}; Dbq&#x3D;&lt;\mdb file&gt;; Uid&#x3D;&lt;\user name&gt;; Pwd&#x3D;&lt;\password&gt;;”</td>
+</tr>
+<tr>
+<td>Access</td>
+<td>OLEDB</td>
+<td>“Provider&#x3D;Microsoft.Jet.OLEDB4.0; Data Source&#x3D;&lt;\mdb file&gt;; User Id&#x3D;&lt;\user name&gt;; Password&#x3D;&lt;\password&gt;”</td>
+</tr>
+<tr>
+<td>SQL Server</td>
+<td>ODBC</td>
+<td>“Driver&#x3D;{SQL Server}; Server&#x3D;&lt;\server name&gt;; Database&#x3D;&lt;\database name&gt; Uid&#x3D;&lt;\user name&gt;; Pwd&#x3D;&lt;\password&gt;;”</td>
+</tr>
+<tr>
+<td>SQL Server</td>
+<td>OLEDB</td>
+<td>“Provider&#x3D;SQLOLEDB; Data Source&#x3D;&lt;\server name&gt;; Initial Catalog&#x3D;&lt;\database name&gt;; Integrated Security&#x3D;SSPI; User</td>
+</tr>
+<tr>
+<td>MySql</td>
+<td>ODBC</td>
+<td>“Draver&#x3D;{mySQL}; Server&#x3D;&lt;\server name&gt;; Option&#x3D;16384; Database&#x3D;&lt;\database name&gt;; Uid&#x3D;&lt;\user name&gt;; Pwd&#x3D;&lt;\password&gt;;”</td>
+</tr>
+<tr>
+<td>MySql</td>
+<td>OLEDB</td>
+<td>“Provider&#x3D;MySQLProv; Data Source&#x3D;&lt;\database name&gt;; User Id&#x3D;&lt;\user name&gt;; Password&#x3D;&lt;\password&gt;;”</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>ODBC</td>
+<td>“Driver&#x3D;{Microsoft ODBC for Oracle}; Server&#x3D;OracleServer.world; Uid&#x3D;&lt;\user name&gt;; Pwd&#x3D;&lt;\password&gt;;”</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>OLEDB</td>
+<td>“Provider&#x3D;OraOLEDB.Oracle; Data Source&#x3D;&lt;\database name&gt; User Id&#x3D;&lt;\user name&gt;; Password&#x3D;&lt;\password&gt;;”</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>经验随笔</category>
+      </categories>
+      <tags>
+        <tag>DB</tag>
+        <tag>CONN</tag>
+      </tags>
+  </entry>
 </search>
