@@ -519,7 +519,9 @@ echo &quot;CONDA_SUBDIR: $CONDA_SUBDIR&quot;<span aria-hidden="true" class="line
 <li>USB 设备<br><code>ls usb -tv</code></li>
 </ul>
 <h3 id="后台进程命令"><a href="#后台进程命令" class="headerlink" title="后台进程命令"></a>后台进程命令</h3><ol>
-<li>运行后台进程<br>  <code>sudo nohup [commandName] [&gt; logFile] [2&gt;&amp;1] [&amp;]</code><blockquote>
+<li>运行后台进程<br>  <code>sudo nohup [commandName] [&gt; logFile] [2&gt;&amp;1] [&amp;]</code></li>
+</ol>
+<blockquote>
 <ul>
 <li>commandName 命令名称</li>
 <li>&gt; logFile 输出日志</li>
@@ -527,14 +529,16 @@ echo &quot;CONDA_SUBDIR: $CONDA_SUBDIR&quot;<span aria-hidden="true" class="line
 <li>&amp; 后台运行进程</li>
 </ul>
 </blockquote>
-</li>
-</ol>
 <h3 id="查看进程命令"><a href="#查看进程命令" class="headerlink" title="查看进程命令"></a>查看进程命令</h3><ol>
 <li>根据名称查看<br>  <code>sudo ps -fe | grep [commandName]</code></li>
 </ol>
 <h3 id="结束进程命令"><a href="#结束进程命令" class="headerlink" title="结束进程命令"></a>结束进程命令</h3><ol>
 <li>查看端口被哪个程序占用<br>  <code>sudo lsof -i tcp:port</code></li>
 <li>看到进程的 PID，可以将进程杀死。<br>  <code>sudo kill -9 PID</code></li>
+</ol>
+<h3 id="硬件挂载"><a href="#硬件挂载" class="headerlink" title="硬件挂载"></a>硬件挂载</h3><ol>
+<li>挂载<br>  <code>sudo mount /dev/[deviceName] [Path(一艘为/mnt/[deviceName])]</code></li>
+<li>看到进程的 PID，可以将进程杀死。<br>  <code>sudo umount [Path]</code></li>
 </ol>
 ]]></content>
       <categories>
