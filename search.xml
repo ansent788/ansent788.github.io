@@ -540,6 +540,13 @@ echo &quot;CONDA_SUBDIR: $CONDA_SUBDIR&quot;<span aria-hidden="true" class="line
 <li>挂载<br>  <code>sudo mount /dev/[deviceName] [Path(一艘为/mnt/[deviceName])]</code></li>
 <li>看到进程的 PID，可以将进程杀死。<br>  <code>sudo umount [Path]</code></li>
 </ol>
+<h3 id="DNS管理"><a href="#DNS管理" class="headerlink" title="DNS管理"></a>DNS管理</h3><ol>
+<li>编辑&#x2F;etc&#x2F;resolv.conf文件</li>
+</ol>
+<blockquote>
+<p>在文件中添加以下行：<br>nameserver [dnsHost]</p>
+<p>请注意，如果您的系统使用resolvconf或其他网络管理服务，您可能需要按照该服务的规范来添加DNS服务器，以确保更改在系统重启后持久生效。在某些系统中，&#x2F;etc&#x2F;resolv.conf文件可能是一个符号链接，指向&#x2F;etc&#x2F;resolvconf&#x2F;resolv.conf.d&#x2F;head或其他位置，您可能需要编辑相应的文件。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>学习笔记</category>
