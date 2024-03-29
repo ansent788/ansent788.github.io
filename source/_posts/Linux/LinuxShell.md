@@ -59,3 +59,12 @@ Linux 常用命令
   `sudo mount /dev/[deviceName] [Path(一艘为/mnt/[deviceName])]`
 1. 看到进程的 PID，可以将进程杀死。
   `sudo umount [Path]`
+
+### DNS管理
+
+1. 编辑/etc/resolv.conf文件
+
+  > 在文件中添加以下行：
+  > nameserver [dnsHost]
+  >
+  > 请注意，如果您的系统使用resolvconf或其他网络管理服务，您可能需要按照该服务的规范来添加DNS服务器，以确保更改在系统重启后持久生效。在某些系统中，/etc/resolv.conf文件可能是一个符号链接，指向/etc/resolvconf/resolv.conf.d/head或其他位置，您可能需要编辑相应的文件。
