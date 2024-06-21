@@ -38,11 +38,11 @@ tags:
   #       image_002.jpg
   #       ...
   #     ...
-  bootstrap_images_in_folder = '/Users/dx/Documents/Python/PaddleXDemo/opencv/mediapipe/images/pose/extended/train'
+  bootstrap_images_in_folder = 'mediapipe/images/pose/extended/train'
 
   # 引导图像和 CSV 的输出文件夹。
-  bootstrap_images_out_folder = '/Users/dx/Documents/Python/PaddleXDemo/opencv/mediapipe/images/pose/extended/images_out'
-  bootstrap_csvs_out_folder = '/Users/dx/Documents/Python/PaddleXDemo/opencv/mediapipe/images/pose/extended/csvs_out'
+  bootstrap_images_out_folder = 'mediapipe/images/pose/extended/images_out'
+  bootstrap_csvs_out_folder = 'mediapipe/images/pose/extended/csvs_out'
 
   # 初始化助手。
   bootstrap_helper = BootstrapHelper(
@@ -110,7 +110,7 @@ tags:
 
 
   def dump_for_the_app():
-      pose_samples_folder = 'fitness_poses_csvs_out'
+      pose_samples_folder = 'mediapipe/images/pose/extended/fitness_poses_csvs_out'
       pose_samples_csv_path = 'fitness_poses_csvs_out.csv'
       file_extension = 'csv'
       file_separator = ','
@@ -158,9 +158,9 @@ tags:
   from PoseClassification import PoseClassifier
 
   # 指定您的视频名称和目标姿势类以计算重复次数。
-  video_path = '/Users/dx/Documents/Python/PaddleXDemo/opencv/mediapipe/images/pose/extended/test/5.mp4'
+  video_path = 'mediapipe/images/pose/extended/test/5.mp4'
   class_name = 'down'
-  out_video_path = '/Users/dx/Documents/Python/PaddleXDemo/opencv/mediapipe/images/pose/extended/test_out/5_out.mp4'
+  out_video_path = 'mediapipe/images/pose/extended/test_out/5_out.mp4'
 
   # 打开视频。
   video_cap = cv2.VideoCapture(video_path)
@@ -176,7 +176,7 @@ tags:
 
   # 包含姿势类 CSV 的文件夹。 那应该是你使用的同一个文件夹
   # 构建分类器以输出 CSV。
-  pose_samples_folder = '/Users/dx/Documents/Python/PaddleXDemo/opencv/mediapipe/images/pose/extended/csvs_out'
+  pose_samples_folder = 'mediapipe/images/pose/extended/csvs_out'
 
   # 初始化跟踪器。
   pose_tracker = mp_pose.Pose(static_image_mode=False)
