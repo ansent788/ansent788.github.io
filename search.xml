@@ -4237,7 +4237,7 @@ cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation
   </entry>
   <entry>
     <title>坐标转换</title>
-    <url>/utils/Coordtransform/</url>
+    <url>/utils/coordtransform/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>提供了百度坐标（BD09）、国测局坐标（火星坐标，GCJ02）、和WGS84坐标系之间的转换的工具模块。</p>
 <span id="more"></span>
 
