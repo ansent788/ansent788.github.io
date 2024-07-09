@@ -37,7 +37,7 @@ tags:
 分隔符：<input value="," onchange="newSplitChange(this)" />
 <textarea id="new_value" style="width:100%;height: 200px"></textarea>
 
-<script src="/Utils/Coordtransform.js"></script>
+<script src="/utils/coordtransform.js"></script>
 <script>
   var old_split = ',', new_split = ',';
   function oldSplitChange(obj){
