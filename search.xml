@@ -65,49 +65,6 @@
       </tags>
   </entry>
   <entry>
-    <title>常用数据库默认端口</title>
-    <url>/ExperienceEssay/DBPort/</url>
-    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>常用数据库默认端口</p>
-<span id="more"></span>
-
-<table>
-<thead>
-<tr>
-<th>数据库</th>
-<th>端口</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>MySql</td>
-<td>3306</td>
-</tr>
-<tr>
-<td>Oracle</td>
-<td>1521</td>
-</tr>
-<tr>
-<td>SqlServer</td>
-<td>1433</td>
-</tr>
-<tr>
-<td>DB2</td>
-<td>5000</td>
-</tr>
-<tr>
-<td>PostgreSQL</td>
-<td>5432</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>经验随笔</category>
-      </categories>
-      <tags>
-        <tag>DB</tag>
-        <tag>Port</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git 命令行使用</title>
     <url>/ExperienceEssay/Git/</url>
     <content><![CDATA[<h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>Git 命令行总结</p>
@@ -312,6 +269,71 @@
       </tags>
   </entry>
   <entry>
+    <title>常用数据库默认端口</title>
+    <url>/ExperienceEssay/DBPort/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>常用数据库默认端口</p>
+<span id="more"></span>
+
+<table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MySql</td>
+<td>3306</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>1521</td>
+</tr>
+<tr>
+<td>SqlServer</td>
+<td>1433</td>
+</tr>
+<tr>
+<td>DB2</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>5432</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>经验随笔</category>
+      </categories>
+      <tags>
+        <tag>DB</tag>
+        <tag>Port</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>npm 命令行使用</title>
+    <url>/ExperienceEssay/Npm/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>npm 使用经验与命令总结</p>
+<span id="more"></span>
+
+<h3 id="node-sass-问题"><a href="#node-sass-问题" class="headerlink" title="node-sass 问题"></a>node-sass 问题</h3><ul>
+<li><p>MacM1 下无法编译 node-sass，问题出现是因 node-sass 不支持 arm64，node16 后支持了 M1 安装包已升级成为 arm64包。</p>
+<blockquote>
+<p>解决办法，去 Node.js 官网下载对应版本的 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2Rpc3QvdjE2LjE0LjIvbm9kZS12MTYuMTQuMi1kYXJ3aW4teDY0LnRhci5neg==">x64<i class="fa fa-external-link-alt"></i></span> 版本，然后按手动复制到 &#x2F;usr&#x2F;local</p>
+<p><em><strong>注：其他版本同理</strong></em></p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>经验随笔</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac + Hexo + Gitee Pages 搭建在线自生成静态Blog</title>
     <url>/ExperienceEssay/GiteeHexo/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>以前都是在本地生成静态站点，然后提交到代码库再更新 Blog，很不方便。最近看到 Gitee 支持 Hexo 在线生成，于是全部上传到了代码库中，这下可以随时随地记录了。</p>
@@ -471,28 +493,6 @@
         <tag>Hexo</tag>
         <tag>Gitee Pages</tag>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>npm 命令行使用</title>
-    <url>/ExperienceEssay/Npm/</url>
-    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>npm 使用经验与命令总结</p>
-<span id="more"></span>
-
-<h3 id="node-sass-问题"><a href="#node-sass-问题" class="headerlink" title="node-sass 问题"></a>node-sass 问题</h3><ul>
-<li><p>MacM1 下无法编译 node-sass，问题出现是因 node-sass 不支持 arm64，node16 后支持了 M1 安装包已升级成为 arm64包。</p>
-<blockquote>
-<p>解决办法，去 Node.js 官网下载对应版本的 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2Rpc3QvdjE2LjE0LjIvbm9kZS12MTYuMTQuMi1kYXJ3aW4teDY0LnRhci5neg==">x64<i class="fa fa-external-link-alt"></i></span> 版本，然后按手动复制到 &#x2F;usr&#x2F;local</p>
-<p><em><strong>注：其他版本同理</strong></em></p>
-</blockquote>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>经验随笔</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
       </tags>
   </entry>
   <entry>
@@ -1113,6 +1113,161 @@ serialPort<span class="token punctuation">.</span>DataReceived <span class="toke
       </tags>
   </entry>
   <entry>
+    <title>坐标转换</title>
+    <url>/Utils/Coordtransform/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>提供了百度坐标（BD09）、国测局坐标（火星坐标，GCJ02）、和WGS84坐标系之间的转换的工具模块。</p>
+<span id="more"></span>
+
+<p>国测局坐标(火星坐标,比如高德地图在用),百度坐标,wgs84坐标(谷歌国外以及绝大部分国外在线地图使用的坐标)。</p>
+<h3 id="需转换的坐标，一行一条，格式如下："><a href="#需转换的坐标，一行一条，格式如下：" class="headerlink" title="需转换的坐标，一行一条，格式如下："></a>需转换的坐标，一行一条，格式如下：</h3><p>分隔符：<input value="," onchange="oldSplitChange(this)" /></p>
+<blockquote>
+<p>116.404<span name="old_split">,</span>39.915<br>116.404<span name="old_split">,</span>39.915</p>
+</blockquote>
+<textarea id="old_value" style="width:100%;height: 200px"></textarea>
+
+<select id="coord_select">
+  <option>bd09 to gcj02</option>
+  <option>gcj02 to bd09</option>
+  <option>wgs84 to gcj02</option>
+  <option>gcj02 to wgs84</option>
+</select>
+<button onclick="ctf()">转换</button>
+
+<h3 id="转换出的坐标"><a href="#转换出的坐标" class="headerlink" title="转换出的坐标"></a>转换出的坐标</h3><p>分隔符：<input value="," onchange="newSplitChange(this)" /></p>
+<textarea id="new_value" style="width:100%;height: 200px"></textarea>
+
+<script src="/utils/coordtransform.js"></script>
+<script>
+  var old_split = ',', new_split = ',';
+  function oldSplitChange(obj){
+    if(obj.value != '') old_split = obj.value;
+    document.getElementsByName('old_split').forEach(item=>{item.innerHTML = old_split});
+  }
+  function newSplitChange(obj){
+    if(obj.value != '') new_split = obj.value;
+  }
+  function ctf() {
+    var select = document.getElementById('coord_select'); //定位id
+    var index = select.selectedIndex; // 选中索引
+    var text = select.options[index].text; // 选中文本
+    var tffn;
+    switch(text) {
+      //百度经纬度坐标转国测局坐标
+      case 'bd09 to gcj02':
+        tffn = coordtransform.bd09togcj02;
+        break;
+      //国测局坐标转百度经纬度坐标
+      case 'gcj02 to bd09':
+        tffn = coordtransform.gcj02tobd09;
+        break;
+      //wgs84转国测局坐标
+      case 'wgs84 to gcj02':
+        tffn = coordtransform.wgs84togcj02;
+        break;
+      //国测局坐标转wgs84坐标
+      case 'gcj02 to wgs84':
+        tffn = coordtransform.gcj02towgs84;
+        break;
+      default:
+        tffn = coordtransform.bd09togcj02;
+        break;
+    }
+    var old_coord = document.getElementById('old_value').value.split('\n').map(item=>{return item.split(old_split)});
+    var new_coord = '';
+    for(const item of old_coord) {
+      if(new_coord != '') new_coord += '\n';
+      var coord = tffn(item[0],item[1]);
+      new_coord += coord[0] + new_split + coord[1];
+      if(item.length>2){
+        for (let index = 2; index < item.length; index += 2){
+          coord = tffn(item[index],item[index + 1]);
+          new_coord += new_split + coord[0] + new_split + coord[1];
+        }
+      }
+    }
+    document.getElementById('new_value').value = new_coord;
+  }
+</script>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>coordinate</tag>
+        <tag>wgs84</tag>
+        <tag>bd09</tag>
+        <tag>gcj02</tag>
+        <tag>transform</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GIS - 天地图应用开发基础知识 - 编写第一个Map应用</title>
+    <url>/GIS/TDT/FirstCode/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>使用第三方 GIS 平台 - “天地图”，搭建 Map 应用。</p>
+<span id="more"></span>
+
+<h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p><span class="exturl" data-url="aHR0cHM6Ly91dW1zLnRpYW5kaXR1Lmdvdi5jbi9yZWdpc3Rlcg==">https://uums.tianditu.gov.cn/register<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="打开控制台"><a href="#打开控制台" class="headerlink" title="打开控制台"></a>打开控制台</h2><p><span class="exturl" data-url="aHR0cHM6Ly9jb25zb2xlLnRpYW5kaXR1Lmdvdi5jbi9hcGkva2V5">https://console.tianditu.gov.cn/api/key<i class="fa fa-external-link-alt"></i></span></p>
+<ol>
+<li>创建新应用（浏览器端）</li>
+<li>复制 Key 备用</li>
+</ol>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content-type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/html; charset=utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>天地图<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>GIS - 天地图应用开发基础知识 - 生成第一个Map应用<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span>
+      <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span>
+      <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://api.tianditu.gov.cn/api?v=4.0&amp;tk=您的密钥<span class="token punctuation">"</span></span>
+    <span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+      <span class="token selector">body,
+      html</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Microsoft YaHei"</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token selector">#mapDiv</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token selector">input,
+      b,
+      p</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">margin-left</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+      <span class="token keyword">var</span> map<span class="token punctuation">;</span>
+      <span class="token keyword">var</span> zoom <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+      <span class="token keyword">function</span> <span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// map = new T.Map("mapDiv"); // 默认为：球面墨卡托投影</span>
+        map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">T<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span><span class="token string">"mapDiv"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">projection</span><span class="token operator">:</span> <span class="token string">"EPSG:4326"</span><span class="token punctuation">,</span> <span class="token comment">// 经纬度直投，编码为：EPSG:4326</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">centerAndZoom</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">T<span class="token punctuation">.</span>LngLat</span><span class="token punctuation">(</span><span class="token number">112.54502</span><span class="token punctuation">,</span> <span class="token number">37.86789</span><span class="token punctuation">)</span><span class="token punctuation">,</span> zoom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token special-attr"><span class="token attr-name">onLoad</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mapDiv<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img data-src="/GIS/TDT/FirstCode/image.jpg" alt="效果图片"></p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>GIS</tag>
+        <tag>天地图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>H5PlusAPI 学习内容整理 - Geolocation</title>
     <url>/H5/PlusAPI/Geolocation/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Geolocation 模块管理设备位置信息，用于获取地理位置信息，如经度、纬度等。通过 plus.geolocation 可获取设备位置管理对象。虽然 W3C 已经提供标准 API 获取位置信息，但在某些平台存在差异或未实现，为了保持各平台的统一性，定义此规范接口获取位置信息。</p>
@@ -1321,74 +1476,6 @@ serialPort<span class="token punctuation">.</span>DataReceived <span class="toke
         <tag>UniApp</tag>
         <tag>H5</tag>
         <tag>定位</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GIS - 天地图应用开发基础知识 - 编写第一个Map应用</title>
-    <url>/GIS/TDT/FirstCode/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>使用第三方 GIS 平台 - “天地图”，搭建 Map 应用。</p>
-<span id="more"></span>
-
-<h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p><span class="exturl" data-url="aHR0cHM6Ly91dW1zLnRpYW5kaXR1Lmdvdi5jbi9yZWdpc3Rlcg==">https://uums.tianditu.gov.cn/register<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="打开控制台"><a href="#打开控制台" class="headerlink" title="打开控制台"></a>打开控制台</h2><p><span class="exturl" data-url="aHR0cHM6Ly9jb25zb2xlLnRpYW5kaXR1Lmdvdi5jbi9hcGkva2V5">https://console.tianditu.gov.cn/api/key<i class="fa fa-external-link-alt"></i></span></p>
-<ol>
-<li>创建新应用（浏览器端）</li>
-<li>复制 Key 备用</li>
-</ol>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content-type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/html; charset=utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>天地图<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>GIS - 天地图应用开发基础知识 - 生成第一个Map应用<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span>
-      <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span>
-      <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://api.tianditu.gov.cn/api?v=4.0&amp;tk=您的密钥<span class="token punctuation">"</span></span>
-    <span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
-      <span class="token selector">body,
-      html</span> <span class="token punctuation">&#123;</span>
-        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
-        <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
-        <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-        <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Microsoft YaHei"</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span>
-      <span class="token selector">#mapDiv</span> <span class="token punctuation">&#123;</span>
-        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
-        <span class="token property">height</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span>
-      <span class="token selector">input,
-      b,
-      p</span> <span class="token punctuation">&#123;</span>
-        <span class="token property">margin-left</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
-        <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span>
-    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
-      <span class="token keyword">var</span> map<span class="token punctuation">;</span>
-      <span class="token keyword">var</span> zoom <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
-      <span class="token keyword">function</span> <span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// map = new T.Map("mapDiv"); // 默认为：球面墨卡托投影</span>
-        map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">T<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span><span class="token string">"mapDiv"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-          <span class="token literal-property property">projection</span><span class="token operator">:</span> <span class="token string">"EPSG:4326"</span><span class="token punctuation">,</span> <span class="token comment">// 经纬度直投，编码为：EPSG:4326</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        map<span class="token punctuation">.</span><span class="token function">centerAndZoom</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">T<span class="token punctuation">.</span>LngLat</span><span class="token punctuation">(</span><span class="token number">112.54502</span><span class="token punctuation">,</span> <span class="token number">37.86789</span><span class="token punctuation">)</span><span class="token punctuation">,</span> zoom<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span>
-    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token special-attr"><span class="token attr-name">onLoad</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mapDiv<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img data-src="/GIS/TDT/FirstCode/image.jpg" alt="效果图片"></p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>GIS</tag>
-        <tag>天地图</tag>
       </tags>
   </entry>
   <entry>
@@ -4233,93 +4320,6 @@ cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation
       <tags>
         <tag>.NetCore</tag>
         <tag>Xamarin</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>坐标转换</title>
-    <url>/utils/coordtransform/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>提供了百度坐标（BD09）、国测局坐标（火星坐标，GCJ02）、和WGS84坐标系之间的转换的工具模块。</p>
-<span id="more"></span>
-
-<p>国测局坐标(火星坐标,比如高德地图在用),百度坐标,wgs84坐标(谷歌国外以及绝大部分国外在线地图使用的坐标)。</p>
-<h3 id="需转换的坐标，一行一条，格式如下："><a href="#需转换的坐标，一行一条，格式如下：" class="headerlink" title="需转换的坐标，一行一条，格式如下："></a>需转换的坐标，一行一条，格式如下：</h3><p>分隔符：<input value="," onchange="oldSplitChange(this)" /></p>
-<blockquote>
-<p>116.404<span name="old_split">,</span>39.915<br>116.404<span name="old_split">,</span>39.915</p>
-</blockquote>
-<textarea id="old_value" style="width:100%;height: 200px"></textarea>
-
-<select id="coord_select">
-  <option>bd09 to gcj02</option>
-  <option>gcj02 to bd09</option>
-  <option>wgs84 to gcj02</option>
-  <option>gcj02 to wgs84</option>
-</select>
-<button onclick="ctf()">转换</button>
-
-<h3 id="转换出的坐标"><a href="#转换出的坐标" class="headerlink" title="转换出的坐标"></a>转换出的坐标</h3><p>分隔符：<input value="," onchange="newSplitChange(this)" /></p>
-<textarea id="new_value" style="width:100%;height: 200px"></textarea>
-
-<script src="/utils/coordtransform.js"></script>
-<script>
-  var old_split = ',', new_split = ',';
-  function oldSplitChange(obj){
-    if(obj.value != '') old_split = obj.value;
-    document.getElementsByName('old_split').forEach(item=>{item.innerHTML = old_split});
-  }
-  function newSplitChange(obj){
-    if(obj.value != '') new_split = obj.value;
-  }
-  function ctf() {
-    var select = document.getElementById('coord_select'); //定位id
-    var index = select.selectedIndex; // 选中索引
-    var text = select.options[index].text; // 选中文本
-    var tffn;
-    switch(text) {
-      //百度经纬度坐标转国测局坐标
-      case 'bd09 to gcj02':
-        tffn = coordtransform.bd09togcj02;
-        break;
-      //国测局坐标转百度经纬度坐标
-      case 'gcj02 to bd09':
-        tffn = coordtransform.gcj02tobd09;
-        break;
-      //wgs84转国测局坐标
-      case 'wgs84 to gcj02':
-        tffn = coordtransform.wgs84togcj02;
-        break;
-      //国测局坐标转wgs84坐标
-      case 'gcj02 to wgs84':
-        tffn = coordtransform.gcj02towgs84;
-        break;
-      default:
-        tffn = coordtransform.bd09togcj02;
-        break;
-    }
-    var old_coord = document.getElementById('old_value').value.split('\n').map(item=>{return item.split(old_split)});
-    var new_coord = '';
-    for(const item of old_coord) {
-      if(new_coord != '') new_coord += '\n';
-      var coord = tffn(item[0],item[1]);
-      new_coord += coord[0] + new_split + coord[1];
-      if(item.length>2){
-        for (let index = 2; index < item.length; index += 2){
-          coord = tffn(item[index],item[index + 1]);
-          new_coord += new_split + coord[0] + new_split + coord[1];
-        }
-      }
-    }
-    document.getElementById('new_value').value = new_coord;
-  }
-</script>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>coordinate</tag>
-        <tag>wgs84</tag>
-        <tag>bd09</tag>
-        <tag>gcj02</tag>
-        <tag>transform</tag>
       </tags>
   </entry>
 </search>
