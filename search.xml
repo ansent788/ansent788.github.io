@@ -474,6 +474,28 @@
       </tags>
   </entry>
   <entry>
+    <title>npm 命令行使用</title>
+    <url>/ExperienceEssay/Npm/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>npm 使用经验与命令总结</p>
+<span id="more"></span>
+
+<h3 id="node-sass-问题"><a href="#node-sass-问题" class="headerlink" title="node-sass 问题"></a>node-sass 问题</h3><ul>
+<li><p>MacM1 下无法编译 node-sass，问题出现是因 node-sass 不支持 arm64，node16 后支持了 M1 安装包已升级成为 arm64包。</p>
+<blockquote>
+<p>解决办法，去 Node.js 官网下载对应版本的 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2Rpc3QvdjE2LjE0LjIvbm9kZS12MTYuMTQuMi1kYXJ3aW4teDY0LnRhci5neg==">x64<i class="fa fa-external-link-alt"></i></span> 版本，然后按手动复制到 &#x2F;usr&#x2F;local</p>
+<p><em><strong>注：其他版本同理</strong></em></p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>经验随笔</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac 无线投屏 Scrcpy</title>
     <url>/ExperienceEssay/Scrcpy/</url>
     <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>安卓手机无线投屏到 Mac</p>
@@ -515,25 +537,130 @@
       </tags>
   </entry>
   <entry>
-    <title>npm 命令行使用</title>
-    <url>/ExperienceEssay/Npm/</url>
-    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>npm 使用经验与命令总结</p>
+    <title>Linux 常用命令</title>
+    <url>/Linux/LinuxShell/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Linux 常用命令</p>
 <span id="more"></span>
 
-<h3 id="node-sass-问题"><a href="#node-sass-问题" class="headerlink" title="node-sass 问题"></a>node-sass 问题</h3><ul>
-<li><p>MacM1 下无法编译 node-sass，问题出现是因 node-sass 不支持 arm64，node16 后支持了 M1 安装包已升级成为 arm64包。</p>
-<blockquote>
-<p>解决办法，去 Node.js 官网下载对应版本的 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2Rpc3QvdjE2LjE0LjIvbm9kZS12MTYuMTQuMi1kYXJ3aW4teDY0LnRhci5neg==">x64<i class="fa fa-external-link-alt"></i></span> 版本，然后按手动复制到 &#x2F;usr&#x2F;local</p>
-<p><em><strong>注：其他版本同理</strong></em></p>
-</blockquote>
-</li>
+<h3 id="环境查看"><a href="#环境查看" class="headerlink" title="环境查看"></a>环境查看</h3><ul>
+<li>操作系统和位数信息<br><code>uname -m &amp;&amp; cat /etc/*release</code></li>
+<li>处理器<br><code>arch</code></li>
+<li>系统内核<br><code>uname -a</code></li>
+<li>系统版本<br><code>cat /etc/lsb-release</code></li>
+<li>已加载的文件系统<br><code>cat /proc/mounts</code></li>
+<li>PCI 设备<br><code>ls pci -tv</code></li>
+<li>USB 设备<br><code>ls usb -tv</code></li>
 </ul>
+<h3 id="后台进程命令"><a href="#后台进程命令" class="headerlink" title="后台进程命令"></a>后台进程命令</h3><ol>
+<li>运行后台进程<br>  <code>sudo nohup [commandName] [&gt; logFile] [2&gt;&amp;1] [&amp;]</code></li>
+</ol>
+<blockquote>
+<ul>
+<li>commandName 命令名称</li>
+<li>&gt; logFile 输出日志</li>
+<li>2&gt;&amp;1 错误日志重定向到输出日志</li>
+<li>&amp; 后台运行进程</li>
+</ul>
+</blockquote>
+<h3 id="查看进程命令"><a href="#查看进程命令" class="headerlink" title="查看进程命令"></a>查看进程命令</h3><ol>
+<li>根据名称查看<br>  <code>sudo ps -fe | grep [commandName]</code></li>
+</ol>
+<h3 id="结束进程命令"><a href="#结束进程命令" class="headerlink" title="结束进程命令"></a>结束进程命令</h3><ol>
+<li>查看端口被哪个程序占用<br>  <code>sudo lsof -i tcp:port</code></li>
+<li>看到进程的 PID，可以将进程杀死。<br>  <code>sudo kill -9 PID</code></li>
+</ol>
+<h3 id="硬件挂载"><a href="#硬件挂载" class="headerlink" title="硬件挂载"></a>硬件挂载</h3><ol>
+<li>挂载<br>  <code>sudo mount /dev/[deviceName] [Path(一艘为/mnt/[deviceName])]</code></li>
+<li>看到进程的 PID，可以将进程杀死。<br>  <code>sudo umount [Path]</code></li>
+</ol>
+<h3 id="DNS管理"><a href="#DNS管理" class="headerlink" title="DNS管理"></a>DNS管理</h3><ol>
+<li>编辑&#x2F;etc&#x2F;resolv.conf文件</li>
+</ol>
+<blockquote>
+<p>在文件中添加以下行：<br>nameserver [dnsHost]</p>
+<p>请注意，如果您的系统使用resolvconf或其他网络管理服务，您可能需要按照该服务的规范来添加DNS服务器，以确保更改在系统重启后持久生效。在某些系统中，&#x2F;etc&#x2F;resolv.conf文件可能是一个符号链接，指向&#x2F;etc&#x2F;resolvconf&#x2F;resolv.conf.d&#x2F;head或其他位置，您可能需要编辑相应的文件。</p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>经验随笔</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>npm</tag>
+        <tag>Linux</tag>
+        <tag>Shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac 安装 PaddleX</title>
+    <url>/Paddlex/Install/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>飞桨全流程开发工具，集飞桨核心框架、模型库、工具及组件等深度学习开发所需全部能力于一身，打通深度学习开发全流程。PaddleX 同时提供简明易懂的 Python API，及一键下载安装的图形化开发客户端。用户可根据实际生产需求选择相应的开发方式，获得飞桨全流程开发的最佳体验。</p>
+<span id="more"></span>
+
+<h2 id="API-方式"><a href="#API-方式" class="headerlink" title="API 方式"></a>API 方式</h2><p>推荐大家先安装 Anacaonda，而后在新建的 conda 环境中安装，以避免卸载时的麻烦。</p>
+<blockquote>
+<p>Anaconda 是一个开源的 Python 发行版本，其包含了 conda、Python 等 180 多个科学包及其依赖项。<br>使用 Anaconda 可以通过创建多个独立的 Python 环境，避免用户的 Python 环境安装太多不同版本依赖导致冲突。</p>
+</blockquote>
+<ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYW5hY29uZGEuY29tL3Byb2R1Y3RzL2luZGl2aWR1YWw=">Anaconda 下载<i class="fa fa-external-link-alt"></i></span><blockquote>
+<p>选择 64-Bit Graphical Installer 下载</p>
+</blockquote>
+</li>
+<li>创建 Python 环境<blockquote>
+<p>conda create -n [paddlexName] python&#x3D;[version]<br>注：<em>M1 版本 CPU 选择 3.8，Intel 建议选择 Python3</em></p>
+</blockquote>
+</li>
+<li>进入 Python 环境，部署依赖库<blockquote>
+<p>conda activate [paddlexName]<br>pip install cython<br>pip install pycocotools</p>
+</blockquote>
+</li>
+<li>安装 PaddlePaddle 与 PaddleX<blockquote>
+<p>pip install paddlepaddle 或 paddlepaddle-gpu<br>pip install paddlex</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="架构不匹配可按如下方式创建环境"><a href="#架构不匹配可按如下方式创建环境" class="headerlink" title="架构不匹配可按如下方式创建环境"></a>架构不匹配可按如下方式创建环境</h3><pre class="line-numbers language-console" data-language="console"><code class="language-console"># 创建一个可以安装 x64 包的虚拟环境
+CONDA_SUBDIR&#x3D;osx-64 conda create -n [paddlexName] python&#x3D;[version]
+
+# 激活该环境
+conda activate [paddlexName]
+
+# 验证该环境支持平台
+python -c &quot;import platform;print(platform.machine())&quot;
+
+# 确保该环境为创建的包为 x64 架构所用
+conda env config vars set CONDA_SUBDIR&#x3D;osx-64
+
+# 退出该环境
+conda deactivate
+
+# 重新激活该环境
+conda activate [paddlexName]
+
+# 查看环境变量，确定是osx-64
+echo &quot;CONDA_SUBDIR: $CONDA_SUBDIR&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>安装完成后可进入 Python 进行测试</p>
+<h2 id="GUI-方式"><a href="#GUI-方式" class="headerlink" title="GUI 方式"></a>GUI 方式</h2><ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGFkZGxlcGFkZGxlLm9yZy5jbi9wYWRkbGV4L2Rvd25sb2Fk">PaddleX GUI 下载<i class="fa fa-external-link-alt"></i></span></li>
+<li>解压后，修改文件夹名称为：[可执行文件名称].app</li>
+<li>拷贝到应用程序目录下，安装完毕</li>
+</ol>
+<blockquote>
+<p>也可按文件夹中提示方式直接使用</p>
+</blockquote>
+<h2 id="Restful-方式"><a href="#Restful-方式" class="headerlink" title="Restful 方式"></a>Restful 方式</h2><p><span class="exturl" data-url="aHR0cHM6Ly9iai5iY2Vib3MuY29tL3BhZGRsZXgvUGFkZGxlWF9SZW1vdGVfR1VJL21hYy9QYWRkbGVYX1JlbW90ZV9HVUkuemlw">Mac 版下载地址<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iai5iY2Vib3MuY29tL3BhZGRsZXgvUGFkZGxlWF9SZW1vdGVfR1VJL3dpbmRvd3MvUGFkZGxlWF9SZW1vdGVfR1VJLnppcA==">Win 版下载地址<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p>下载后解压按说明文件操作即可<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1BhZGRsZVBhZGRsZS9QYWRkbGVYL2Jsb2IvZGV2ZWxvcC9kb2NzL1Jlc2Z1bF9BUEkvZG9jcy9yZWFkbWUubWQ=">详细说明<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>PaddlePaddle</tag>
+        <tag>PaddleX</tag>
+        <tag>VC</tag>
+        <tag>ML</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -669,87 +796,17 @@ context<span class="token punctuation">.</span>Response<span class="token punctu
       </tags>
   </entry>
   <entry>
-    <title>Linux 常用命令</title>
-    <url>/Linux/LinuxShell/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Linux 常用命令</p>
+    <title>MacM1 配置 Python 环境</title>
+    <url>/Python/MacM1Python/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>MacM1 部署 Python 环境后，大多数 AI 框架支持总是出问题，这里分享下自己的经验。</p>
 <span id="more"></span>
 
-<h3 id="环境查看"><a href="#环境查看" class="headerlink" title="环境查看"></a>环境查看</h3><ul>
-<li>操作系统和位数信息<br><code>uname -m &amp;&amp; cat /etc/*release</code></li>
-<li>处理器<br><code>arch</code></li>
-<li>系统内核<br><code>uname -a</code></li>
-<li>系统版本<br><code>cat /etc/lsb-release</code></li>
-<li>已加载的文件系统<br><code>cat /proc/mounts</code></li>
-<li>PCI 设备<br><code>ls pci -tv</code></li>
-<li>USB 设备<br><code>ls usb -tv</code></li>
-</ul>
-<h3 id="后台进程命令"><a href="#后台进程命令" class="headerlink" title="后台进程命令"></a>后台进程命令</h3><ol>
-<li>运行后台进程<br>  <code>sudo nohup [commandName] [&gt; logFile] [2&gt;&amp;1] [&amp;]</code></li>
-</ol>
-<blockquote>
-<ul>
-<li>commandName 命令名称</li>
-<li>&gt; logFile 输出日志</li>
-<li>2&gt;&amp;1 错误日志重定向到输出日志</li>
-<li>&amp; 后台运行进程</li>
-</ul>
-</blockquote>
-<h3 id="查看进程命令"><a href="#查看进程命令" class="headerlink" title="查看进程命令"></a>查看进程命令</h3><ol>
-<li>根据名称查看<br>  <code>sudo ps -fe | grep [commandName]</code></li>
-</ol>
-<h3 id="结束进程命令"><a href="#结束进程命令" class="headerlink" title="结束进程命令"></a>结束进程命令</h3><ol>
-<li>查看端口被哪个程序占用<br>  <code>sudo lsof -i tcp:port</code></li>
-<li>看到进程的 PID，可以将进程杀死。<br>  <code>sudo kill -9 PID</code></li>
-</ol>
-<h3 id="硬件挂载"><a href="#硬件挂载" class="headerlink" title="硬件挂载"></a>硬件挂载</h3><ol>
-<li>挂载<br>  <code>sudo mount /dev/[deviceName] [Path(一艘为/mnt/[deviceName])]</code></li>
-<li>看到进程的 PID，可以将进程杀死。<br>  <code>sudo umount [Path]</code></li>
-</ol>
-<h3 id="DNS管理"><a href="#DNS管理" class="headerlink" title="DNS管理"></a>DNS管理</h3><ol>
-<li>编辑&#x2F;etc&#x2F;resolv.conf文件</li>
-</ol>
-<blockquote>
-<p>在文件中添加以下行：<br>nameserver [dnsHost]</p>
-<p>请注意，如果您的系统使用resolvconf或其他网络管理服务，您可能需要按照该服务的规范来添加DNS服务器，以确保更改在系统重启后持久生效。在某些系统中，&#x2F;etc&#x2F;resolv.conf文件可能是一个符号链接，指向&#x2F;etc&#x2F;resolvconf&#x2F;resolv.conf.d&#x2F;head或其他位置，您可能需要编辑相应的文件。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Shell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac 安装 PaddleX</title>
-    <url>/Paddlex/Install/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>飞桨全流程开发工具，集飞桨核心框架、模型库、工具及组件等深度学习开发所需全部能力于一身，打通深度学习开发全流程。PaddleX 同时提供简明易懂的 Python API，及一键下载安装的图形化开发客户端。用户可根据实际生产需求选择相应的开发方式，获得飞桨全流程开发的最佳体验。</p>
-<span id="more"></span>
-
-<h2 id="API-方式"><a href="#API-方式" class="headerlink" title="API 方式"></a>API 方式</h2><p>推荐大家先安装 Anacaonda，而后在新建的 conda 环境中安装，以避免卸载时的麻烦。</p>
+<h2 id="安装-Anaconda"><a href="#安装-Anaconda" class="headerlink" title="安装 Anaconda"></a>安装 Anaconda</h2><p>推荐大家先安装 Anacaonda，而后在新建的 conda 环境中安装，以避免卸载时的麻烦。</p>
 <blockquote>
 <p>Anaconda 是一个开源的 Python 发行版本，其包含了 conda、Python 等 180 多个科学包及其依赖项。<br>使用 Anaconda 可以通过创建多个独立的 Python 环境，避免用户的 Python 环境安装太多不同版本依赖导致冲突。</p>
 </blockquote>
-<ol>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYW5hY29uZGEuY29tL3Byb2R1Y3RzL2luZGl2aWR1YWw=">Anaconda 下载<i class="fa fa-external-link-alt"></i></span><blockquote>
-<p>选择 64-Bit Graphical Installer 下载</p>
-</blockquote>
-</li>
-<li>创建 Python 环境<blockquote>
-<p>conda create -n [paddlexName] python&#x3D;[version]<br>注：<em>M1 版本 CPU 选择 3.8，Intel 建议选择 Python3</em></p>
-</blockquote>
-</li>
-<li>进入 Python 环境，部署依赖库<blockquote>
-<p>conda activate [paddlexName]<br>pip install cython<br>pip install pycocotools</p>
-</blockquote>
-</li>
-<li>安装 PaddlePaddle 与 PaddleX<blockquote>
-<p>pip install paddlepaddle 或 paddlepaddle-gpu<br>pip install paddlex</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="架构不匹配可按如下方式创建环境"><a href="#架构不匹配可按如下方式创建环境" class="headerlink" title="架构不匹配可按如下方式创建环境"></a>架构不匹配可按如下方式创建环境</h3><pre class="line-numbers language-console" data-language="console"><code class="language-console"># 创建一个可以安装 x64 包的虚拟环境
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYW5hY29uZGEuY29tL3Byb2R1Y3RzL2luZGl2aWR1YWw=">选择 64-Bit Graphical Installer 下载<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="处理架构不匹配问题"><a href="#处理架构不匹配问题" class="headerlink" title="处理架构不匹配问题"></a>处理架构不匹配问题</h2><pre class="line-numbers language-console" data-language="console"><code class="language-console"># 创建一个可以安装 x64 包的虚拟环境
 CONDA_SUBDIR&#x3D;osx-64 conda create -n [paddlexName] python&#x3D;[version]
 
 # 激活该环境
@@ -771,28 +828,61 @@ conda activate [paddlexName]
 echo &quot;CONDA_SUBDIR: $CONDA_SUBDIR&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>安装完成后可进入 Python 进行测试</p>
-<h2 id="GUI-方式"><a href="#GUI-方式" class="headerlink" title="GUI 方式"></a>GUI 方式</h2><ol>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cucGFkZGxlcGFkZGxlLm9yZy5jbi9wYWRkbGV4L2Rvd25sb2Fk">PaddleX GUI 下载<i class="fa fa-external-link-alt"></i></span></li>
-<li>解压后，修改文件夹名称为：[可执行文件名称].app</li>
-<li>拷贝到应用程序目录下，安装完毕</li>
-</ol>
-<blockquote>
-<p>也可按文件夹中提示方式直接使用</p>
-</blockquote>
-<h2 id="Restful-方式"><a href="#Restful-方式" class="headerlink" title="Restful 方式"></a>Restful 方式</h2><p><span class="exturl" data-url="aHR0cHM6Ly9iai5iY2Vib3MuY29tL3BhZGRsZXgvUGFkZGxlWF9SZW1vdGVfR1VJL21hYy9QYWRkbGVYX1JlbW90ZV9HVUkuemlw">Mac 版下载地址<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9iai5iY2Vib3MuY29tL3BhZGRsZXgvUGFkZGxlWF9SZW1vdGVfR1VJL3dpbmRvd3MvUGFkZGxlWF9SZW1vdGVfR1VJLnppcA==">Win 版下载地址<i class="fa fa-external-link-alt"></i></span></p>
-<blockquote>
-<p>下载后解压按说明文件操作即可<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1BhZGRsZVBhZGRsZS9QYWRkbGVYL2Jsb2IvZGV2ZWxvcC9kb2NzL1Jlc2Z1bF9BUEkvZG9jcy9yZWFkbWUubWQ=">详细说明<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>经验随笔</category>
       </categories>
       <tags>
-        <tag>PaddlePaddle</tag>
-        <tag>PaddleX</tag>
-        <tag>VC</tag>
-        <tag>ML</tag>
         <tag>Python</tag>
+        <tag>Mac M1</tag>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Psycopg</title>
+    <url>/Python/Psycopg/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Psycopg 3是一个新设计的PostgreSQL数据库适配器，用于Python编程语言。</p>
+<span id="more"></span>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
+<p>pip &gt; 20.3<br>python &gt; 3.6<br>PostgreSQL &gt; 10</p>
+</blockquote>
+<pre class="line-numbers language-console" data-language="console"><code class="language-console">pip install psycopg
+pip install psycopg_binary<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> psycopg
+
+conn <span class="token operator">=</span> psycopg<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">"dbname=&lt;dbname> user=&lt;username> password=&lt;password>"</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">with</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> cur<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> record <span class="token keyword">in</span> cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT * FROM test"</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> record <span class="token keyword">in</span> cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT now()"</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
+
+    <span class="token keyword">with</span> conn<span class="token punctuation">.</span>transaction<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> record <span class="token keyword">in</span> conn<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT * FROM test"</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> record <span class="token keyword">in</span> conn<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT now()"</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span>conn<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT (%s %% 2) = 1 AS even"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">except</span> BaseException<span class="token punctuation">:</span>
+    conn<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>经验随笔</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PostgreSQL</tag>
+        <tag>Psycopg</tag>
       </tags>
   </entry>
   <entry>
@@ -819,7 +909,7 @@ echo &quot;CONDA_SUBDIR: $CONDA_SUBDIR&quot;<span aria-hidden="true" class="line
 <h3 id="转换出的坐标"><a href="#转换出的坐标" class="headerlink" title="转换出的坐标"></a>转换出的坐标</h3><p>分隔符：<input value="," onchange="newSplitChange(this)" /></p>
 <textarea id="new_value" style="width:100%;height: 200px"></textarea>
 
-<script src="/utils/coordtransform.js"></script>
+<script src="/Utils/Coordtransform.js"></script>
 <script>
   var old_split = ',', new_split = ',';
   function oldSplitChange(obj){
@@ -1107,96 +1197,6 @@ serialPort<span class="token punctuation">.</span>DataReceived <span class="toke
       <tags>
         <tag>Port</tag>
         <tag>Serial</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MacM1 配置 Python 环境</title>
-    <url>/Python/MacM1Python/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>MacM1 部署 Python 环境后，大多数 AI 框架支持总是出问题，这里分享下自己的经验。</p>
-<span id="more"></span>
-
-<h2 id="安装-Anaconda"><a href="#安装-Anaconda" class="headerlink" title="安装 Anaconda"></a>安装 Anaconda</h2><p>推荐大家先安装 Anacaonda，而后在新建的 conda 环境中安装，以避免卸载时的麻烦。</p>
-<blockquote>
-<p>Anaconda 是一个开源的 Python 发行版本，其包含了 conda、Python 等 180 多个科学包及其依赖项。<br>使用 Anaconda 可以通过创建多个独立的 Python 环境，避免用户的 Python 环境安装太多不同版本依赖导致冲突。</p>
-</blockquote>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYW5hY29uZGEuY29tL3Byb2R1Y3RzL2luZGl2aWR1YWw=">选择 64-Bit Graphical Installer 下载<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="处理架构不匹配问题"><a href="#处理架构不匹配问题" class="headerlink" title="处理架构不匹配问题"></a>处理架构不匹配问题</h2><pre class="line-numbers language-console" data-language="console"><code class="language-console"># 创建一个可以安装 x64 包的虚拟环境
-CONDA_SUBDIR&#x3D;osx-64 conda create -n [paddlexName] python&#x3D;[version]
-
-# 激活该环境
-conda activate [paddlexName]
-
-# 验证该环境支持平台
-python -c &quot;import platform;print(platform.machine())&quot;
-
-# 确保该环境为创建的包为 x64 架构所用
-conda env config vars set CONDA_SUBDIR&#x3D;osx-64
-
-# 退出该环境
-conda deactivate
-
-# 重新激活该环境
-conda activate [paddlexName]
-
-# 查看环境变量，确定是osx-64
-echo &quot;CONDA_SUBDIR: $CONDA_SUBDIR&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>安装完成后可进入 Python 进行测试</p>
-]]></content>
-      <categories>
-        <category>经验随笔</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Mac M1</tag>
-        <tag>Anaconda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Psycopg</title>
-    <url>/Python/Psycopg/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Psycopg 3是一个新设计的PostgreSQL数据库适配器，用于Python编程语言。</p>
-<span id="more"></span>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
-<p>pip &gt; 20.3<br>python &gt; 3.6<br>PostgreSQL &gt; 10</p>
-</blockquote>
-<pre class="line-numbers language-console" data-language="console"><code class="language-console">pip install psycopg
-pip install psycopg_binary<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> psycopg
-
-conn <span class="token operator">=</span> psycopg<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">"dbname=&lt;dbname> user=&lt;username> password=&lt;password>"</span><span class="token punctuation">)</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span>
-
-    <span class="token keyword">with</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> cur<span class="token punctuation">:</span>
-        <span class="token keyword">for</span> record <span class="token keyword">in</span> cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT * FROM test"</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> record <span class="token keyword">in</span> cur<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT now()"</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
-
-    <span class="token keyword">with</span> conn<span class="token punctuation">.</span>transaction<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">for</span> record <span class="token keyword">in</span> conn<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT * FROM test"</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> record <span class="token keyword">in</span> conn<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT now()"</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
-
-    <span class="token keyword">print</span><span class="token punctuation">(</span>conn<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT (%s %% 2) = 1 AS even"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span> binary<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token keyword">except</span> BaseException<span class="token punctuation">:</span>
-    conn<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-    conn<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">finally</span><span class="token punctuation">:</span>
-    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>经验随笔</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>PostgreSQL</tag>
-        <tag>Psycopg</tag>
       </tags>
   </entry>
   <entry>
@@ -2317,6 +2317,103 @@ cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation
       </tags>
   </entry>
   <entry>
+    <title>Xamarin.Forms 创建移动应用程序的基础知识 10 - 应用程序的生命周期</title>
+    <url>/Xamarin/Forms/10_LifeCycle/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>演示应用程序的生命周期事件与各事件之间的数据处理。</p>
+<ol>
+<li>生命周期事件。</li>
+<li>生命周期数据处理。</li>
+</ol>
+<span id="more"></span>
+
+<h2 id="生命周期事件"><a href="#生命周期事件" class="headerlink" title="生命周期事件"></a>生命周期事件</h2><ol>
+<li>打开已有项目 AwesomeApp。</li>
+<li>编辑 App.xaml.cs：</li>
+</ol>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnStart"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnSleep"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnResume"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>调试界面：<blockquote>
+<p>应用程序起动时触发<br><img data-src="https://img-blog.csdnimg.cn/20200309114151711.png" alt="Onstart"></p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>应用程序切换到后台时触发<br><img data-src="https://img-blog.csdnimg.cn/20200309114647300.png" alt="OnSleep"></p>
+</blockquote>
+<blockquote>
+<p>当前活动应用程序切换回本程序时触发<img data-src="https://img-blog.csdnimg.cn/20200309115207278.png" alt="OnResume"></p>
+</blockquote>
+<h2 id="生命周期数据处理"><a href="#生命周期数据处理" class="headerlink" title="生命周期数据处理"></a>生命周期数据处理</h2><ol>
+<li>编辑 App.xaml.cs：</li>
+</ol>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">const</span> <span class="token class-name"><span class="token keyword">string</span></span> displayText <span class="token operator">=</span> <span class="token string">"displayText"</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> DisplayText <span class="token punctuation">&#123;</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+……
+<span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnStart"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>Properties<span class="token punctuation">.</span><span class="token function">ContainsKey</span><span class="token punctuation">(</span>displayText<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		DisplayText <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">)</span>Properties<span class="token punctuation">[</span>displayText<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnSleep"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	Properties<span class="token punctuation">[</span>displayText<span class="token punctuation">]</span> <span class="token operator">=</span> DisplayText<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>编辑 MainPage.xaml：</li>
+</ol>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Entry</span> <span class="token attr-name"><span class="token namespace">x:</span>Name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>entEvent<span class="token punctuation">"</span></span>
+	   <span class="token attr-name">Placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>这里显示生命周期内容<span class="token punctuation">"</span></span>
+	   <span class="token attr-name">Completed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>entEvent_Completed<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>编辑 MainPage.xaml.cs：</li>
+</ol>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnAppearing</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	<span class="token keyword">base</span><span class="token punctuation">.</span><span class="token function">OnAppearing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	entEvent<span class="token punctuation">.</span>Text <span class="token operator">=</span> <span class="token punctuation">(</span>Application<span class="token punctuation">.</span>Current <span class="token keyword">as</span> <span class="token class-name">App</span><span class="token punctuation">)</span><span class="token punctuation">.</span>DisplayText<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">entEvent_Completed</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	<span class="token punctuation">(</span>Application<span class="token punctuation">.</span>Current <span class="token keyword">as</span> <span class="token class-name">App</span><span class="token punctuation">)</span><span class="token punctuation">.</span>DisplayText <span class="token operator">=</span> <span class="token punctuation">(</span>sender <span class="token keyword">as</span> <span class="token class-name">Entry</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>调试界面：<blockquote>
+<p>无输入内容、APP 永久属性字典中不包含 displayText 或 displayText 无值时显示<br><img data-src="https://img-blog.csdnimg.cn/20200309121724339.png"></p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>应用程序切换时 APP 永久属性字典包含 displayText 并 displayText 有值时显示<br><img data-src="https://img-blog.csdnimg.cn/20200309124017490.png"></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>.NetCore</tag>
+        <tag>Xamarin</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Xamarin.Forms 创建移动应用程序的基础知识 11 - SQLite数据库</title>
     <url>/Xamarin/Forms/11_Sqlite/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>演示 SQLite 数据库访问与数据操作。</p>
@@ -2693,103 +2790,6 @@ cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation
 <ol start="7">
 <li>调试界面：<br><img data-src="https://img-blog.csdnimg.cn/20200309171537312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ1NjQyMQ==,size_16,color_FFFFFF,t_70"><br><img data-src="https://img-blog.csdnimg.cn/20200309171553783.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ1NjQyMQ==,size_16,color_FFFFFF,t_70"><br><img data-src="https://img-blog.csdnimg.cn/20200309171638665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ1NjQyMQ==,size_16,color_FFFFFF,t_70"><br><img data-src="https://img-blog.csdnimg.cn/20200309171656902.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ1NjQyMQ==,size_16,color_FFFFFF,t_70"><br><img data-src="https://img-blog.csdnimg.cn/20200309171711780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ1NjQyMQ==,size_16,color_FFFFFF,t_70"></li>
 </ol>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>.NetCore</tag>
-        <tag>Xamarin</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Xamarin.Forms 创建移动应用程序的基础知识 10 - 应用程序的生命周期</title>
-    <url>/Xamarin/Forms/10_LifeCycle/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>演示应用程序的生命周期事件与各事件之间的数据处理。</p>
-<ol>
-<li>生命周期事件。</li>
-<li>生命周期数据处理。</li>
-</ol>
-<span id="more"></span>
-
-<h2 id="生命周期事件"><a href="#生命周期事件" class="headerlink" title="生命周期事件"></a>生命周期事件</h2><ol>
-<li>打开已有项目 AwesomeApp。</li>
-<li>编辑 App.xaml.cs：</li>
-</ol>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnStart"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnSleep"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnResume"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol start="3">
-<li>调试界面：<blockquote>
-<p>应用程序起动时触发<br><img data-src="https://img-blog.csdnimg.cn/20200309114151711.png" alt="Onstart"></p>
-</blockquote>
-</li>
-</ol>
-<blockquote>
-<p>应用程序切换到后台时触发<br><img data-src="https://img-blog.csdnimg.cn/20200309114647300.png" alt="OnSleep"></p>
-</blockquote>
-<blockquote>
-<p>当前活动应用程序切换回本程序时触发<img data-src="https://img-blog.csdnimg.cn/20200309115207278.png" alt="OnResume"></p>
-</blockquote>
-<h2 id="生命周期数据处理"><a href="#生命周期数据处理" class="headerlink" title="生命周期数据处理"></a>生命周期数据处理</h2><ol>
-<li>编辑 App.xaml.cs：</li>
-</ol>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">const</span> <span class="token class-name"><span class="token keyword">string</span></span> displayText <span class="token operator">=</span> <span class="token string">"displayText"</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> DisplayText <span class="token punctuation">&#123;</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
-……
-<span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnStart"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span> <span class="token punctuation">(</span>Properties<span class="token punctuation">.</span><span class="token function">ContainsKey</span><span class="token punctuation">(</span>displayText<span class="token punctuation">)</span><span class="token punctuation">)</span>
-	<span class="token punctuation">&#123;</span>
-		DisplayText <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">string</span><span class="token punctuation">)</span>Properties<span class="token punctuation">[</span>displayText<span class="token punctuation">]</span><span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"OnSleep"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	Properties<span class="token punctuation">[</span>displayText<span class="token punctuation">]</span> <span class="token operator">=</span> DisplayText<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol start="2">
-<li>编辑 MainPage.xaml：</li>
-</ol>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Entry</span> <span class="token attr-name"><span class="token namespace">x:</span>Name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>entEvent<span class="token punctuation">"</span></span>
-	   <span class="token attr-name">Placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>这里显示生命周期内容<span class="token punctuation">"</span></span>
-	   <span class="token attr-name">Completed</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>entEvent_Completed<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="3">
-<li>编辑 MainPage.xaml.cs：</li>
-</ol>
-<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">protected</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">OnAppearing</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	<span class="token keyword">base</span><span class="token punctuation">.</span><span class="token function">OnAppearing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	entEvent<span class="token punctuation">.</span>Text <span class="token operator">=</span> <span class="token punctuation">(</span>Application<span class="token punctuation">.</span>Current <span class="token keyword">as</span> <span class="token class-name">App</span><span class="token punctuation">)</span><span class="token punctuation">.</span>DisplayText<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">private</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">entEvent_Completed</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">object</span></span> sender<span class="token punctuation">,</span> <span class="token class-name">EventArgs</span> e<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	<span class="token punctuation">(</span>Application<span class="token punctuation">.</span>Current <span class="token keyword">as</span> <span class="token class-name">App</span><span class="token punctuation">)</span><span class="token punctuation">.</span>DisplayText <span class="token operator">=</span> <span class="token punctuation">(</span>sender <span class="token keyword">as</span> <span class="token class-name">Entry</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Text<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol start="4">
-<li>调试界面：<blockquote>
-<p>无输入内容、APP 永久属性字典中不包含 displayText 或 displayText 无值时显示<br><img data-src="https://img-blog.csdnimg.cn/20200309121724339.png"></p>
-</blockquote>
-</li>
-</ol>
-<blockquote>
-<p>应用程序切换时 APP 永久属性字典包含 displayText 并 displayText 有值时显示<br><img data-src="https://img-blog.csdnimg.cn/20200309124017490.png"></p>
-</blockquote>
 ]]></content>
       <categories>
         <category>学习笔记</category>
