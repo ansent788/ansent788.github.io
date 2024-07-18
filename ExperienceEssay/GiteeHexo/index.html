@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <meta name="baidu-site-verification" content="code-jzYjZNIgkV">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/@fancyapps/fancybox/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ansent788.gitee.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#007acc","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="简介以前都是在本地生成静态站点，然后提交到代码库再更新 Blog，很不方便。最近看到 Gitee 支持 Hexo 在线生成，于是全部上传到了代码库中，这下可以随时随地记录了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac + Hexo + Gitee Pages 搭建在线自生成静态Blog">
+<meta property="og:url" content="https://ansent788.gitee.io/ExperienceEssay/GiteeHexo/index.html">
+<meta property="og:site_name" content="鼠标与键盘的故事">
+<meta property="og:description" content="简介以前都是在本地生成静态站点，然后提交到代码库再更新 Blog，很不方便。最近看到 Gitee 支持 Hexo 在线生成，于是全部上传到了代码库中，这下可以随时随地记录了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-31T09:20:46.000Z">
+<meta property="article:modified_time" content="2024-07-18T05:37:55.737Z">
+<meta property="article:author" content="Paul.DX">
+<meta property="article:tag" content="Mac">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Gitee Pages">
+<meta property="article:tag" content="Blog">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ansent788.gitee.io/ExperienceEssay/GiteeHexo/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ansent788.gitee.io/ExperienceEssay/GiteeHexo/","path":"ExperienceEssay/GiteeHexo/","title":"Mac + Hexo + Gitee Pages 搭建在线自生成静态Blog"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Mac + Hexo + Gitee Pages 搭建在线自生成静态Blog | 鼠标与键盘的故事</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">鼠标与键盘的故事</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Paul.DX</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-number">3.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%8A%9F%E5%91%8A%E6%88%90"><span class="nav-number">3.1.</span> <span class="nav-text">大功告成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0"><span class="nav-number">5.</span> <span class="nav-text">添加文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C"><span class="nav-number">7.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99"><span class="nav-number">8.</span> <span class="nav-text">部署网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E6%96%87%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">渲染文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E5%85%B6%E4%BB%96%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F-%E8%BF%81%E7%A7%BB%E5%86%85%E5%AE%B9"><span class="nav-number">10.</span> <span class="nav-text">从其他博客系统 迁移内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98"><span class="nav-number">11.</span> <span class="nav-text">清除缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E7%BD%91%E7%AB%99%E8%B5%84%E6%96%99"><span class="nav-number">12.</span> <span class="nav-text">列出网站资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA-Hexo-%E7%89%88%E6%9C%AC"><span class="nav-number">13.</span> <span class="nav-text">显示 Hexo 版本</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Paul.DX"
+      src="/images/custom-logo.png">
+  <p class="site-author-name" itemprop="name">Paul.DX</p>
+  <div class="site-description" itemprop="description">鼠标与键盘的故事(Paul.DX)，记录：C#、.Net、.NetCore、.AspNetCore、Xamarin、AI、OpenCV，等学习笔记</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <button><i class="fa fa-comment"></i>
+      Chat
+    </button>
+  </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vYW5zZW50Nzg4L2Fuc2VudDc4OA==" title="GitHub → https:&#x2F;&#x2F;gitee.com&#x2F;ansent788&#x2F;ansent788"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmFuc2VudDc4OEAxNjMuY29t" title="E-Mail → mailto:ansent788@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.gitee.io/ExperienceEssay/GiteeHexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.png">
+      <meta itemprop="name" content="Paul.DX">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠标与键盘的故事">
+      <meta itemprop="description" content="鼠标与键盘的故事(Paul.DX)，记录：C#、.Net、.NetCore、.AspNetCore、Xamarin、AI、OpenCV，等学习笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Mac + Hexo + Gitee Pages 搭建在线自生成静态Blog | 鼠标与键盘的故事">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mac + Hexo + Gitee Pages 搭建在线自生成静态Blog
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-31 17:20:46" itemprop="dateCreated datePublished" datetime="2021-08-31T17:20:46+08:00">2021-08-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-07-18 13:37:55" itemprop="dateModified" datetime="2024-07-18T13:37:55+08:00">2024-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BB%8F%E9%AA%8C%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">经验随笔</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>以前都是在本地生成静态站点，然后提交到代码库再更新 Blog，很不方便。最近看到 Gitee 支持 Hexo 在线生成，于是全部上传到了代码库中，这下可以随时随地记录了。</p>
+<span id="more"></span>
+
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ol>
+<li>git <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">https://git-scm.com<i class="fa fa-external-link-alt"></i></span></li>
+<li>node.js <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL3poLWNu">https://nodejs.org/zh-cn<i class="fa fa-external-link-alt"></i></span></li>
+<li>hexo <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3M=">https://hexo.io/zh-cn/docs<i class="fa fa-external-link-alt"></i></span></li>
+</ol>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>具体过程与部署步骤就不在这里说了，hexo 站点中很详细，这里主要说怎么部署到 Gitee</p>
+<ol>
+<li><p>按 hexo 文档本地部署并配置好项目，测试正常</p>
+</li>
+<li><p>将自己的主题配置文件复制到 Blog 项目根目录</p>
+<blockquote>
+<p>修改文件名为: _config.[theme].yml (<em>theme:主题文件夹名，一般是主题名称</em>)</p>
+</blockquote>
+</li>
+<li><p>将自己的个性化静态文件复制到 source 目录下</p>
+<blockquote>
+<p>如我个性化了部分主题中的图片，于是将这些图片放到了 source 下的 images，在 config 中 使用路径为: &#x2F;images&#x2F;[imageName]</p>
+</blockquote>
+</li>
+<li><p>上传代码到 Gitee</p>
+<blockquote>
+<p>配置文件和包文件<br>_config.yml、_comfig.[theme].yml、package.json<br>及文件夹<br>scaffolds、source、themes</p>
+</blockquote>
+</li>
+<li><p>添加 Blog 文章</p>
+</li>
+<li><p>进入代码库 -&gt; 服务 -&gt; Pages，点击更新</p>
+</li>
+</ol>
+<h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>🎉 现在可以随时在 Gitee 中的 WebIDE 编写文章了！脱离了本地环境的限制，感觉自由 🆓 原来是这么的美好！</p>
+<blockquote>
+<p><strong>记得要更新 Blog 内容时去 Pages 再次点击更新哦！</strong></p>
+</blockquote>
+<hr>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo init [folder]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="添加文章"><a href="#添加文章" class="headerlink" title="添加文章"></a>添加文章</h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo new [post] &lt;title&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-p, –path</td>
+<td align="left">自定义新文章的路径</td>
+</tr>
+<tr>
+<td align="left">-r, –replace</td>
+<td align="left">如果存在同名文章，将其替换</td>
+</tr>
+<tr>
+<td align="left">-s, –slug</td>
+<td align="left">文章的 Slug，作为新文章的文件名和发布后的 URL</td>
+</tr>
+</tbody></table>
+<h2 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo g | generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-d, –deploy</td>
+<td align="left">文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td align="left">-w, –watch</td>
+<td align="left">监视文件变动</td>
+</tr>
+<tr>
+<td align="left">-b, –bail</td>
+<td align="left">生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td align="left">-f, –force</td>
+<td align="left">强制重新生成文件</br>Hexo 引入了差分机制，如果 public 目录存在，那么 hexo g 只会重新生成改动的文件。</br>使用该参数的效果接近 hexo clean &amp;&amp; hexo generate</td>
+</tr>
+<tr>
+<td align="left">-c, –concurrency</td>
+<td align="left">最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-p, –port</td>
+<td align="left">重设端口</td>
+</tr>
+<tr>
+<td align="left">-s, –static</td>
+<td align="left">只使用静态文件</td>
+</tr>
+<tr>
+<td align="left">-l, –log</td>
+<td align="left">启动日记记录，使用覆盖记录格式</td>
+</tr>
+</tbody></table>
+<h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo d | deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-g, –generate</td>
+<td align="left">部署之前预先生成静态文件</td>
+</tr>
+</tbody></table>
+<h2 id="渲染文件"><a href="#渲染文件" class="headerlink" title="渲染文件"></a>渲染文件</h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo render &lt;file1&gt; [file2] ...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-o, –output</td>
+<td align="left">设置输出路径</td>
+</tr>
+</tbody></table>
+<h2 id="从其他博客系统-迁移内容"><a href="#从其他博客系统-迁移内容" class="headerlink" title="从其他博客系统 迁移内容"></a>从其他博客系统 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvbWlncmF0aW9u">迁移内容<i class="fa fa-external-link-alt"></i></span></h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo migrate &lt;file1&gt; [file2] ...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="列出网站资料"><a href="#列出网站资料" class="headerlink" title="列出网站资料"></a>列出网站资料</h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo list &lt;type&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="显示-Hexo-版本"><a href="#显示-Hexo-版本" class="headerlink" title="显示 Hexo 版本"></a>显示 Hexo 版本</h2><pre class="line-numbers language-base" data-language="base"><code class="language-base">[npx] hexo version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Paul.DX 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="Paul.DX 支付宝">
+        <span>支付宝</span>
+      </div>
+      <div>
+        <img src="/images/paypal.png" alt="Paul.DX PayPal">
+        <span>PayPal</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Mac/" rel="tag"><i class="fa fa-tag"></i> Mac</a>
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/Gitee-Pages/" rel="tag"><i class="fa fa-tag"></i> Gitee Pages</a>
+              <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Linux/LinuxShell/" rel="prev" title="Linux 常用命令">
+                  <i class="fa fa-chevron-left"></i> Linux 常用命令
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Paddlex/Install/" rel="next" title="Mac 安装 PaddleX">
+                  Mac 安装 PaddleX <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-brain"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Paul.DX</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/@next-theme/pjax/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="/lib/jquery/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/lib/@fancyapps/fancybox/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/pangu/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="/lib/hexo-generator-searchdb/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"imT8iiXTN4ucSguh6"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-hlC2uSQYTmPsrzGZTEQEg9PZ1a/+SV6VBCTclohf2og="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
