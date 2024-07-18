@@ -21,7 +21,21 @@ Git 命令行总结
   git init
   ```
 
-### 3. config 配置
+### 3. clone 初始化
+
+- 默认克隆主分支
+
+  ```bash
+  git clone 远程仓库地址
+  ```
+
+- 指定clone某个分支
+
+  ```bash
+  git clone -b 远程分支名 远程仓库地址
+  ```
+
+### 4. config 配置
 
 - 查看配置
 
@@ -59,7 +73,7 @@ Git 命令行总结
   git config --local --list｜-l
   ```
 
-### 4. add 添加
+### 5. add 添加
 
 - 添加所有新文件
 
@@ -67,7 +81,7 @@ Git 命令行总结
   git add .
   ```
 
-### 5. commit 更改
+### 6. commit 更改
 
 - 带注释添加更改
 
@@ -81,7 +95,7 @@ Git 命令行总结
   git commit --amend
   ```
 
-### 6. remote 跟踪
+### 7. remote 跟踪
 
 - 跟踪远程分支到指定分支
 
@@ -107,7 +121,7 @@ Git 命令行总结
   git remote prune origin
   ```
 
-### 7. pull 拉取
+### 8. pull 拉取
 
 - 远程分支拉取 - 不变基
 
@@ -127,7 +141,7 @@ Git 命令行总结
   git pull origin master --allow-unrelated-histories
   ```
 
-### 8. push 推送
+### 9. push 推送
 
 - 推送到指定的远程分支
 
@@ -147,7 +161,7 @@ Git 命令行总结
   git push --set-upstream origin [branchName]
   ```
 
-### 9. reset 重置
+### 10. reset 重置
 
 - 重置当前最后一次更改
 
@@ -155,7 +169,7 @@ Git 命令行总结
   git reset --soft HEAD^
   ```
 
-### 10. cherry-pick 应用更改
+### 11. cherry-pick 应用更改
 
 - 应用指定更改到当前分支
 
@@ -189,7 +203,7 @@ Git 命令行总结
 
 -
 
-### 11. stash 储藏
+### 12. stash 储藏
 
 - 储藏当前更改
 
@@ -203,7 +217,13 @@ Git 命令行总结
   git stash pop
   ```
 
-### 12. branch 分支
+### 13. branch 分支
+
+- 查看当前远端分支情况
+
+  ```bash
+  git branch -a
+  ```
 
 - 查看分支
 
@@ -253,7 +273,7 @@ Git 命令行总结
   git branch -u origin/[branchName] [branchName]
   ```
 
-### 13. checkout 检出
+### 14. checkout 检出
 
 - 撤消当前分支所有修改
 
@@ -279,7 +299,7 @@ Git 命令行总结
   git checkout -b [branchName] -t origin/[branchName]
   ```
 
-### 14. rebase 变基
+### 15. rebase 变基
 
 - no branch, rebasing master （当前无分支，可变基到master分支）
 
@@ -287,7 +307,7 @@ Git 命令行总结
   git rebase --continue
   ```
 
-### 15. reset 重置某次更改
+### 16. reset 重置某次更改
 
 - 回滚到某次更改
 
@@ -307,7 +327,7 @@ Git 命令行总结
   git reset --hard commit_id
   ```
 
-### 16. rebase 重新设置基准
+### 17. rebase 重新设置基准
 
 > 当两个分支不在一条线上，需要执行 merge 操作时使用该命令
 
@@ -331,7 +351,7 @@ Git 命令行总结
   git push
   ```
 
-### 17. revert 还原到更改
+### 18. revert 还原到更改
 
 - 之前的更改仍会保留在 git log 中，而此次还原会做为一次新的更改
 
@@ -352,7 +372,7 @@ Git 命令行总结
   git push
   ```
 
-### 18. merge 合并分支
+### 19. merge 合并分支
 
 - 合并分支到当前分支
 
@@ -362,7 +382,7 @@ Git 命令行总结
   git merge [branchName] // 合并为v祸从口出当前分支
   ```
 
-### 19. fetch 抓取
+### 20. fetch 抓取
 
 - 清除无效分支
 
