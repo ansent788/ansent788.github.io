@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <meta name="baidu-site-verification" content="code-jzYjZNIgkV">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/@fancyapps/ui/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ansent788.gitee.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#007acc","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="手部识别（Hands）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 媒体识别包 Mediapipe - 手（Hands）">
+<meta property="og:url" content="https://ansent788.gitee.io/Python/Mediapipe/Hands/index.html">
+<meta property="og:site_name" content="鼠标与键盘的故事">
+<meta property="og:description" content="手部识别（Hands）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-30T07:15:42.000Z">
+<meta property="article:modified_time" content="2024-07-18T05:37:55.741Z">
+<meta property="article:author" content="Paul.DX">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Mediapipe">
+<meta property="article:tag" content="OpenCV">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ansent788.gitee.io/Python/Mediapipe/Hands/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ansent788.gitee.io/Python/Mediapipe/Hands/","path":"Python/Mediapipe/Hands/","title":"Python 媒体识别包 Mediapipe - 手（Hands）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python 媒体识别包 Mediapipe - 手（Hands） | 鼠标与键盘的故事</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">鼠标与键盘的故事</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Paul.DX</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E9%83%A8%E8%AF%86%E5%88%AB%EF%BC%88Hands%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">手部识别（Hands）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">其它功能</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Paul.DX"
+      src="/images/custom-logo.png">
+  <p class="site-author-name" itemprop="name">Paul.DX</p>
+  <div class="site-description" itemprop="description">鼠标与键盘的故事(Paul.DX)，记录：C#、.Net、.NetCore、.AspNetCore、Xamarin、AI、OpenCV，等学习笔记</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button animated">
+    <button><i class="fa fa-comment"></i>
+      聊天
+    </button>
+  </div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Fuc2VudDc4OA==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ansent788"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmFuc2VudDc4OEAxNjMuY29t" title="E-Mail → mailto:ansent788@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ansent788.gitee.io/Python/Mediapipe/Hands/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/custom-logo.png">
+      <meta itemprop="name" content="Paul.DX">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠标与键盘的故事">
+      <meta itemprop="description" content="鼠标与键盘的故事(Paul.DX)，记录：C#、.Net、.NetCore、.AspNetCore、Xamarin、AI、OpenCV，等学习笔记">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Python 媒体识别包 Mediapipe - 手（Hands） | 鼠标与键盘的故事">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python 媒体识别包 Mediapipe - 手（Hands）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-30 15:15:42" itemprop="dateCreated datePublished" datetime="2021-09-30T15:15:42+08:00">2021-09-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-07-18 13:37:55" itemprop="dateModified" datetime="2024-07-18T13:37:55+08:00">2024-07-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="手部识别（Hands）"><a href="#手部识别（Hands）" class="headerlink" title="手部识别（Hands）"></a>手部识别（Hands）</h3><span id="more"></span>
+
+<ol>
+<li><p>编写手部识别类</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> typing
+<span class="token keyword">from</span> cv2 <span class="token keyword">import</span> COLOR_BGR2RGB<span class="token punctuation">,</span> FILLED<span class="token punctuation">,</span> circle<span class="token punctuation">,</span> cvtColor
+<span class="token keyword">from</span> mediapipe<span class="token punctuation">.</span>python<span class="token punctuation">.</span>solutions<span class="token punctuation">.</span>drawing_utils <span class="token keyword">import</span> draw_landmarks
+<span class="token keyword">from</span> mediapipe<span class="token punctuation">.</span>python<span class="token punctuation">.</span>solutions<span class="token punctuation">.</span>hands <span class="token keyword">import</span> HAND_CONNECTIONS<span class="token punctuation">,</span> Hands
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token keyword">class</span> <span class="token class-name">handDetector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> static_image_mode<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> max_num_hands<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> min_detection_confidence<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> min_tracking_confidence<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> typing<span class="token punctuation">.</span>Any<span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        处理 RGB 图像并返回每只检测到的手的手部标志和惯用性。
+
+        Args:
+            static_image_mode: 是否将输入图像视为一批静态且可能不相关的图像，或视频流。
+            max_num_hands: 要检测的最大手数。
+            min_detection_confidence: 手部检测成功的最小置信值 ([0.0, 1.0])。
+            min_tracking_confidence: 要被视为成功跟踪的手部标志的最小置信值 ([0.0, 1.0])。
+
+        Raises:
+            RuntimeError: 如果底层图形抛出任何错误。
+            ValueError: 如果输入图像不是三通道 RGB。
+        """</span>
+
+        self<span class="token punctuation">.</span>hands <span class="token operator">=</span> Hands<span class="token punctuation">(</span>
+            static_image_mode<span class="token punctuation">,</span>
+            max_num_hands<span class="token punctuation">,</span>
+            min_detection_confidence<span class="token punctuation">,</span>
+            min_tracking_confidence
+        <span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">drawHands</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> img<span class="token punctuation">:</span> np<span class="token punctuation">.</span>ndarray<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> typing<span class="token punctuation">.</span>Any<span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        返回手部骨骼识别后绘制图片
+
+        Args:
+            img: 表示为 numpy ndarray 的 RGB 图像。
+
+        Return:
+            绘制手部骨骼后的 numpy ndarray 的 RGB 图像
+        """</span>
+        results <span class="token operator">=</span> self<span class="token punctuation">.</span>findHands<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> results<span class="token punctuation">.</span>multi_handedness <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> handLms <span class="token keyword">in</span> results<span class="token punctuation">.</span>multi_hand_landmarks<span class="token punctuation">:</span>
+                draw_landmarks<span class="token punctuation">(</span>img<span class="token punctuation">,</span> handLms<span class="token punctuation">,</span> HAND_CONNECTIONS<span class="token punctuation">)</span>
+                <span class="token keyword">for</span> <span class="token builtin">id</span><span class="token punctuation">,</span> lm <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>handLms<span class="token punctuation">.</span>landmark<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    h<span class="token punctuation">,</span> w<span class="token punctuation">,</span> c <span class="token operator">=</span> img<span class="token punctuation">.</span>shape
+                    cx<span class="token punctuation">,</span> cy <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>lm<span class="token punctuation">.</span>x <span class="token operator">*</span> w<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>lm<span class="token punctuation">.</span>y <span class="token operator">*</span> h<span class="token punctuation">)</span>
+                    circle<span class="token punctuation">(</span>img<span class="token punctuation">,</span> <span class="token punctuation">(</span>cx<span class="token punctuation">,</span> cy<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> FILLED<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> img
+
+    <span class="token keyword">def</span> <span class="token function">findHands</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> img<span class="token punctuation">:</span> np<span class="token punctuation">.</span>ndarray<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> typing<span class="token punctuation">.</span>Any<span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        返回手部识别骨骼数据
+
+        Args:
+            img: 表示为 numpy ndarray 的 RGB 图像。
+
+        Return:
+            具有两个字段的 NamedTuple 对象：
+            “multi_hand_landmarks”字段包含检测到的每只手上的手部标志
+            “multi_handedness”字段包含检测到的手的惯用手（左手与右手）
+        """</span>
+        imgRGB <span class="token operator">=</span> cvtColor<span class="token punctuation">(</span>img<span class="token punctuation">,</span> COLOR_BGR2RGB<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>hands<span class="token punctuation">.</span>process<span class="token punctuation">(</span>imgRGB<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>识别视频中的手</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> time <span class="token keyword">import</span> time
+<span class="token keyword">from</span> Hands <span class="token keyword">import</span> handDetector
+<span class="token keyword">from</span> cv2 <span class="token keyword">import</span> FONT_HERSHEY_PLAIN<span class="token punctuation">,</span> VideoCapture<span class="token punctuation">,</span> imshow<span class="token punctuation">,</span> putText<span class="token punctuation">,</span> waitKey
+
+<span class="token comment"># 打开视频链接</span>
+cap <span class="token operator">=</span> VideoCapture<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 创建识别器，并开始识别</span>
+hands <span class="token operator">=</span> handDetector<span class="token punctuation">(</span>
+    static_image_mode<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
+    max_num_hands<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>
+    min_detection_confidence<span class="token operator">=</span><span class="token number">0.8</span><span class="token punctuation">,</span>
+    min_tracking_confidence<span class="token operator">=</span><span class="token number">0.8</span>
+<span class="token punctuation">)</span>
+start <span class="token operator">=</span> <span class="token number">0</span>
+end <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    start <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    success<span class="token punctuation">,</span> img <span class="token operator">=</span> cap<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> success<span class="token punctuation">:</span>
+        img <span class="token operator">=</span> hands<span class="token punctuation">.</span>drawHands<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
+        end <span class="token operator">=</span> time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        fps <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token punctuation">(</span>end <span class="token operator">-</span> start<span class="token punctuation">)</span>
+        putText<span class="token punctuation">(</span>img<span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f'FPS:</span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">int</span><span class="token punctuation">(</span>fps<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                FONT_HERSHEY_PLAIN<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+        imshow<span class="token punctuation">(</span><span class="token string">'hand'</span><span class="token punctuation">,</span> img<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+
+cap<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h3 id="其它功能"><a href="#其它功能" class="headerlink" title="其它功能"></a>其它功能</h3><ul>
+<li><a href="../Face/">人脸检测</a></li>
+<li><a href="../FaceMesh/">面网格</a></li>
+<li>手</li>
+<li><a href="../Holistic/">整体</a></li>
+<li><a href="../Objectron/">物体空间</a></li>
+<li><a href="../Pose/">姿势</a></li>
+<li><a href="../PoseClassification/">姿势分类</a></li>
+<li><a href="../SelfieSegmentation/">自拍分割</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Paul.DX 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="Paul.DX 支付宝">
+        <span>支付宝</span>
+      </div>
+      <div>
+        <img src="/images/paypal.png" alt="Paul.DX PayPal">
+        <span>PayPal</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+              <a href="/tags/Mediapipe/" rel="tag"><i class="fa fa-tag"></i> Mediapipe</a>
+              <a href="/tags/OpenCV/" rel="tag"><i class="fa fa-tag"></i> OpenCV</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Python/Mediapipe/FaceMesh/" rel="prev" title="Python 媒体识别包 Mediapipe - 面网格（FaceMesh）">
+                  <i class="fa fa-angle-left"></i> Python 媒体识别包 Mediapipe - 面网格（FaceMesh）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Python/Mediapipe/Holistic/" rel="next" title="Python 媒体识别包 Mediapipe - 整体（Holistic）">
+                  Python 媒体识别包 Mediapipe - 整体（Holistic） <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-brain"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Paul.DX</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/@next-theme/pjax/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="/lib/@fancyapps/ui/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/pangu/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="/lib/hexo-generator-searchdb/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"imT8iiXTN4ucSguh6"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
