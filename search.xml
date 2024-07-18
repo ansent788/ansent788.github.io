@@ -74,7 +74,14 @@
 <li><p>初始化Git代码仓库</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="3-config-配置"><a href="#3-config-配置" class="headerlink" title="3. config 配置"></a>3. config 配置</h3><ul>
+<h3 id="3-clone-初始化"><a href="#3-clone-初始化" class="headerlink" title="3. clone 初始化"></a>3. clone 初始化</h3><ul>
+<li><p>默认克隆主分支</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone 远程仓库地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>指定clone某个分支</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token parameter variable">-b</span> 远程分支名 远程仓库地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h3 id="4-config-配置"><a href="#4-config-配置" class="headerlink" title="4. config 配置"></a>4. config 配置</h3><ul>
 <li><p>查看配置</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -93,18 +100,18 @@
 <li><p>查看仓库配置</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--local</span> --list｜-l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="4-add-添加"><a href="#4-add-添加" class="headerlink" title="4. add 添加"></a>4. add 添加</h3><ul>
+<h3 id="5-add-添加"><a href="#5-add-添加" class="headerlink" title="5. add 添加"></a>5. add 添加</h3><ul>
 <li><p>添加所有新文件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="5-commit-更改"><a href="#5-commit-更改" class="headerlink" title="5. commit 更改"></a>5. commit 更改</h3><ul>
+<h3 id="6-commit-更改"><a href="#6-commit-更改" class="headerlink" title="6. commit 更改"></a>6. commit 更改</h3><ul>
 <li><p>带注释添加更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit <span class="token parameter variable">-am</span> <span class="token string">'message'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>修改更改注释</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit <span class="token parameter variable">--amend</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="6-remote-跟踪"><a href="#6-remote-跟踪" class="headerlink" title="6. remote 跟踪"></a>6. remote 跟踪</h3><ul>
+<h3 id="7-remote-跟踪"><a href="#7-remote-跟踪" class="headerlink" title="7. remote 跟踪"></a>7. remote 跟踪</h3><ul>
 <li><p>跟踪远程分支到指定分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> origin/<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -117,7 +124,7 @@
 <li><p>删除本地存在远程不存在的分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote prune origin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="7-pull-拉取"><a href="#7-pull-拉取" class="headerlink" title="7. pull 拉取"></a>7. pull 拉取</h3><ul>
+<h3 id="8-pull-拉取"><a href="#8-pull-拉取" class="headerlink" title="8. pull 拉取"></a>8. pull 拉取</h3><ul>
 <li><p>远程分支拉取 - 不变基</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull origin <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span>:<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> --no-rebase<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -127,7 +134,7 @@
 <li><p>允许不相关历史强制合并</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull origin master --allow-unrelated-histories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="8-push-推送"><a href="#8-push-推送" class="headerlink" title="8. push 推送"></a>8. push 推送</h3><ul>
+<h3 id="9-push-推送"><a href="#9-push-推送" class="headerlink" title="9. push 推送"></a>9. push 推送</h3><ul>
 <li><p>推送到指定的远程分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push origin <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -137,11 +144,11 @@
 <li><p>新建并推送到远程分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push --set-upstream origin <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="9-reset-重置"><a href="#9-reset-重置" class="headerlink" title="9. reset 重置"></a>9. reset 重置</h3><ul>
+<h3 id="10-reset-重置"><a href="#10-reset-重置" class="headerlink" title="10. reset 重置"></a>10. reset 重置</h3><ul>
 <li><p>重置当前最后一次更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token parameter variable">--soft</span> HEAD^<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="10-cherry-pick-应用更改"><a href="#10-cherry-pick-应用更改" class="headerlink" title="10. cherry-pick 应用更改"></a>10. cherry-pick 应用更改</h3><ul>
+<h3 id="11-cherry-pick-应用更改"><a href="#11-cherry-pick-应用更改" class="headerlink" title="11. cherry-pick 应用更改"></a>11. cherry-pick 应用更改</h3><ul>
 <li><p>应用指定更改到当前分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> cherry-pick <span class="token punctuation">[</span>commitHash<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -159,14 +166,17 @@
 </li>
 <li></li>
 </ul>
-<h3 id="11-stash-储藏"><a href="#11-stash-储藏" class="headerlink" title="11. stash 储藏"></a>11. stash 储藏</h3><ul>
+<h3 id="12-stash-储藏"><a href="#12-stash-储藏" class="headerlink" title="12. stash 储藏"></a>12. stash 储藏</h3><ul>
 <li><p>储藏当前更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>读取储藏更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash pop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="12-branch-分支"><a href="#12-branch-分支" class="headerlink" title="12. branch 分支"></a>12. branch 分支</h3><ul>
+<h3 id="13-branch-分支"><a href="#13-branch-分支" class="headerlink" title="13. branch 分支"></a>13. branch 分支</h3><ul>
+<li><p>查看当前远端分支情况</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-a</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>查看分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><div class="caption"><span>list</span></div><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-l</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -191,7 +201,7 @@
 <li><p>修改跟踪的远程分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-u</span> origin/<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="13-checkout-检出"><a href="#13-checkout-检出" class="headerlink" title="13. checkout 检出"></a>13. checkout 检出</h3><ul>
+<h3 id="14-checkout-检出"><a href="#14-checkout-检出" class="headerlink" title="14. checkout 检出"></a>14. checkout 检出</h3><ul>
 <li><p>撤消当前分支所有修改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -204,11 +214,11 @@
 <li><p>创建并切换、设置跟踪的远程分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> <span class="token parameter variable">-t</span> origin/<span class="token punctuation">[</span>branchName<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="14-rebase-变基"><a href="#14-rebase-变基" class="headerlink" title="14. rebase 变基"></a>14. rebase 变基</h3><ul>
+<h3 id="15-rebase-变基"><a href="#15-rebase-变基" class="headerlink" title="15. rebase 变基"></a>15. rebase 变基</h3><ul>
 <li><p>no branch, rebasing master （当前无分支，可变基到master分支）</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> rebase <span class="token parameter variable">--continue</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="15-reset-重置某次更改"><a href="#15-reset-重置某次更改" class="headerlink" title="15. reset 重置某次更改"></a>15. reset 重置某次更改</h3><ul>
+<h3 id="16-reset-重置某次更改"><a href="#16-reset-重置某次更改" class="headerlink" title="16. reset 重置某次更改"></a>16. reset 重置某次更改</h3><ul>
 <li><p>回滚到某次更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset commit_id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
@@ -218,7 +228,7 @@
 <li><p>此次更改之后的修改不做任何保留</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token parameter variable">--hard</span> commit_id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<h3 id="16-rebase-重新设置基准"><a href="#16-rebase-重新设置基准" class="headerlink" title="16. rebase 重新设置基准"></a>16. rebase 重新设置基准</h3><blockquote>
+<h3 id="17-rebase-重新设置基准"><a href="#17-rebase-重新设置基准" class="headerlink" title="17. rebase 重新设置基准"></a>17. rebase 重新设置基准</h3><blockquote>
 <p>当两个分支不在一条线上，需要执行 merge 操作时使用该命令</p>
 </blockquote>
 <ul>
@@ -236,7 +246,7 @@
 // 若还在 rebase 状态，则重复 <span class="token number">2</span>、3、4，直至 rebase 完成出现 applying 字样
 <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="17-revert-还原到更改"><a href="#17-revert-还原到更改" class="headerlink" title="17. revert 还原到更改"></a>17. revert 还原到更改</h3><ul>
+<h3 id="18-revert-还原到更改"><a href="#18-revert-还原到更改" class="headerlink" title="18. revert 还原到更改"></a>18. revert 还原到更改</h3><ul>
 <li><p>之前的更改仍会保留在 git log 中，而此次还原会做为一次新的更改</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log // 查找需要还原的 commit_id
 <span class="token function">git</span> revert commit_id  // 还原到这次更改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -250,13 +260,13 @@
 // 重复 <span class="token number">2</span>，3，4
 <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="18-merge-合并分支"><a href="#18-merge-合并分支" class="headerlink" title="18. merge 合并分支"></a>18. merge 合并分支</h3><ul>
+<h3 id="19-merge-合并分支"><a href="#19-merge-合并分支" class="headerlink" title="19. merge 合并分支"></a>19. merge 合并分支</h3><ul>
 <li><p>合并分支到当前分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-a</span> <span class="token parameter variable">-vv</span> // 查看所有分支是否为最新更改
 // 拉取最新更改
 <span class="token function">git</span> merge <span class="token punctuation">[</span>branchName<span class="token punctuation">]</span> // 合并为v祸从口出当前分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="19-fetch-抓取"><a href="#19-fetch-抓取" class="headerlink" title="19. fetch 抓取"></a>19. fetch 抓取</h3><ul>
+<h3 id="20-fetch-抓取"><a href="#20-fetch-抓取" class="headerlink" title="20. fetch 抓取"></a>20. fetch 抓取</h3><ul>
 <li><p>清除无效分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch <span class="token parameter variable">-p</span> // 删除本地存在，但远程不存在的分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
