@@ -50,3 +50,28 @@ echo "CONDA_SUBDIR: $CONDA_SUBDIR"
 ```
 
 安装完成后可进入 Python 进行测试
+
+## ubuntu处理OpenGL
+
+在Ubuntu系统中，libGL.so.1 是 OpenGL 的动态链接库，通常由 Mesa 或者其他图形驱动包提供。如果你遇到了需要安装 libGL.so.1 的情况，可以通过以下命令来安装：
+
+```console
+sudo apt-get update
+sudo apt-get install libgl1-mesa-glx
+```
+
+这条命令会安装 Mesa 提供的 OpenGL 实现库，确保你的系统有图形界面的话，这通常是必须的。如果你在没有图形界面的服务器上运行需要 OpenGL 的程序，你可能需要安装头文件和开发库：
+
+```console
+sudo apt-get install libgl1-mesa-dev
+```
+
+如果你遇到了特定版本的依赖问题，可以使用 apt-file 工具来查找并安装所需的文件：
+
+```console
+sudo apt-get install apt-file
+sudo apt-file update
+sudo apt-file search libGL.so.1
+```
+
+然后根据 apt-file 提供的信息安装相应的包。
