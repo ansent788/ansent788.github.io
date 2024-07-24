@@ -270,6 +270,35 @@
 <li><p>清除无效分支</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> fetch <span class="token parameter variable">-p</span> // 删除本地存在，但远程不存在的分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
+<h3 id="21-撤销修改"><a href="#21-撤销修改" class="headerlink" title="21. 撤销修改"></a>21. 撤销修改</h3><p>要撤销在Git中的修改，可以使用以下命令：</p>
+<ul>
+<li><p>如果你还没有把修改添加到暂存区，可以使用：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout -- <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>这将撤销指定文件的本地修改。</p>
+</blockquote>
+</li>
+<li><p>如果已经添加到暂存区，需要先取消暂存，然后再撤销修改：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>file<span class="token operator">></span>
+<span class="token function">git</span> checkout -- <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>如果你已经提交了修改，你需要使用git revert或git reset来撤销更改。</p>
+<blockquote>
+<p>使用git revert创建一个新的提交来撤销之前的更改：</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> revert <span class="token operator">&lt;</span>commit<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>使用git reset将HEAD指针移回到之前的提交，这样你的工作目录中的文件就会恢复到那个状态。这个操作会丢失最近的提交，所以请小心使用。</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token parameter variable">--hard</span> <span class="token operator">&lt;</span>commit<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>在这里，<commit>是你想要撤销的提交的哈希值。使用–hard选项会修改工作目录中的文件，以匹配指定的提交。如果不想影响工作目录中的文件，可以使用–soft选项或者不添加任何选项（默认为–mixed）。</p>
+</blockquote>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>经验随笔</category>
