@@ -559,7 +559,7 @@
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Linux 常用命令</p>
 <span id="more"></span>
 
-<h3 id="环境查看"><a href="#环境查看" class="headerlink" title="环境查看"></a>环境查看</h3><ul>
+<h2 id="环境查看"><a href="#环境查看" class="headerlink" title="环境查看"></a>环境查看</h2><ul>
 <li>操作系统和位数信息<br><code>uname -m &amp;&amp; cat /etc/*release</code></li>
 <li>处理器<br><code>arch</code></li>
 <li>系统内核<br><code>uname -a</code></li>
@@ -568,7 +568,7 @@
 <li>PCI 设备<br><code>ls pci -tv</code></li>
 <li>USB 设备<br><code>ls usb -tv</code></li>
 </ul>
-<h3 id="后台进程命令"><a href="#后台进程命令" class="headerlink" title="后台进程命令"></a>后台进程命令</h3><ol>
+<h2 id="后台进程命令"><a href="#后台进程命令" class="headerlink" title="后台进程命令"></a>后台进程命令</h2><ol>
 <li>运行后台进程<br>  <code>sudo nohup [commandName] [&gt; logFile] [2&gt;&amp;1] [&amp;]</code></li>
 </ol>
 <blockquote>
@@ -579,25 +579,25 @@
 <li>&amp; 后台运行进程</li>
 </ul>
 </blockquote>
-<h3 id="查看进程命令"><a href="#查看进程命令" class="headerlink" title="查看进程命令"></a>查看进程命令</h3><ol>
+<h2 id="查看进程命令"><a href="#查看进程命令" class="headerlink" title="查看进程命令"></a>查看进程命令</h2><ol>
 <li>根据名称查看<br>  <code>sudo ps -fe | grep [commandName]</code></li>
 </ol>
-<h3 id="结束进程命令"><a href="#结束进程命令" class="headerlink" title="结束进程命令"></a>结束进程命令</h3><ol>
+<h2 id="结束进程命令"><a href="#结束进程命令" class="headerlink" title="结束进程命令"></a>结束进程命令</h2><ol>
 <li>查看端口被哪个程序占用<br>  <code>sudo lsof -i tcp:port</code></li>
 <li>看到进程的 PID，可以将进程杀死。<br>  <code>sudo kill -9 PID</code></li>
 </ol>
-<h3 id="硬件挂载"><a href="#硬件挂载" class="headerlink" title="硬件挂载"></a>硬件挂载</h3><ol>
+<h2 id="硬件挂载"><a href="#硬件挂载" class="headerlink" title="硬件挂载"></a>硬件挂载</h2><ol>
 <li>挂载<br>  <code>sudo mount /dev/[deviceName] [Path(一艘为/mnt/[deviceName])]</code></li>
 <li>看到进程的 PID，可以将进程杀死。<br>  <code>sudo umount [Path]</code></li>
 </ol>
-<h3 id="DNS管理"><a href="#DNS管理" class="headerlink" title="DNS管理"></a>DNS管理</h3><ol>
+<h2 id="DNS管理"><a href="#DNS管理" class="headerlink" title="DNS管理"></a>DNS管理</h2><ol>
 <li>编辑&#x2F;etc&#x2F;resolv.conf文件</li>
 </ol>
 <blockquote>
 <p>在文件中添加以下行：<br>nameserver [dnsHost]</p>
 <p>请注意，如果您的系统使用resolvconf或其他网络管理服务，您可能需要按照该服务的规范来添加DNS服务器，以确保更改在系统重启后持久生效。在某些系统中，&#x2F;etc&#x2F;resolv.conf文件可能是一个符号链接，指向&#x2F;etc&#x2F;resolvconf&#x2F;resolv.conf.d&#x2F;head或其他位置，您可能需要编辑相应的文件。</p>
 </blockquote>
-<h3 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h3><p>在Ubuntu中，您可以使用chmod和chown命令来设置文件夹的权限，并确保当前用户拥有所需的访问权限。以下是一些基本的命令示例：</p>
+<h2 id="权限设置"><a href="#权限设置" class="headerlink" title="权限设置"></a>权限设置</h2><p>在Ubuntu中，您可以使用chmod和chown命令来设置文件夹的权限，并确保当前用户拥有所需的访问权限。以下是一些基本的命令示例：</p>
 <ol>
 <li><p>给当前用户设置文件夹的读权限：<br>  &#96;chmod u+r 文件夹名称</p>
 </li>
@@ -615,7 +615,7 @@
 </blockquote>
 </li>
 </ol>
-<h3 id="yum换源"><a href="#yum换源" class="headerlink" title="yum换源"></a>yum换源</h3><p>在CentOS 8中更换YUM源，你可以按照以下步骤操作：</p>
+<h2 id="yum换源"><a href="#yum换源" class="headerlink" title="yum换源"></a>yum换源</h2><p>在CentOS 8中更换YUM源，你可以按照以下步骤操作：</p>
 <ol>
 <li>备份当前的YUM源：<br>  <code>sudo mv /etc/yum.repos.d/CentOS-Linux-BaseOS.repo /etc/yum.repos.d/CentOS-Linux-BaseOS.repo.backup</code><br>  <code>sudo mv /etc/yum.repos.d/CentOS-Linux-AppStream.repo /etc/yum.repos.d/CentOS-Linux-AppStream.repo.backup</code></li>
 <li>下载新的YUM源文件。你可以选择一个新的镜像源或者使用官方的源。这里以使用阿里云的源为例：<br>  <code>sudo curl -o /etc/yum.repos.d/CentOS-Linux-BaseOS.repo http://mirrors.aliyun.com/repo/Centos-8.repo</code><br>  <code>sudo curl -o /etc/yum.repos.d/CentOS-Linux-AppStream.repo http://mirrors.aliyun.com/repo/Centos-8.repo</code></li>
