@@ -87,3 +87,36 @@ Linux 常用命令
   `sudo chown $(whoami) 文件夹名称`
 
     > 请将“文件夹名称”替换为您要修改权限的实际文件夹名称。如果您需要为组设置权限，可以使用g代替u。如果您需要为所有用户设置权限，可以使用a代替u。
+
+### yum换源
+
+在CentOS 8中更换YUM源，你可以按照以下步骤操作：
+
+1. 备份当前的YUM源：
+
+  ```console
+  sudo mv /etc/yum.repos.d/CentOS-Linux-BaseOS.repo /etc/yum.repos.d/CentOS-Linux-BaseOS.repo.backup
+  sudo mv /etc/yum.repos.d/CentOS-Linux-AppStream.repo /etc/yum.repos.d/CentOS-Linux-AppStream.repo.backup
+  ```
+
+1. 下载新的YUM源文件。你可以选择一个新的镜像源或者使用官方的源。这里以使用阿里云的源为例：
+
+  ```console
+  sudo curl -o /etc/yum.repos.d/CentOS-Linux-BaseOS.repo <http://mirrors.aliyun.com/repo/Centos-8.repo>
+  sudo curl -o /etc/yum.repos.d/CentOS-Linux-AppStream.repo <http://mirrors.aliyun.com/repo/Centos-8.repo>
+  ```
+
+1. 清除缓存并生成新的缓存：
+
+  ```console
+  sudo yum clean all
+  sudo yum makecache
+  ```
+
+1. 更新已安装的包：
+
+  ```console
+  sudo yum update
+  ```
+
+> 以上步骤将会把CentOS 8的YUM源更换为阿里云的源。你可以根据需要替换为其他的源。
