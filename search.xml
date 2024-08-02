@@ -617,9 +617,9 @@
 </ol>
 <h3 id="yum换源"><a href="#yum换源" class="headerlink" title="yum换源"></a>yum换源</h3><p>在CentOS 8中更换YUM源，你可以按照以下步骤操作：</p>
 <ol>
-<li>备份当前的YUM源：<br>  <code>sudo mv /etc/yum.repos.d/CentOS-Linux-BaseOS.repo /etc/yum.repos.d/CentOS-Linux-BaseOS.repo.backup   sudo mv /etc/yum.repos.d/CentOS-Linux-AppStream.repo /etc/yum.repos.d/CentOS-Linux-AppStream.repo.backup</code></li>
-<li>下载新的YUM源文件。你可以选择一个新的镜像源或者使用官方的源。这里以使用阿里云的源为例：<br>  <code>sudo curl -o /etc/yum.repos.d/CentOS-Linux-BaseOS.repo http://mirrors.aliyun.com/repo/Centos-8.repo   sudo curl -o /etc/yum.repos.d/CentOS-Linux-AppStream.repo http://mirrors.aliyun.com/repo/Centos-8.repo</code></li>
-<li>清除缓存并生成新的缓存：<br>  <code>sudo yum clean all   sudo yum makecache</code></li>
+<li>备份当前的YUM源：<br>  <code>sudo mv /etc/yum.repos.d/CentOS-Linux-BaseOS.repo /etc/yum.repos.d/CentOS-Linux-BaseOS.repo.backup</code><br>  <code>sudo mv /etc/yum.repos.d/CentOS-Linux-AppStream.repo /etc/yum.repos.d/CentOS-Linux-AppStream.repo.backup</code></li>
+<li>下载新的YUM源文件。你可以选择一个新的镜像源或者使用官方的源。这里以使用阿里云的源为例：<br>  <code>sudo curl -o /etc/yum.repos.d/CentOS-Linux-BaseOS.repo http://mirrors.aliyun.com/repo/Centos-8.repo</code><br>  <code>sudo curl -o /etc/yum.repos.d/CentOS-Linux-AppStream.repo http://mirrors.aliyun.com/repo/Centos-8.repo</code></li>
+<li>清除缓存并生成新的缓存：<br>  <code>sudo yum clean all</code><br>  <code>sudo yum makecache</code></li>
 <li>更新已安装的包：<br>  <code>sudo yum update</code></li>
 </ol>
 <blockquote>
