@@ -24,3 +24,8 @@ tags:
 |MySql|OLEDB|"Provider=MySQLProv; Data Source=<\database name>; User Id=<\user name>; Password=<\password>;"|
 |Oracle|ODBC|"Driver={Microsoft ODBC for Oracle}; Server=OracleServer.world; Uid=<\user name>; Pwd=<\password>;"|
 |Oracle|OLEDB|"Provider=OraOLEDB.Oracle; Data Source=<\database name> User Id=<\user name>; Password=<\password>;"|
+|SQLite|ODBC|Basic:"Data Source=Application.db;Cache=Shared"|
+|SQLite|ODBC|加密:"Data Source=Encrypted.db;Password=MyEncryptionKey"|
+|SQLite|ODBC|只读:"Data Source=Reference.db;Mode=ReadOnly"|
+|SQLite|ODBC|内存中:"Data Source=:memory:"|
+|SQLite|ODBC|可共享的内存:"Data Source=Sharable;Mode=Memory;Cache=Shared"|
