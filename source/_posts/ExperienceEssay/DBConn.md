@@ -19,7 +19,7 @@ tags:
 |Access|ODBC|"Driver={Microsoft Access Driver(*.mdb)}; Dbq=<\mdb file>; Uid=<\user name>; Pwd=<\password>;"|
 |Access|OLEDB|"Provider=Microsoft.Jet.OLEDB4.0; Data Source=<\mdb file>; User Id=<\user name>; Password=<\password>"|
 |SQL Server|ODBC|"Driver={SQL Server}; Server=<\server name>; Database=<\database name> Uid=<\user name>; Pwd=<\password>;"|
-|SQL Server|OLEDB|"Provider=SQLOLEDB; Data Source=<\server name>; Initial Catalog=<\database name>; Integrated Security=SSPI; User |Id=<\user name>; Password=<\password>;"|
+|SQL Server|OLEDB|"Provider=SQLOLEDB; Data Source=<\server name>; Initial Catalog=<\database name>; Integrated Security=SSPI; User Id=<\user name>; Password=<\password>;"|
 |MySql|ODBC|"Draver={mySQL}; Server=<\server name>; Option=16384; Database=<\database name>; Uid=<\user name>; Pwd=<\password>;"|
 |MySql|OLEDB|"Provider=MySQLProv; Data Source=<\database name>; User Id=<\user name>; Password=<\password>;"|
 |Oracle|ODBC|"Driver={Microsoft ODBC for Oracle}; Server=OracleServer.world; Uid=<\user name>; Pwd=<\password>;"|
