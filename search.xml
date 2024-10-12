@@ -54,6 +54,31 @@
 <td>OLEDB</td>
 <td>“Provider&#x3D;OraOLEDB.Oracle; Data Source&#x3D;&lt;\database name&gt; User Id&#x3D;&lt;\user name&gt;; Password&#x3D;&lt;\password&gt;;”</td>
 </tr>
+<tr>
+<td>SQLite</td>
+<td>ODBC</td>
+<td>Basic:”Data Source&#x3D;Application.db;Cache&#x3D;Shared”</td>
+</tr>
+<tr>
+<td>SQLite</td>
+<td>ODBC</td>
+<td>加密:”Data Source&#x3D;Encrypted.db;Password&#x3D;MyEncryptionKey”</td>
+</tr>
+<tr>
+<td>SQLite</td>
+<td>ODBC</td>
+<td>只读:”Data Source&#x3D;Reference.db;Mode&#x3D;ReadOnly”</td>
+</tr>
+<tr>
+<td>SQLite</td>
+<td>ODBC</td>
+<td>内存中:”Data Source&#x3D;:memory:”</td>
+</tr>
+<tr>
+<td>SQLite</td>
+<td>ODBC</td>
+<td>可共享的内存:”Data Source&#x3D;Sharable;Mode&#x3D;Memory;Cache&#x3D;Shared”</td>
+</tr>
 </tbody></table>
 ]]></content>
       <categories>
