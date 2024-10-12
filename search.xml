@@ -32,7 +32,7 @@
 <tr>
 <td>SQL Server</td>
 <td>OLEDB</td>
-<td>“Provider&#x3D;SQLOLEDB; Data Source&#x3D;&lt;\server name&gt;; Initial Catalog&#x3D;&lt;\database name&gt;; Integrated Security&#x3D;SSPI; User</td>
+<td>“Provider&#x3D;SQLOLEDB; Data Source&#x3D;&lt;\server name&gt;; Initial Catalog&#x3D;&lt;\database name&gt;; Integrated Security&#x3D;SSPI; User Id&#x3D;&lt;\user name&gt;; Password&#x3D;&lt;\password&gt;;”</td>
 </tr>
 <tr>
 <td>MySql</td>
