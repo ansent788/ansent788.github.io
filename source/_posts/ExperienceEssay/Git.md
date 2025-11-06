@@ -161,7 +161,7 @@ Git 命令行总结
   git push --set-upstream origin [branchName]
   ```
 
-### 10. reset 重置
+### 10. reset 删除提交
 
 - 重置当前最后一次更改
 
