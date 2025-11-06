@@ -166,7 +166,9 @@ Git 命令行总结
 - 重置当前最后一次更改
 
   ```bash
-  git reset --soft HEAD^
+  git reset --soft HEAD~1
+  # 强制推送到远程（会覆盖远程记录，谨慎操作！）
+  git push -f origin 分支名
   ```
 
 ### 11. cherry-pick 应用更改
