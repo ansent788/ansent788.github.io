@@ -171,7 +171,9 @@
 </ul>
 <h3 id="10-reset-重置"><a href="#10-reset-重置" class="headerlink" title="10. reset 重置"></a>10. reset 重置</h3><ul>
 <li><p>重置当前最后一次更改</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token parameter variable">--soft</span> HEAD^<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reset <span class="token parameter variable">--soft</span> HEAD~1
+<span class="token comment"># 强制推送到远程（会覆盖远程记录，谨慎操作！）</span>
+<span class="token function">git</span> push <span class="token parameter variable">-f</span> origin 分支名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h3 id="11-cherry-pick-应用更改"><a href="#11-cherry-pick-应用更改" class="headerlink" title="11. cherry-pick 应用更改"></a>11. cherry-pick 应用更改</h3><ul>
 <li><p>应用指定更改到当前分支</p>
