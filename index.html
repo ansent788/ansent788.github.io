@@ -240,7 +240,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-24 11:28:30" itemprop="dateModified" datetime="2025-11-24T11:28:30+08:00">2025-11-24</time>
+      <time title="修改时间：2025-11-24 11:31:31" itemprop="dateModified" datetime="2025-11-24T11:31:31+08:00">2025-11-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -263,172 +263,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="1、换行符和空字符"><a href="#1、换行符和空字符" class="headerlink" title="1、换行符和空字符"></a>1、换行符和空字符</h1><p>在正则表达式中，<strong>换行符</strong>和<strong>空字符</strong>是两类常用的“非打印控制字符”，用于匹配文本中的换行、空白间隔或特殊空值场景。下面结合定义、语法、使用场景和示例，帮你彻底理清两者的区别和用法：</p>
-<h2 id="一、正则中的「换行符」"><a href="#一、正则中的「换行符」" class="headerlink" title="一、正则中的「换行符」"></a>一、正则中的「换行符」</h2><p>换行符是用于分隔文本行的控制字符，不同操作系统的换行格式不同（但正则提供了统一的匹配语法）。</p>
-<h3 id="1-核心定义"><a href="#1-核心定义" class="headerlink" title="1. 核心定义"></a>1. 核心定义</h3><p>匹配文本中“行与行之间的分隔符号”，常见的实际换行格式：</p>
-<ul>
-<li><code>\n</code>：Unix&#x2F;Linux&#x2F;Mac（现代）系统的换行符（<code>LF</code>，Line Feed）；</li>
-<li><code>\r\n</code>：Windows 系统的换行符（<code>CRLF</code>，Carriage Return + Line Feed）；</li>
-<li><code>\r</code>：早期 Mac 系统的换行符（<code>CR</code>）。</li>
-</ul>
-<h3 id="2-正则匹配语法（跨平台通用）"><a href="#2-正则匹配语法（跨平台通用）" class="headerlink" title="2. 正则匹配语法（跨平台通用）"></a>2. 正则匹配语法（跨平台通用）</h3><table>
-<thead>
-<tr>
-<th>语法</th>
-<th>含义</th>
-<th>适用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>\n</code></td>
-<td>匹配单个 <code>LF</code>（Unix 风格换行）</td>
-<td>明确知道目标文本是 Unix 格式</td>
-</tr>
-<tr>
-<td><code>\r</code></td>
-<td>匹配单个 <code>CR</code>（早期 Mac 格式）</td>
-<td>极少用，仅兼容旧文本</td>
-</tr>
-<tr>
-<td><code>\r?\n</code></td>
-<td>匹配 <code>CRLF</code>（Windows）或 <code>LF</code>（Unix）</td>
-<td>跨平台通用（推荐，覆盖 99% 场景）</td>
-</tr>
-<tr>
-<td><code>\R</code></td>
-<td>匹配任意换行序列（<code>\n</code>&#x2F;<code>\r\n</code>&#x2F;<code>\r</code>）</td>
-<td>.NET、Java、Python（3.7+）等支持</td>
-</tr>
-<tr>
-<td><code>[\r\n]</code></td>
-<td>匹配单个 <code>CR</code> 或 <code>LF</code>（不推荐，易误配）</td>
-<td>临时兼容简单场景</td>
-</tr>
-</tbody></table>
-<h3 id="3-关键注意事项"><a href="#3-关键注意事项" class="headerlink" title="3. 关键注意事项"></a>3. 关键注意事项</h3><ul>
-<li>正则默认不匹配“跨行”：比如 <code>.</code>（匹配任意字符）默认<strong>不包含换行符</strong>，若需匹配包括换行在内的所有字符，需开启「单行模式」（<code>.</code> 匹配换行）：<ul>
-<li>语法：在正则末尾加 <code>(?s)</code>（内联模式），或通过代码设置 <code>RegexOptions.Singleline</code>（如 C#、Java）。</li>
-</ul>
-</li>
-<li>示例：匹配跨两行的文本<pre class="line-numbers language-regex" data-language="regex"><code class="language-regex"><span class="token group punctuation">(?s</span><span class="token group punctuation">)</span>hello<span class="token char-set class-name">.</span><span class="token quantifier number">*</span>world  // 能匹配 "hello<span class="token escape">\n</span>world" 或 "hello<span class="token escape">\r</span><span class="token escape">\n</span>world"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h3 id="4-实际用法示例"><a href="#4-实际用法示例" class="headerlink" title="4. 实际用法示例"></a>4. 实际用法示例</h3><ul>
-<li>需求1：匹配 Windows 格式的换行（<code>CRLF</code>）<pre class="line-numbers language-regex" data-language="regex"><code class="language-regex">第一行<span class="token escape">\r</span><span class="token escape">\n</span>第二行  // 精准匹配 "第一行<span class="token escape">\r</span><span class="token escape">\n</span>第二行"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>需求2：跨平台匹配换行，提取每行内容<pre class="line-numbers language-regex" data-language="regex"><code class="language-regex"><span class="token anchor function">^</span><span class="token char-set class-name">.</span><span class="token quantifier number">+</span><span class="token escape">\R</span><span class="token quantifier number">?</span>  // <span class="token anchor function">^</span> 匹配行首，<span class="token char-set class-name">.</span><span class="token quantifier number">+</span> 匹配行内容，<span class="token escape">\R</span><span class="token quantifier number">?</span> 匹配换行（最后一行可能无换行）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h2 id="二、正则中的「空字符」"><a href="#二、正则中的「空字符」" class="headerlink" title="二、正则中的「空字符」"></a>二、正则中的「空字符」</h2><p>空字符是一类“不可见、表示空白或空值”的字符，核心分为两类：<strong>空白字符</strong>（空格、制表符等）和<strong>空字符串</strong>（无字符）。</p>
-<h3 id="（一）第一类：空白字符（占位置的不可见字符）"><a href="#（一）第一类：空白字符（占位置的不可见字符）" class="headerlink" title="（一）第一类：空白字符（占位置的不可见字符）"></a>（一）第一类：空白字符（占位置的不可见字符）</h3><p>指文本中用于分隔元素的空白间隔（如空格、制表符、换行符等），正则提供了专门的语法匹配。</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>含义</th>
-<th>等价于</th>
-<th>适用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>\s</code></td>
-<td>匹配任意空白字符（空格、制表符、换行等）</td>
-<td><code>[ \t\n\r\f\v]</code></td>
-<td>匹配所有空白间隔（最常用）</td>
-</tr>
-<tr>
-<td><code>\S</code></td>
-<td>匹配非空白字符（与 <code>\s</code> 相反）</td>
-<td><code>[^ \t\n\r\f\v]</code></td>
-<td>排除空白，提取有效内容</td>
-</tr>
-<tr>
-<td><code> </code>（空格）</td>
-<td>匹配单个普通空格</td>
-<td>-</td>
-<td>精准匹配空格（如分隔单词的空格）</td>
-</tr>
-<tr>
-<td><code>\t</code></td>
-<td>匹配制表符（<code>Tab</code> 键产生的字符）</td>
-<td>-</td>
-<td>匹配代码缩进、表格分隔的制表符</td>
-</tr>
-<tr>
-<td><code>\f</code></td>
-<td>匹配换页符（Form Feed）</td>
-<td>-</td>
-<td>极少用，仅兼容打印机相关文本</td>
-</tr>
-<tr>
-<td><code>\v</code></td>
-<td>匹配垂直制表符（Vertical Tab）</td>
-<td>-</td>
-<td>几乎不用</td>
-</tr>
-</tbody></table>
-<h4 id="注意：-s-包含换行符！"><a href="#注意：-s-包含换行符！" class="headerlink" title="注意：\s 包含换行符！"></a>注意：<code>\s</code> 包含换行符！</h4><ul>
-<li><code>\s</code> 的本质是“所有空白类字符”，其中包含 <code>\n</code>（换行）、<code>\r</code>（回车），因此：<ul>
-<li>若只想匹配“非换行的空白”（如空格、制表符），需手动排除换行：<code>[ \t]</code> 或 <code>\s-[^\r\n]</code>。</li>
-<li>示例：匹配单词间的空格&#x2F;制表符（不包含换行）<pre class="line-numbers language-regex" data-language="regex"><code class="language-regex"><span class="token char-set class-name">\w</span><span class="token quantifier number">+</span><span class="token char-class"><span class="token char-class-punctuation punctuation">[</span> <span class="token escape">\t</span><span class="token char-class-punctuation punctuation">]</span></span><span class="token quantifier number">+</span><span class="token char-set class-name">\w</span><span class="token quantifier number">+</span>  // 匹配 "hello world"（空格）或 "hello<span class="token escape">\t</span>world"（制表符）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-</li>
-</ul>
-<h3 id="（二）第二类：空字符串（不占位置的“无字符”）"><a href="#（二）第二类：空字符串（不占位置的“无字符”）" class="headerlink" title="（二）第二类：空字符串（不占位置的“无字符”）"></a>（二）第二类：空字符串（不占位置的“无字符”）</h3><p>指“没有任何字符的位置”，正则中无需专门语法匹配，而是通过「边界符」或「可选语法」间接处理。</p>
-<h4 id="关键场景："><a href="#关键场景：" class="headerlink" title="关键场景："></a>关键场景：</h4><ol>
-<li>匹配空行（行内无任何内容，仅换行）：<ul>
-<li>正则：<code>^$</code>（<code>^</code> 行首，<code>$</code> 行尾，中间无字符）</li>
-<li>若文本是 Windows 格式（<code>CRLF</code>），需兼容换行符：<code>^\r?$</code>（匹配空行 + 可能的 <code>CR</code>）</li>
-</ul>
-</li>
-<li>匹配可选的空值（如某字段可填或为空）：<ul>
-<li>正则：<code>^.*$</code>（<code>.*</code> 匹配任意字符（包括空））</li>
-<li>或精准匹配空：<code>^$</code>（仅匹配空字符串，不匹配任何字符）</li>
-</ul>
-</li>
-</ol>
-<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><ul>
-<li>需求：过滤文本中的空行<pre class="line-numbers language-regex" data-language="regex"><code class="language-regex"><span class="token anchor function">^</span><span class="token char-set class-name">\s</span><span class="token quantifier number">*</span><span class="token anchor function">$</span>  // <span class="token char-set class-name">\s</span><span class="token quantifier number">*</span> 匹配0个或多个空白字符（包括空），匹配空行或仅含空格/制表符的“伪空行”<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h2 id="三、换行符与空字符的核心区别"><a href="#三、换行符与空字符的核心区别" class="headerlink" title="三、换行符与空字符的核心区别"></a>三、换行符与空字符的核心区别</h2><table>
-<thead>
-<tr>
-<th>维度</th>
-<th>换行符（<code>\n</code>&#x2F;<code>\r\n</code>&#x2F;<code>\R</code>）</th>
-<th>空字符</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>本质</td>
-<td>行分隔符（控制文本换行）</td>
-<td>空白间隔（<code>\s</code>）或无字符（空字符串）</td>
-</tr>
-<tr>
-<td>占位置</td>
-<td>占1个字符位置（<code>\r\n</code> 占2个）</td>
-<td>空白字符占1个位置，空字符串不占位置</td>
-</tr>
-<tr>
-<td>正则语法</td>
-<td><code>\n</code>&#x2F;<code>\r\n</code>&#x2F;<code>\R</code></td>
-<td>空白：<code>\s</code>&#x2F;<code>\t</code>&#x2F;空格；空字符串：<code>^$</code></td>
-</tr>
-<tr>
-<td>关联关系</td>
-<td><code>\s</code> 包含换行符（<code>\n</code>&#x2F;<code>\r</code>）</td>
-<td>空字符串与换行符无包含关系</td>
-</tr>
-<tr>
-<td>典型用途</td>
-<td>匹配&#x2F;分割文本行</td>
-<td>匹配空格&#x2F;制表符、过滤空行&#x2F;空值</td>
-</tr>
-</tbody></table>
-<h2 id="四、常用实战总结"><a href="#四、常用实战总结" class="headerlink" title="四、常用实战总结"></a>四、常用实战总结</h2><ol>
-<li>跨平台匹配换行：优先用 <code>\R</code>（支持的语言）或 <code>\r?\n</code>（兼容所有语言）；</li>
-<li>匹配空格&#x2F;制表符（不含换行）：用 <code>[ \t]</code>（避免 <code>\s</code> 包含换行）；</li>
-<li>过滤空行：用 <code>^\s*$</code>（匹配空行或仅含空白的行）；</li>
-<li>匹配包括换行的所有字符：开启单行模式 <code>(?s)</code> + <code>.</code>；</li>
-<li>匹配空字符串（无任何内容）：用 <code>^$</code>。</li>
-</ol>
-<p>通过以上规则，可覆盖正则中换行和空字符的绝大多数使用场景，避免因“看不见的字符”导致匹配失败～</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/ExperienceEssay/Regex/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -4512,6 +4512,8 @@ cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation
     <title>正则表达式</title>
     <url>/ExperienceEssay/Regex/</url>
     <content><![CDATA[<h1 id="1、换行符和空字符"><a href="#1、换行符和空字符" class="headerlink" title="1、换行符和空字符"></a>1、换行符和空字符</h1><p>在正则表达式中，<strong>换行符</strong>和<strong>空字符</strong>是两类常用的“非打印控制字符”，用于匹配文本中的换行、空白间隔或特殊空值场景。下面结合定义、语法、使用场景和示例，帮你彻底理清两者的区别和用法：</p>
+<span id="more"></span>
+
 <h2 id="一、正则中的「换行符」"><a href="#一、正则中的「换行符」" class="headerlink" title="一、正则中的「换行符」"></a>一、正则中的「换行符」</h2><p>换行符是用于分隔文本行的控制字符，不同操作系统的换行格式不同（但正则提供了统一的匹配语法）。</p>
 <h3 id="1-核心定义"><a href="#1-核心定义" class="headerlink" title="1. 核心定义"></a>1. 核心定义</h3><p>匹配文本中“行与行之间的分隔符号”，常见的实际换行格式：</p>
 <ul>
