@@ -58,7 +58,7 @@ du -sh /path/to/your/folder
 在 Mac 系统里，你可以借助以下命令查看文件夹的大小：
 `ncdu` 是一个交互式的磁盘使用情况分析工具，能更直观地查看文件夹大小。
 
-- **安装 `ncdu` 命令**：
+- **安装** **`ncdu`** **命令**：
 
 > 如果你还没有安装 `ncdu`，可以使用 Homebrew 进行安装：
 
@@ -66,7 +66,7 @@ du -sh /path/to/your/folder
 brew install ncdu
 ```
 
-- **使用 `ncdu` 查看文件夹大小**：
+- **使用** **`ncdu`** **查看文件夹大小**：
 
 ```bash
 ncdu /path/to/your/folder
@@ -82,10 +82,10 @@ ncdu /path/to/your/folder
 sudo nohup [commandName] [> logFile] [2>&1] [&]
 ```
 
-  > - commandName 命令名称
-  > - \> logFile 输出日志
-  > - 2>&1 错误日志重定向到输出日志
-  > - & 后台运行进程
+> - commandName 命令名称
+> - \> logFile 输出日志
+> - 2>&1 错误日志重定向到输出日志
+> - & 后台运行进程
 
 ## 查看进程命令
 
@@ -103,7 +103,7 @@ sudo ps -fe | grep [commandName]
 sudo lsof -i tcp:port
 ```
 
-2. 看到进程的 PID，可以将进程杀死。
+1. 看到进程的 PID，可以将进程杀死。
 
 ```bash
 sudo kill -9 PID
@@ -117,7 +117,7 @@ sudo kill -9 PID
   sudo mount /dev/[deviceName] [Path(一艘为/mnt/[deviceName])]
 ```
 
-2. 看到进程的 PID，可以将进程杀死。
+1. 看到进程的 PID，可以将进程杀死。
 
 ```bash
 sudo umount [Path]
@@ -127,10 +127,10 @@ sudo umount [Path]
 
 1. 编辑/etc/resolv.conf文件
 
-  > 在文件中添加以下行：
-  > nameserver [dnsHost]
-  >
-  > 请注意，如果您的系统使用resolvconf或其他网络管理服务，您可能需要按照该服务的规范来添加DNS服务器，以确保更改在系统重启后持久生效。在某些系统中，/etc/resolv.conf文件可能是一个符号链接，指向/etc/resolvconf/resolv.conf.d/head或其他位置，您可能需要编辑相应的文件。
+> 在文件中添加以下行：
+> nameserver \[dnsHost]
+>
+> 请注意，如果您的系统使用resolvconf或其他网络管理服务，您可能需要按照该服务的规范来添加DNS服务器，以确保更改在系统重启后持久生效。在某些系统中，/etc/resolv.conf文件可能是一个符号链接，指向/etc/resolvconf/resolv.conf.d/head或其他位置，您可能需要编辑相应的文件。
 
 ## 权限设置
 
@@ -142,37 +142,37 @@ sudo umount [Path]
 chmod u+r 文件夹名称
 ```
 
-2. 给当前用户设置文件夹的写权限：
+1. 给当前用户设置文件夹的写权限：
 
 ```bash
 chmod u+w 文件夹名称
 ```
 
-3. 给当前用户设置文件夹的执行权限：
+1. 给当前用户设置文件夹的执行权限：
 
 ```bash
 chmod u+x 文件夹名称
 ```
 
-4. 同时给当前用户设置文件夹的读写执行权限：
+1. 同时给当前用户设置文件夹的读写执行权限：
 
 ```bash
 chmod u+rwx 文件夹名称
 ```
 
-5. 如果需要递归地应用权限到所有子文件和子文件夹，可以使用-R选项：
+1. 如果需要递归地应用权限到所有子文件和子文件夹，可以使用-R选项：
 
 ```bash
 chmod -R u+rwx 文件夹名称
 ```
 
-6. 确保当前用户是文件夹的所有者：
+1. 确保当前用户是文件夹的所有者：
 
 ```bash
 sudo chown $(whoami) 文件夹名称
 ```
 
-  > 请将“文件夹名称”替换为您要修改权限的实际文件夹名称。如果您需要为组设置权限，可以使用g代替u。如果您需要为所有用户设置权限，可以使用a代替u。
+> 请将“文件夹名称”替换为您要修改权限的实际文件夹名称。如果您需要为组设置权限，可以使用g代替u。如果您需要为所有用户设置权限，可以使用a代替u。
 
 ## yum换源
 
@@ -185,22 +185,39 @@ sudo mv /etc/yum.repos.d/CentOS-Linux-BaseOS.repo /etc/yum.repos.d/CentOS-Linux-
 sudo mv /etc/yum.repos.d/CentOS-Linux-AppStream.repo /etc/yum.repos.d/CentOS-Linux-AppStream.repo.backup
 ```
 
-2. 下载新的YUM源文件。你可以选择一个新的镜像源或者使用官方的源。这里以使用阿里云的源为例：
+1. 下载新的YUM源文件。你可以选择一个新的镜像源或者使用官方的源。这里以使用阿里云的源为例：
 
 ```bash
 sudo curl -o /etc/yum.repos.d/CentOS-Linux-BaseOS.repo http://mirrors.aliyun.com/repo/Centos-8.repo
 sudo curl -o /etc/yum.repos.d/CentOS-Linux-AppStream.repo http://mirrors.aliyun.com/repo/Centos-8.repo
 ```
 
-3. 清除缓存并生成新的缓存：
+1. 清除缓存并生成新的缓存：
 
 ```bash
 sudo yum clean all
 sudo yum makecache
 ```
 
-4. 更新已安装的包：
+1. 更新已安装的包：
 
 ```bash
 sudo yum update
 ```
+
+## Mac 息屏
+
+1. 开盖状态，一键立刻黑屏息屏
+
+```Shell
+sudo pmset displaysleepnow
+```
+
+1. 临时防休眠
+
+> 定时版本（例如保持 2 小时不休眠，单位秒）
+
+```Shell
+caffeinate -t 7200
+```
+
